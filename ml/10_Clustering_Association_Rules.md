@@ -1,0 +1,127 @@
+# Clustering & Association Rules
+
+## Data Clustering
+
+- Verfahren zur Entdeckung von Ähnlichkeitsstrukturen in grossen Datenbeständen
+- Gefundenen Gruppen von ähnlichen Objekten werden als _Cluster_ bezeichnet
+- Gruppenzuordnung wird als _Clustering_ bezeichnet
+- Ziel _neue_ Gruppen in den Daten zu identifizieren, bei Klassifikation werden nur Daten den bestehenden Gruppen zugeordnet
+- uniformiertes Verfahren, nicht angewiesen auf Klassen-Vorwissen
+- z.B. für automatisierte Klassifizierung, Erkennung von Mustern in Bildern, Marktsegmentierung oder Zielgruppenanalyse
+
+### k-Means Algorithmus
+
+#### Ablauf
+
+##### 1. Vorbereitung
+
+- Wähle die Anzahl an Clusters (z.B. 3)
+- Erstelle zufällig neue Cluster Centers (neue Datenpunkte)
+
+![k-Means Vorbereitung](images/k_means_clustering_preparation.png)
+
+##### 2. Suchen nach dem nächstgelegenen Cluster für jeden Datenpunkt
+
+![k-Means suche Cluster](images/k_means_clustering_search_cluster.png)
+
+##### 3. Berechnung des Mittelpunktes eines Clusters
+
+- Berechnen des Mittelwerts aller Punkte, welche momentan zu dem selben Cluster angehören
+- Verschiebung des Mittelpunktes des Clusters zu dem vorher berechneten Mittelwert aller Punkte
+
+![k-Means neuer Mittelpunkt des Clusters](images/k_means_clustering_center_cluster.png)
+
+##### 4. Berechnung des Mittelpunktes für jedes Cluster
+
+![k-Means neuer Mittelpunkt für alle Cluster](images/k_means_clustering_center_all_clusters.png)
+
+##### 5. Neustart und Fortfahren bis zur Stabilität der Mittelpunkte
+
+![k-Means Wiederholung](images/k_means_clustering_restart_continue.png)
+
+#### Pseudo Code
+
+1. Input: number of clusters $k > 0$ and data points $x_1, ..., x_n$
+2. Randomly choose $k$ cluster centers $\mu_1, ..., \mu_k$
+3. Repeat until convergence
+  a. Assign each data point $x_i$ to its nearest cluster center $\mu_j$
+  b. Update each cluster center to the mean of all assigned data points
+
+### Clustering Abweichung (Distortion)
+
+- Die Gesamtabweichung (total distortion) kann durch durch Summieren der quadratischen Abstände zwischen jedem Punkt und seinem Clusterzentrum gemessen werden
+
+$$ \sum_{i=1}^n ||x_i - \mu_{ci}||^2 $$
+
+- Die Durchschnittsabweichung (average distortion) jedes Datenpunktes
+
+$$ \frac{1}{n} \sum_{i=1}^n ||x_i - \mu_{ci}||^2 $$
+
+- Die Durchschnittsabweichung ermöglicht den Vergleich von Clusters über verschiedene Datensätze
+
+### Konvergenz und Optimalität
+
+- Optimales Clustering minimiert die Gesamtabweichung
+- k-Means entspricht daher nur _annähernd_ der optimalen Lösung
+- k-Means _konvergieren immer_, aber nicht unbedingt zu einem globalen Minimum, manchmal auch zu einem lokalen Minimum
+- In der Praxis wird k-Means mehrfach ausgeführt und das Clustering mit minimaler Abweichung genommen
+
+### Wählen der Anzahl Clusters
+
+- Je mehr Cluster, desto kleiner ist die Gesamtabweichung
+- In der Praxis bevorzugt man wenige Cluster, aber auch geringe Abweichung
+- Die Ellbogenmethode verwenden, guter Kompromiss
+  - Man iteriert über verschiedene Anzahlen von Clusters und berechnet die Gesamtabweichung
+
+![Ellbogenmethode](images/data_clustering_ellbow_method.png)
+
+## Association Rules
+
+- Findet interessante Bezihungen zwischen Attributen in grossen Datensets
+- Ist eine Implikation $X \rightarrow Y$, in der $X$ und $Y$ disjunkt sind
+
+### Support eines Satzes von Items
+
+- Support ist der Anteil der Transaktionen, welcher ein spezifisches Itemset enthält
+
+$$ support({i_1, ..., i_n}) = \frac{\text{\# purchases of }{i_1, ..., i_n}}{\text{\# transactions}} $$
+
+- Support misst wie oft gewisse Items zusammen gekauft wurden
+
+![Support eines Items](images/association_rules_support.png)
+
+### Support einer Association Rule
+
+$$ support(X \rightarrow Y) = support(X \cup Y) $$
+
+$$ support(X \rightarrow Y) = support(Y \rightarrow X) $$
+
+- Richtungsunabhängig, kann daher die Qualität einer gerichteten Association Rule nicht messen!
+
+![Support einer Association Rule](images/association_rule_support_association_rule.png)
+
+### Interpretation des Supports
+
+- Misst, wie häufig ein Itemset in den Daten vorkommt
+- Regeln mit geringem Support können einfach durch Zufall entstehen
+- Niedrige Supportregeln können aus geschäftlicher Sicht uninteressant sein
+- Eine gute Association Rule hat ein höhen Support
+  
+$$ Support = Intresse $$
+
+### Confidence einer Association Rule
+
+$$ confidence(X \rightarrow Y) = \frac{support(X \cup Y)}{support(X)} $$
+
+![Confidence einer Association Rule](images/association_rule_confidence.png)
+
+### Interpretation der Confidence
+
+- Legt fest, wie häufig Elemente in $Y$ in Transaktionen erscheinen, die $X$ enthalten
+- Für eine bestimmte Regel $X \rightarrow Y$, je höher die Confidence ist, deto wahrscheinlicher ist es für $Y$, in Transaktionen, die $X$ enthalten, vorhanden zu sein
+- Confidence liefert eine Schätzung der bedingten Wahscheinlichkeit
+- Confidence misst die Zuverlässigkeit oder Vertrauenswürdigkeit einer Association Rule
+- Eine gute Association Rule hat eine hohe Confidence
+  
+$$ Confidence = Vertrauenswürdigkeit $$
+
