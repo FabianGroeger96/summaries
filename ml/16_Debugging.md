@@ -34,7 +34,7 @@ Aufgrund von Bias und Varianz kann bestummen werden ob ein Model Underfitted ode
 
 ## Underfitting und Overfitting
 
-- `Underfitting`: Das Model findet keine geeignete Lösung für das Problem. Das Model bietet schlechte Resultate auf dem Trainings-, Test- sowie auf dem Evaluationset. Es wird eine zuwenig Komplexe Lösung gefunden.
+- `Underfitting`: Das Model findet keine geeignete Lösung für das Problem. Das Model bietet schlechte Resultate auf dem Trainings-, Test- sowie auf dem Evaluationset. Es wird eine zuwenig komplexe Lösung gefunden.
 
 - `Overfitting`: Das Model findet eines zu optimierte Lösung für das Trainingset. Dies führt dazu, dass auf dem Trainingsset eine sehr hohe Genauigkeit erreicht wird. Auf dem Test- sowie vorallem auf dem Evaluationsset schlecht performen wird. Das Model optimiert die Lösung zu stark an die Trainingsdaten.
 
@@ -42,7 +42,7 @@ Aufgrund von Bias und Varianz kann bestummen werden ob ein Model Underfitted ode
 
 ### Underfitting
 
-Untenstehend ein Bild das die Learning Curve eines Models, welches Underfitted, zeigt. Man sieht die Error-Kurven schmiegen sich gegenseitig an. Die gewünschte Performance ist nur früh im Training ersichtlich. Anschliessend konvergieren beide Kurven zu einem hohen Error.
+Untenstehend ein Bild das die Learning Curve eines Models, welches Underfitted, zeigt. Man sieht die Error-Kurven schmiegen sich gegenseitig an. Die gewünschte Performance ist nur früh im Training-Set ersichtlich. Anschliessend konvergieren beide Kurven zu einem zu hohen Error.
 
 ![Learning Curve für Underfitting](images/learningcurve_underfitting.png)
 
@@ -77,7 +77,64 @@ Beim Early Stopping wird das Training des Models an einem Punkt gestoppt, an dem
 
 ![Learning Curve für Underfitting](images/earlystopping.png)
 
+## Machine Learning Projekt Lösungsansatz
 
+Von M. Pouly wird vorgeschlagen folgendermassen für Machine Learning Projekte vorzugehen.
 
+1. Data Quality Assessment ist seine Zeit IMMER Wert
+2. Daten visualisieren
+3. Quality Assessment Workflow verwenden der gut durchdacht und spezifiert ist
+4. Ausprobieren mit einfachen ML Ansätzen. Wie das schnelle erstellen eines einfachen Classifier oder Regressor
+5. Fehlerquellen-Analyse und Diagnostik anwenden
+6. Iterative das Model verbessern. Auch durch eventuelle kombination von Ansätzen
 
+## Fluch der Dimensionalität
+
+"As the number of features or dimensions grows, the amount of data we need to generalize accurately grows exponentially."
+
+- In the 1-D case, each data point represents a neighborhood of area 1/10
+- In the 2-D case, we need 100 data points for a similar coverage
+- In the 3-D case, we need 1000 data points
+
+Dafür gibt es folgende Ursachen,
+
+- Die meisten statistischen Lernalgorithmen benötigen Zählfunktionen. z.B. bei einem Decision Tree und der Verwendung von Majority Voting
+- Um bei wachsender Dimension (Features) die selbe Abdeckung zu erhalten, mehr Daten sind nötig. Wird dies nicht geführt verringert sich die Dichte der Daten. Sprich für ein zusätzliches Feature gibt es zu wenig "gültige" Koorelation zum Datensatz.
+
+Daraus folgt,
+
+- Das hinzufügen von mehr Daten ist nicht immer die Lösung oder Konstruktiv
+- Wichtig ist das redundante und unwichtige Features entfernt werden!
+
+Unter der Annahme das folgende Feature für einen Datensatz vorliegen.
+
+1. Anzahl Unfälle
+2. Anzahl Wasserrohrbrüche
+3. Anzahl geschlossener Schulen
+4. Anzahl Patienten mit einem Hitzeschlag
+5. Ausgaben für die Schneeräumung in CHF
+
+- Der Datensatz beruht hier auf fünf Features. Der eigentliche grosse Koorelations Faktor ist jedoch der Temperaturwert (Hidden Variable).
+- Alle fünf Features korrelieren stark mit der Temperatur. Covarianz zeigt hier Redundanz.
+
+Um dies zu lösen kann Principal Component Analysis (PCA) genutzt werden. Dadurch wird ein reduziertes Datenset erstellt.
+
+## Feature Selection
+
+Für das selektieren sollte an Datensetz erstellt werden welcher möglichst nur relevante Features für das Problem des Model beinhaltet. Dabei soll folgendes beachtet werden.
+
+- `Redundante` Features vermeiden
+- `Irrelevante` Features vermeiden
+- PCA kann genutzt werden um neue Features aus dem Datensatz zu erstellen. So können andere Features reduziert werden.
+
+Gutes Features Selection bekämpft auch den "Fluch der Dimensionalität". Weiter hilft es jedoch verbessertes auch im allgemeinen die Effizienz von Machine Learning.
+
+- weniger Feature sind weniger Daten. Daher kürzere Trainingszeiten
+- Weniger Feature führen zu einfacheren und besser interpretierbaren Models
+- Weniger Feature kann der Generalisierung dienen und verringert so eventuell Overfitting
+
+Folgende Techniken können für die Feature Selection genutzt werden.
+
+- Korrelations Analyse, `Gute Features korrelieren stark mit dem Label, jedoch nicht untereinandner.`
+- Decisions Tree
 
