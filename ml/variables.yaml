@@ -1,0 +1,9 @@
+---
+titlepage: true
+listings-disable-line-numbers: true
+toc-own-page: true
+title: "Zusammenfassung ML"
+author: [Reto Barmettler, Fabian Gröger]
+subtitle: "Machine Learning"
+keywords: [HSLU, I.BA_ML_MM.F1901]
+---

@@ -77,7 +77,7 @@ $$ \frac{1}{n} \sum_{i=1}^n ||x_i - \mu_{ci}||^2 $$
 
 ## Association Rules
 
-- Findet interessante Bezihungen zwischen Attributen in grossen Datensets
+- Findet interessante Beziehungen zwischen Attributen in grossen Datensets
 - Ist eine Implikation $X \rightarrow Y$, in der $X$ und $Y$ disjunkt sind
 
 ### Support eines Satzes von Items
