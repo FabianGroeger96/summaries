@@ -107,7 +107,7 @@ $$ support(X \rightarrow Y) = support(Y \rightarrow X) $$
 - Niedrige Supportregeln können aus geschäftlicher Sicht uninteressant sein
 - Eine gute Association Rule hat ein höhen Support
   
-$$ Support = Intresse $$
+$$ Support = Interesse $$
 
 ### Confidence einer Association Rule
 
@@ -118,10 +118,64 @@ $$ confidence(X \rightarrow Y) = \frac{support(X \cup Y)}{support(X)} $$
 ### Interpretation der Confidence
 
 - Legt fest, wie häufig Elemente in $Y$ in Transaktionen erscheinen, die $X$ enthalten
-- Für eine bestimmte Regel $X \rightarrow Y$, je höher die Confidence ist, deto wahrscheinlicher ist es für $Y$, in Transaktionen, die $X$ enthalten, vorhanden zu sein
-- Confidence liefert eine Schätzung der bedingten Wahscheinlichkeit
+- Für eine bestimmte Regel $X \rightarrow Y$, je höher die Confidence ist, desto wahrscheinlicher ist es für $Y$, in Transaktionen, die $X$ enthalten, vorhanden zu sein
+- Confidence liefert eine Schätzung der bedingten Wahrscheinlichkeit
 - Confidence misst die Zuverlässigkeit oder Vertrauenswürdigkeit einer Association Rule
 - Eine gute Association Rule hat eine hohe Confidence
   
 $$ Confidence = Vertrauenswürdigkeit $$
+
+### Lift einer Association Rule
+
+$$ lift(X \rightarrow Y) = \frac{support(X \cup Y)}{support(X) * support(Y)} $$
+
+![Lift Association Rule](images/association_rule_lift.png)
+
+### Interpretation des Lifts
+
+- Misst wie oft $X$ und $Y$ zusammen aufgetaucht sind, wenn sie statistisch unabhängig sind
+- $Lift = 1$, $X$ und $Y$ sind statistisch unabhängig
+- $Lift < 1$, $X$ und $Y$ erscheinen seltener zusammen als erwartet, sie sind antikorreliert
+- $Lift > 1$, $X$ und $Y$ erscheinen häufiger zusammen als erwartet, sie sind korreliert
+- Je grösser der Liftwert, desto stärker ist die Assoziation zwischen $X$ und $Y$
+
+$$ Lift = \text{Stärke der Assoziation} $$
+
+### Vertrauenswürdige, aber uninteressante Regeln
+
+- Seltene aber korrekte Regeln werden somit nicht richtig berücksichtigt
+- Kann nicht nur eine der beiden Massnahmen (Confidence / Support) in betracht ziehen
+- z.B. Regeln welche Milch und Bananen beinhalten, können zufällig auftreten, weil Mich und Bananen sehr oft eingekauft werden
+
+### Apriori Algorithmus
+
+- In einer Reihe von Transaktionen alle Regeln mit Support $\geq min_s$ und Confidence $\geq min_c$, wobei $min_s$ und $min_c$ die entsprechenden Support und Confidence Thresholds sind
+- Apriori Algorithmus findet association rules in zwei Schritten:
+  1. Generieren häufiger Itemsets, welche den Support Threshold erfüllen (z.B. {milk, bread} erfüllt Thresholdminimum vom Support)
+  2. Extrahieren der Regeln aus häufigen Itemsets, welche den Confidence Threshold erfüllen (z.B. entweder {milk} $\rightarrow$ {bread} oder {bread} $\rightarrow$ {milk})
+- Langsam für grosse Datensets
+- Alternativ ein Frequent Pattern Growth (FP-Growth) verwenden, enthält eine spezifische Datenstruktur (FP-Tree)
+
+#### 1. Generieren häufiger Itemsets
+
+- Wenn ein Itemset häufig ist (hoher Supportwert), müssen auch alle Subsets einen hohen Support wert aufweisen
+- Wenn ein Itemset nicht häufig ist (tiefer Supportwert), müssen alle Supersets auch nicht häufig sein
+
+![Generieren häufiger Itemsets](images/apriori_itemset_generation.png)
+
+#### 2. Generieren der Regeln aus häufigen Itemsets
+
+- Wenn eine Regel den Confidence Threshold nicht erfüllen kann, dann erfüllt auch das Subset den Threshold nicht
+
+![Generieren der Regeln](images/apriori_generate_rules.png)
+
+### Businessseite
+
+- Wenn eine Regel $X \rightarrow Y$ hohen Support, hohe Confidence und einen Liftwert von > 1 hat, kann man davon profitieren indem man z.B.:
+  - $X$ und $Y$ näher im Laden zusammenstellen
+  - $X$ und $Y$ zusammenführen (Paket, Angebot)
+  - $X$ und $Y$ zusammen mit einem weniger beliebten Item einpacken
+  - $X$ oder $Y$ einen Discount geben
+  - $X$ Preis erhöhen und $Y$ den Preis verringern
+  - $X$ oder $Y$ werben, aber nie zusammen
 
