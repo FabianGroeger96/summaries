@@ -35,7 +35,7 @@ Der Datensatz kann auf die Basis der beiden Achsen projeziert werden. Dies würd
 
 #### Projektion andhand von Transformation
 
-Eine Projektion die den Informationsgehalt weiter konversiert ist die Transformation. Dabei wird ein Punkt des 2D-Plot mit über eine Achse gelegt. Dabei werden die zwei neue Achsen definiert, welche sich über die Winkel der Rotation und den ursprünglichen X/Y-Werten berrechnet wird.
+Eine Projektion die den Informationsgehalt weiter konserviert ist die Transformation. Dabei wird ein Punkt des 2D-Plot mit über eine Achse gelegt. Dabei werden die zwei neue Achsen definiert, welche sich über die Winkel der Rotation und den ursprünglichen X/Y-Werten berrechnet wird.
 
 ![Rotation](images/projection_rotation.png)
 
@@ -111,6 +111,8 @@ $$ \mathbf{S_y} = \frac{1}{n-1}\mathbf{YY^T} = \frac{1}{n-1}\mathbf{(PX)}\mathbf
 Dabei ist zu beachten das $\mathbf{XX^T}$ symmetrisch ist.
 
 So wird für die Principal Component Analysis nur eine othonormale Matritze $\mathbf{P}$ benötigt, so dass $\mathbf{S_y} = \mathbf{P(XX^T)P^T}$ eine Diagonal Matrix ergibt.
+
+### Einbezug von Eigenvektoren und Eigenwerten
 
 
 
