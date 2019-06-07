@@ -9,7 +9,9 @@
 - Die vertikale Distanz wird als Residual, Modeling error oder Error beschrieben
 - Regressionsanalyse kann auch auf Probleme angewendet werden, bei denen die Bezihung nicht linear ist
 
-## Die best passende Linie
+## (Simple) Linear Regression
+
+### Die best passende Linie
 
 - Welche Linie passt am besten zu den Stichprobenpunkten?
 - Wie wählen wir am besten die parameter $\theta_0$ und $\theta_1$?
@@ -168,7 +170,7 @@ $$
     s_{\theta_{1}} = \sqrt{MSE}\cdot \sqrt{\frac{1}{\sum_{i=1}^{n}{(x^{(i)}-\bar{x})^2}}}
 $$
 
-- Um das Confidence Intervall für $\theta_0$ und $\theta_1$ zu berechnen muss man zuerst einen t Test machen
+- Um das $100 (1 - \alpha)\%$ Confidence Intervall für $\theta_0$ und $\theta_1$ zu berechnen muss man zuerst einen t Test machen, mit $t[1 - \frac{\alpha}{2}; n - 2]$
 ```python
 from scipy.stats import t
 t_quant = t.ppf(0.95, n-2)
@@ -196,3 +198,22 @@ $$ s_{\theta_0} = \sqrt{0.046} \Bigg [\frac{1}{4} + \frac{7^2}
 
 ...TODO
 
+### Standardisierung oder Neuskalierung von Variablen
+
+- Wenn die unabhängigen Variablen von sehr unterschiedlicher Grösse und Streuung sind, muss man diese standarisieren
+- Standardisierte Variable hat einen Mittelwert von 0 und eine Standardabweichung von 1
+
+1. Berechnen des Stichprobenmittelwerts und der Stichprobenabweichung
+
+$$ 
+    \hat{\mu_x} = \bar{x} = \frac{1}{n} \sum_{i=1}^n x^{(i)} \\
+    \hat{\sigma_x} = s_x = \frac{1}{n - 1} \sum_{i=1}^n (x^{(i)} - \hat{\mu_x})^2
+$$
+
+2. Anschliessend die standardisierte (normierte) Variable
+
+$$ \tilde{x}^{(i)} = \frac{1}{s_x} (x^{(i)} - \bar{x}) $$
+
+## Multiple Linear Regression
+
+TODO
