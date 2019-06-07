@@ -61,8 +61,48 @@ $$
     \text{wir starten am Punkt } x_0 = (2,2) \text{ und gehen in die Richtung des negativen Gradienten}\\
     x_1 = x_0 - \alpha\nabla f(x_0) \\
     = \Bigg[\frac{2}{2}\Bigg] - \alpha \Bigg[\frac{8}{20}\Bigg] = \Bigg[\frac{1.2}{0}\Bigg] \\
-    \text{wir haben } \alpha = 0.1 \text{ gewählt (Schrittgrösse)}\\
+    \text{wir haben } \alpha = 0.1 \text{ gewählt (Learningrate)}\\
     x_2 = x_1 - \alpha\nabla f (x_1)\\
     = = \Bigg[\frac{1.2}{0}\Bigg] - \alpha \Bigg[\frac{2.4}{2.4}\Bigg] = \Bigg[\frac{0.96}{-0.24}\Bigg]
 $$
 
+## Batch Gradient Descent
+
+- Minimieren der Kostenfunktion
+
+$$ J(\theta) = \frac{1}{2n} \sum_{i=1}^n (h(\theta, x^{(i)}) - y^{(i)})^2 $$
+
+$$ h(\theta, x^{(i)}) = \hat{y}^{(i)} = \theta_0 + \theta_1x_1^{(i)} + ... + \theta_mx_m^{(i)} $$
+
+- Wir starten mit einem initialen Parametervektor $\theta_0$ und wiederholen
+
+$$ \theta_{k+1} = \theta_k - \alpha\nabla J(\theta_k), k = 1,2,3,... $$
+
+**Nur python code können, muss nicht auf Papier angewandt werden**
+
+### Eigenschaften
+
+- Die Aktualisierung des Parametervektors $\theta$ erfolgt auf einmal mit Hilfe des gesamten Satzes von $n$ Trainigspunkten
+- Wenn $n$ grösser als $10^6$ ist, wird es langsam
+- Mögliche Alternative wäre ein upgrade von $\theta$ für jedes einzelne Trainingsbeispiel, wird normalerweise durch zufälliges Mischen der Trainingspunkte gemacht und aktualisieren von $\theta$ nach jedem Trainingspunkt
+- Diese Methode kann schneller sein als die Batch Methode
+
+## Stochastic Gradient Descent
+
+- Wähle einen initialen Vektor von Parametern $\theta$ und learning rate $\alpha$
+- Wiederholen bis ein ungefähres Minimum erhalten wurde
+- **Der Unterschied zu Batch Gradient Descent ist, dass nur ein Teil des Datasets gebraucht wird um den zu aktualisierenden Parameter zu berechnen, und dieser einer Teil wird zufällig gewählt**
+
+**Nur python code können, muss nicht auf Papier angewandt werden**
+
+## Polynomiale Regression
+
+- Wenn wir keine lineare Beziehung zwischen den Features und dem erwarteten Ergebnis haben, z.B. wie
+
+$$ h(\theta,x) = \theta_0 + \theta_1x + \theta_1x^2 + \theta_1x^3 $$
+
+- Könnten wir die gewählten features $x_1 = x, x_2 = x^2, x_3 = x^3$ wählen und wir haben wieder eine lineare regression
+
+$$ h(\theta,x) = \theta_0 + \theta_1x_1 + \theta_1x_2 + \theta_1x_3 $$
+
+- **Umbedingt zuerst feature scaling anwenden!**
