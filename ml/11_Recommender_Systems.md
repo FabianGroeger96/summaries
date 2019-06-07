@@ -53,7 +53,10 @@ $$ \frac{X \text{ and } Y}{X} : \frac{\neg X \text{ and } Y}{\neg X} $$
 
 ![Artikelähnlichkeit](images/item_similarity.png)
 
-$$ similarity = \frac{\sum_{i=1}^n A_i \times B_i}{\sqrt{\sum_{i=1}^n (A_i)^2} \times \sqrt{\sum_{i=1}^n(B_i)^2}} $$
+$$ similarity = \frac{\sum_{i=1}^n A_i \times B_i}
+{\sqrt{\sum_{i=1}^n (A_i)^2} \times \sqrt{\sum_{i=1}^n(B_i)^2}} $$
+
+
 
 ### Ähnlichkeitsmatrix
 
