@@ -216,6 +216,8 @@ $$ \tilde{x}^{(i)} = \frac{1}{s_x} (x^{(i)} - \bar{x}) $$
 
 ## Multiple Linear Regression
 
+- Probleme wenn $n$ riesig ist, dann wird es fast unmöglich alle $\theta$ auszurechnen (z.B. bei $10^7$)
+
 ### Beispiel
 
 ![Multiple Linear Regression Example](images/multiple_linear_regression_example.png)
