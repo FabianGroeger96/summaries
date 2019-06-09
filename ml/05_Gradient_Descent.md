@@ -106,3 +106,20 @@ $$ h(\theta,x) = \theta_0 + \theta_1x + \theta_1x^2 + \theta_1x^3 $$
 $$ h(\theta,x) = \theta_0 + \theta_1x_1 + \theta_1x_2 + \theta_1x_3 $$
 
 - **Umbedingt zuerst feature scaling anwenden!**
+
+### Feature Scaling
+
+- Die Merkmale müssen in ähnlicher Grössenordnung sind und bringen Sie jedes Merkmal in ungefähr ein $-1 \leq x_i \leq 1$ Bereich
+- Ersetzen von $x_i$ mit $x_i - \bar{x}_i$ so dass die Merkmale in etwa einem Mittelwert von 0 bekommen, nicht $x_0 = 1$ anwenden
+- Dividieren von $x_i - \bar{x_i}$ durch $\text{max } x_i - \text{min } x_i$ oder durch die Standardabweichung von $x_i$
+- **Wird gebraucht um das Konvergenzverhalt zu verbessern von GD**
+
+### Checking Convergence
+
+- Um zu testen ob GD korrekt funktioniert, plottet man die Kostenfunktion $J(\theta)$ gegen die Nummer an Iterationen
+- Konvergenz erklähren, wenn $J(\theta)$ um weniger als $10^{-3}$ in einer Iteration abnimmt
+- Für sehr kleine $\alpha$, $J(\theta)$ sollte sich in jeder Iteration verringern
+- Zu kleine $\alpha$ für zu sehr langsamen Konvergenz
+- Bei zu grossem $\alpha$ kann es sein, dass GD nicht konvergiert
+- Starten mit $\alpha = 0.001$ und danach mit 0.003, 0.01, 0.03, 0.1, ...
+
