@@ -2,16 +2,16 @@
 
 ## Definition Machine Learning
 
-"Field of study that gives computer the ability to learn without being explicitly programmed."
+- "Field of study that gives computer the ability to learn without being explicitly programmed."
 
-"A computer program is said to learn from experience $E$ with respect to some task $T$ and some performance measure $P$, if its performance on $T$, as measured by $P$, improves with experience $E$."
+- "A computer program is said to learn from experience $E$ with respect to some task $T$ and some performance measure $P$, if its performance on $T$, as measured by $P$, improves with experience $E$."
 
-Diese beiden Definitionen beschreiben das Ziel von Machine Learning, die Strategien um dieses Ziel zu erreichen unterteilt ML in verschiedene Disziplinen.
+- Diese beiden Definitionen beschreiben das Ziel von Machine Learning, die Strategien um dieses Ziel zu erreichen unterteilt ML in verschiedene Disziplinen.
 
 ## Machine Learning Disziplinen
 
 - Supervised Learning
-  - Algorithmus bekommt gelablete Trainingsdaten
+  - Algorithmus bekommt gelabelte Trainingsdaten
   - Algorithmus lernt das Label vorherzusagen von ungesehenen Daten
 - Unsupervised Learning
   - Algorithmus bekommt ungelabelte Daten
@@ -65,7 +65,7 @@ Diese beiden Definitionen beschreiben das Ziel von Machine Learning, die Strateg
 
 ## Datenklassifizierung
 
-![Datenklassifizierung](images/datenklassifizierung.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/datenklassifizierung.png} $$
 
 ## Bewertung der Datenqualität
 
@@ -116,14 +116,14 @@ Auch wenn die Datenqualität manuell verbessert wird, nie vergessen:
 
 Der Mittelwert, Modus und Median geben wertvolle Informationen über die Neigung der Daten.
 
-![Datenneigung](images/datenneigung.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/datenneigung.png} $$
 
 - links-geneigte Daten: $Mittelwert - Modus < 0$
 - rechts-geneigte Daten: $Mittelwert - Modus > 0$
 
 ### Quartile & Interquartile Range (IQR)
 
-![Quartile](images/quartile.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/quartile.png} $$
 
 ### 5 Kennzahlen um eine Datenverteilung zusammenzufassen
 
@@ -131,11 +131,11 @@ Der Mittelwert, Modus und Median geben wertvolle Informationen über die Neigung
 - Quartile Q1 & Q3
 - Kleinster und grösster Wert
 
--> in Python: `pandas_df.describe()`
+`pandas_df.describe()`
 
 ### Boxplots
 
-![Boxplots](images/boxplots.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/boxplots.png} $$
 
 - Werte welche mindestens 1.5 * IQR oberhalb des dritten Quartils oder unterhalb des ersten Quartils sind gelten als Ausreisser
 
@@ -143,7 +143,7 @@ Der Mittelwert, Modus und Median geben wertvolle Informationen über die Neigung
 
 ### Pairplots
 
-![Pairplots](images/pairplots.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/pairplots.png} $$
 
 `sns.pairplot()`
 
@@ -154,7 +154,7 @@ Der Mittelwert, Modus und Median geben wertvolle Informationen über die Neigung
 
 ### Kovarianz
 
-- Probenkovarianz beschreibt die gemeinsame Variablität von zwei gleich grossen Verteilungen
+- Probenkovarianz beschreibt die gemeinsame Variabilität von zwei gleich grossen Verteilungen
 - Wenn zwei Datenpunkte beide über oder unter ihrem jeweiligen Mittelwert liegen, wird die Kovarianz positiv, d.h. die Verteilungen zeigen eine ähnliche Tendenz
 - Wenn ein Datenpunkt über seinem Mittelwert liegt und der andere unten, ist die Kovarianz negativ, d.h. die Verteilung zeigen gegenläufige Tendenz
 - Bei unabhängigen Verteilungen heben positive und negative Werte sich gegenseitig auf, so dass die Kovarianz ungefähr Null wird
@@ -175,7 +175,7 @@ und 1 für perfekte Korrelation
 
 ### Ersetzungsstrategien für NULL-Werte
 
-- Viele Machine Learning Algorithmes können nicht mit Null Werten umgehen
+- Viele Machine Learning Algorithmen können nicht mit Null Werten umgehen
 - Ersetzungsstrategie je nach Anwendung wählen:
   - Zeilen mit Null Werten lösen -> wenn genügend Daten vorhanden
   - Fehlende Werte manuell eingeben -> Werte aus anderen Quellen übernehmen

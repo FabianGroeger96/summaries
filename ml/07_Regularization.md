@@ -5,7 +5,7 @@
 - **Underfitting** (high bias) bedeutet, dass das Modell nicht komplex genug ist, um genügend Muster im Trainingsset zu erkennen und zeigt daher schlechte Performanz auf dem Testset, ungesehenen Daten
 - **Overfitting** bedeutet, dass das Modell gute Performanz auf den Trainingsdaten hat, aber nicht gute Performanz auf dem Testset, ungesehenen Daten. Es wird auch als **high variance** bezeichnet, was bedeutet, dass eine kleine Änderung in dem Trainingsset den Parameter des Modells drastisch ändert
 
-![Under- and Overfitting](images/under_overfitting.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/under_overfitting.png} $$
 
 ## High/Low Bias and High/Low Variance
 
@@ -14,7 +14,7 @@
 - **Low Variance**: Werte sind nicht weit verteilt
 - **High Variance**: Werte sind weit verteilt
 
-![High/Low Bias and High/Low Variance](images/high_low_bias_and_high_low_variance.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/high_low_bias_and_high_low_variance.png} $$
 
 ## Adressing Overfitting
 

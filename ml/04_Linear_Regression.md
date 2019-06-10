@@ -7,7 +7,7 @@
 - Einfache Lineare Regressions Modelle haben nur einen Vorhersager (predictor)
 - Regression versucht die vertikale Distanz zwischen Datenpunkt und der Modelllinie zu minimieren
 - Die vertikale Distanz wird als Residual, Modeling error oder Error beschrieben
-- Regressionsanalyse kann auch auf Probleme angewendet werden, bei denen die Bezihung nicht linear ist
+- Regressionsanalyse kann auch auf Probleme angewendet werden, bei denen die Beziehung nicht linear ist
 
 ## (Simple) Linear Regression
 
@@ -16,7 +16,7 @@
 - Welche Linie passt am besten zu den Stichprobenpunkten?
 - Wie wählen wir am besten die parameter $\theta_0$ und $\theta_1$?
 
-![Lineare Regression](images/linear_regression.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/linear_regression.png} $$
 
 ### Linie des Modells (Hypothese) oder Regressionslinie
 
@@ -37,9 +37,11 @@ $$ \bar{x} = \frac{1}{n} \sum_{i=1}^n x^{(i)} $$
 $$ \bar{y} = \frac{1}{n} \sum_{i=1}^n y^{(i)} $$
 
 $$
-    S_{xy} = \sum_{i=1}^{n}(x^{(i)} - \bar{x})(y^{(i)} - \bar{y}) \\
-    S_{xx} = \sum_{i=1}^{n}(x^{(i)} - \bar{x})^2 \\
-    S_{yy} = \sum_{i=1}^{n}(y^{(i)} - \bar{y})^2 \\
+\begin{aligned}
+    S_{xy} &= \sum_{i=1}^{n}(x^{(i)} - \bar{x})(y^{(i)} - \bar{y}) \\
+    S_{xx} &= \sum_{i=1}^{n}(x^{(i)} - \bar{x})^2 \\
+    S_{yy} &= \sum_{i=1}^{n}(y^{(i)} - \bar{y})^2 \\
+\end{aligned}
 $$
 
 $$ \theta_1 = \frac{
@@ -62,9 +64,13 @@ $$ \bar{y} = \frac{1}{4} (2.3 + 4.1 + 5.7 + 6.9) = \frac{19}{4} = 4.75 $$
 
 2. Berechnen vom Regressions Koeffizient $\theta_1$
 
-$$ \theta_1 = \frac{(4-7)(2.3-4.75)+(6-7)(4.1-4.75)+(8-7)(5.7-4.75)+(10-7)(6.9-4.75)}
-                {(4-7)^2 + (6-7)^2 + (8-7)^2 + (10-7)^2} \\\\
-            = \frac{15.4}{20} = 0.77 $$
+$$
+\begin{aligned}
+    \theta_1 &= \frac{(4-7)(2.3-4.75)+(6-7)(4.1-4.75)+(8-7)(5.7-4.75)+(10-7)(6.9-4.75)}
+                {(4-7)^2 + (6-7)^2 + (8-7)^2 + (10-7)^2} \\
+            &= \frac{15.4}{20} = 0.77
+\end{aligned}
+$$
 
 3. Berechnen von $\theta_0$
 
@@ -131,7 +137,7 @@ $$ R^2 = 1 - \frac{SSE}{SST} = 1 - \frac{0.092}{11.95} = \underline{\underline{0
 - $S_{xy}$ = Summierte Abweichung vom Mittelwert aller Punkte von x und y  
 - $s_{xy}$ = Bereich, in dem sich alle Punkte befinden
 
-![Pearson Correlation Coefficient](images/pearson_correlation.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/pearson_correlation.png} $$
 
 $$ r = \frac{\sum_{i=1}^n (x^{(i)} - \bar{x}) (y^{(i)} - \bar{y})}
         {\sqrt{\sum_{i=1}^n (x^{(i)} - \bar{x})^2}
@@ -153,9 +159,13 @@ Die folgenden Zahlenpaare geben den Volumenabfall y (in %) von Leder unter dem D
 
 1. Berechnen von $r$
 
-$$ r = \frac{(4 - 7)(2.3 - 4.75) + (6 - 7)(4.1 - 4.75) + (8 - 7)(5.7 - 4.75) + (10 - 7)(6.9 - 4.75)}
-        {\sqrt{((4 - 7)^2 + (6 - 7)^2 + (8 - 7)^2 + (10 - 7)^2)}*\sqrt{((2.3 - 4.75)^2 + (4.1 - 4.75)^2 + (5.7 - 4.75)^2 + (6.9 - 4.75)^2)}} \\\\
-        = \underline{\underline{0.99614}}$$
+$$ 
+\begin{aligned}
+    r &= \frac{(4 - 7)(2.3 - 4.75) + (6 - 7)(4.1 - 4.75) + (8 - 7)(5.7 - 4.75) + (10 - 7)(6.9 - 4.75)}
+        {\sqrt{((4 - 7)^2 + (6 - 7)^2 + (8 - 7)^2 + (10 - 7)^2)}*\sqrt{((2.3 - 4.75)^2 + (4.1 - 4.75)^2 + (5.7 - 4.75)^2 + (6.9 - 4.75)^2)}} \\
+        &= \underline{\underline{0.99614}}
+\end{aligned}
+$$
 
 ### Mean Square Error (MSE)
 
@@ -165,9 +175,11 @@ $$ \text{Standardabweichung von MSE} = \sqrt{MSE} $$
 - Die Regressionskoeffizienten $\theta_0$ und $\theta_1$ sind Schätzungen aus einer einzigen Stichprobe von Grösse n. Die Verwendung einer anderen Probe würde zu unterschiedlichen Regressionskoeffizienten führen.
 - Die Standardabweichung der Parameter $\theta_0$ und $\theta_1$ der Probe
 
-$$ 
-    s_{\theta_{0}} = \sqrt{MSE} \cdot \sqrt{\frac{1}{n} + \frac{\bar{x}^2}{\sum_{i=1}^{n}{(x^{(i)}-\bar{x})^2}}} \\
-    s_{\theta_{1}} = \sqrt{MSE}\cdot \sqrt{\frac{1}{\sum_{i=1}^{n}{(x^{(i)}-\bar{x})^2}}}
+$$
+\begin{aligned}
+    s_{\theta_{0}} &= \sqrt{MSE} \cdot \sqrt{\frac{1}{n} + \frac{\bar{x}^2}{\sum_{i=1}^{n}{(x^{(i)}-\bar{x})^2}}} \\
+    s_{\theta_{1}} &= \sqrt{MSE}\cdot \sqrt{\frac{1}{\sum_{i=1}^{n}{(x^{(i)}-\bar{x})^2}}}
+\end{aligned}
 $$
 
 - Um das $100 (1 - \alpha)\%$ Confidence Intervall für $\theta_0$ und $\theta_1$ zu berechnen muss man zuerst einen t Test machen, mit $t[1 - \frac{\alpha}{2}; n - 2]$
@@ -179,8 +191,10 @@ print("t_quant = ", t_quant)
 - Um die Confidence Intervalle zu bekommen
 
 $$ 
-    \theta_0 \pm t_{quant} * s_{\theta_0} \\
-    \theta_1 \pm t_{quant} * s_{\theta_1}
+\begin{aligned}
+    \theta_0 &\pm t_{quant} * s_{\theta_0} \\
+    \theta_1 &\pm t_{quant} * s_{\theta_1}
+\end{aligned}
 $$
 
 #### Beispiel
@@ -205,9 +219,11 @@ $$ s_{\theta_0} = \sqrt{0.046} \Bigg [\frac{1}{4} + \frac{7^2}
 
 1. Berechnen des Stichprobenmittelwerts und der Stichprobenabweichung
 
-$$ 
-    \hat{\mu_x} = \bar{x} = \frac{1}{n} \sum_{i=1}^n x^{(i)} \\
-    \hat{\sigma_x} = s_x = \frac{1}{n - 1} \sum_{i=1}^n (x^{(i)} - \hat{\mu_x})^2
+$$
+\begin{aligned}
+    \hat{\mu_x} &= \bar{x} = \frac{1}{n} \sum_{i=1}^n x^{(i)} \\
+    \hat{\sigma_x} &= s_x = \frac{1}{n - 1} \sum_{i=1}^n (x^{(i)} - \hat{\mu_x})^2
+\end{aligned}
 $$
 
 2. Anschliessend die standardisierte (normierte) Variable
@@ -220,6 +236,6 @@ $$ \tilde{x}^{(i)} = \frac{1}{s_x} (x^{(i)} - \bar{x}) $$
 
 ### Beispiel
 
-![Multiple Linear Regression Example](images/multiple_linear_regression_example.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/multiple_linear_regression_example.png} $$
 
-![Multiple Linear Regression Example Solution](images/multiple_linear_regression_example_solution.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/multiple_linear_regression_example_solution.png} $$

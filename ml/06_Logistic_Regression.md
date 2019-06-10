@@ -31,7 +31,7 @@ $$ y = \sigma(\theta_0 + \theta_1x) = \frac{1}{1 + e^{-(\theta_0 + \theta_1x)}} 
 
 $$ z = \theta_0 + \theta_1x $$
 
-![Sigmoid Funktion](images/sigmoid_funktion.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/sigmoid_funktion.png} $$
 
 - blaue Punkte: $y = 1$, Prüfung bestanden
 - grüne Punkte: $y = 0$, Prüfung nicht bestanden
@@ -45,8 +45,10 @@ Model sagt vorher ob ein Student eine Frau oder ein Mann ist, aufgrund seiner/ih
 Wir gehen davon aus, dass der Algorithmus $\theta_0 = -100$ und $\theta_1 = 0.6cm^-1$ gelernt. Aufgrund dieser Parameter kann man die Wahrscheinlichkeit $P(male|h = 155cm)$ ausrechnen.
 
 $$ 
-    P(male|h = 155cm) = \hat{y} = \frac{1}{1 + exp(-(\theta_0 + \theta_1x))} = \frac{1}{1 + exp(100 - 0.6 * 155)} \\
-    = \frac{1}{1 + exp(7)} = 0.9 x 10^{-3}
+\begin{aligned}
+    P(male|h = 155cm) &= \hat{y} = \frac{1}{1 + exp(-(\theta_0 + \theta_1x))} = \frac{1}{1 + exp(100 - 0.6 * 155)} \\
+    &= \frac{1}{1 + exp(7)} = 0.9 x 10^{-3}
+\end{aligned}
 $$
 
 Die Wahrscheinlichkeit ist fast 0, dass der Student männlich ist.
@@ -60,19 +62,27 @@ $$ h(\theta, x) = x^T\theta = \theta_0 + \theta_1x_1 + \theta_2x_2 = 0 $$
 
 ### Beispiel
 
-![Linear Decision Boundaries](images/linear_decision_boundaries.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/linear_decision_boundaries.png} $$
 
 Decision Boundary ist gegeben durch $\theta = [-1.8, -3.9, 4.5]^T$, dies ergibt die Gleichung der roten Linie $-1.8 - 3.9x_1 + 4.5x_2 = 0$
 
 Die Wahrscheinlichkeit des feature Vektors $(x_1, x_2) = (2.2, 2.7)$ (blauer Kreis) ist gegeben durch:
 
-$$ \sigma(-1.8 - 3.9 \cdot 2.2 + 4.5 \cdot 2.7) = \sigma(3.57) = 0.973 \geq 0.5 \\
-    \text{Gehört somit zur Klasse: } y = 1$$
+$$
+\begin{aligned}
+    \sigma(-1.8 - 3.9 \cdot 2.2 + 4.5 \cdot 2.7) = \sigma(3.57) = 0.973 \geq 0.5 \\
+    \text{Gehört somit zur Klasse: } y = 1
+\end{aligned}
+$$
 
 Die Wahrscheinlichkeit des feature Vektors $(x_1, x_2) = (3.5, 3)$ (grüner Kreis) ist gegeben durch:
 
-$$ \sigma(-1.8 - 3.9 \cdot 3.5 + 4.5 \cdot 3) = \sigma(-1.95) = 0.125 < 0.5 \\
-    \text{Gehört somit zur Klasse: } y = 0$$
+$$ 
+\begin{aligned}
+    \sigma(-1.8 - 3.9 \cdot 3.5 + 4.5 \cdot 3) = \sigma(-1.95) = 0.125 < 0.5 \\
+    \text{Gehört somit zur Klasse: } y = 0
+\end{aligned}
+$$
 
 ## Maximum Likelihood Estimation (MLE)
 
@@ -87,9 +97,12 @@ Es sind $n$ Beispiele im Trainingsset gegeben, $(x^{(i)}, y^{(i)}), i = 1,2,...,
 1. Starte mit einem zufälligen Parametervektor $\theta_0$
 2. Iteriere bis es konvergiert
 
-$$ \theta_{k+1} = \theta_k - \alpha \frac{1}{n} \sum_{i=1}^n (h(\theta_k, x^{(i)}) - y^{(i)}) x^{(i)}, k = 0,1,2,3,... \\
+$$ 
+\begin{aligned}
+    \theta_{k+1} = \theta_k - \alpha \frac{1}{n} \sum_{i=1}^n (h(\theta_k, x^{(i)}) - y^{(i)}) x^{(i)}, k = 0,1,2,3,... \\
     \text{mit: } h(\theta, x^{(i)}) = \sigma((x^{(i)})^T\theta) \\
     \text{und: } \sigma(z) = \frac{1}{1 + e^{-z}}
+\end{aligned}
 $$
 
 ## (Binary) Classification

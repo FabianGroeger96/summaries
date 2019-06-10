@@ -23,7 +23,7 @@ Dabei können Strategien zur reduktion der Dimensionalität angewandt werden. Zw
 
 Hier wird ein Beispiel für die Projektion eine 2D-Datensatz aufgezeigt. Folgender Datensatz sei in 2D so aufgebaut.
 
-![2D Area/Price](images/2d_projection.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/2d_projection.png} $$
 
 Dieser Datensatz soll jetzt in 1D abgebildet werden und dabei möglichst wenig Informationsgehalt zuverlieren.
 
@@ -31,23 +31,23 @@ Dieser Datensatz soll jetzt in 1D abgebildet werden und dabei möglichst wenig I
 
 Der Datensatz kann auf die Basis der beiden Achsen projeziert werden. Dies würde einer Verteilung der Datenpunkt aus Sicht von Area/Price entsprechen.
 
-![2D Base Vectors](images/projection_basevectors.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/projection_basevectors.png} $$
 
-#### Projektion andhand von Transformation
+#### Projektion anhand von Transformation
 
 Eine Projektion die den Informationsgehalt weiter konserviert ist die Transformation. Dabei wird ein Punkt des 2D-Plot mit über eine Achse gelegt. Dabei werden die zwei neue Achsen definiert, welche sich über die Winkel der Rotation und den ursprünglichen X/Y-Werten berrechnet wird.
 
-![Rotation](images/projection_rotation.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/projection_rotation.png} $$
 
 // Formel für x' und y'
 
 Anschliessend kann wieder die Verteilung der Basis Vektoren durchgeführt werden. Diese liegen nun auf der schneideten Achse.
 
-![Rotation Basis-Vektoren](images/projection_rotation_base.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/projection_rotation_base.png} $$
 
 Wenn nun die drei Variationen visualisiert werden. Ergeben sich folgende 1D-Representationen.
 
-![Projektions Vergleich](images/projection_comparsion.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/projection_comparsion.png} $$
 
 Dabei wird ersichtlich die Projektion über die Transformation beinhaltet weiter die Werte beider Dimensionen, Area und Price.
 

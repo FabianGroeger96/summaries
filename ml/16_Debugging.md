@@ -38,13 +38,13 @@ Aufgrund von Bias und Varianz kann bestummen werden ob ein Model Underfitted ode
 
 - `Overfitting`: Das Model findet eines zu optimierte Lösung für das Trainingset. Dies führt dazu, dass auf dem Trainingsset eine sehr hohe Genauigkeit erreicht wird. Auf dem Test- sowie vorallem auf dem Evaluationsset schlecht performen wird. Das Model optimiert die Lösung zu stark an die Trainingsdaten.
 
-![Under- und Overfitting](images/under_overfitting.jpg)
+$$ \includegraphics[width=0.7\columnwidth]{images/under_overfitting.png} $$
 
 ### Underfitting
 
 Untenstehend ein Bild das die Learning Curve eines Models, welches Underfitted, zeigt. Man sieht die Error-Kurven schmiegen sich gegenseitig an. Die gewünschte Performance ist nur früh im Training-Set ersichtlich. Anschliessend konvergieren beide Kurven zu einem zu hohen Error.
 
-![Learning Curve für Underfitting](images/learningcurve_underfitting.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/learningcurve_underfitting.png} $$
 
 #### Gegenmassnahmen für Underfitting
 
@@ -58,7 +58,7 @@ Modele mit Underfitting sind grundsätzlich einfacher zu verbessern. Die relevan
 
 Beim Overfitting kann eine Lernkurve eines Model wie folgt aussehen. Die Performenz auf den Trainingsdaten ist sehr gut (klassisches Overfitting Phänomen) der Validation Error ist jedoch nicht an der gewünschten Performenz. Die Error-Kurven flachen ab. Und werden sich nicht an die Gewünschte Performenz annähern.
 
-![Learning Curve für Underfitting](images/learningcurve_overfitting.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/learningcurve_overfitting.png} $$
 
 #### Gegenmassnahmen für Overfitting
 
@@ -75,7 +75,7 @@ Overfitting tritt im Vergleich zu Underfitting weit öfter auf. Auch ist der Auf
 
 Beim Early Stopping wird das Training des Models an einem Punkt gestoppt, an dem das Overfitting für das Model noch nicht eingetreten ist. Dabei kann man für ein Model, welches Overfitten würde, doch noch ein brauchbares Resultat ziehen. Bedeutet jedoch nicht, dass mit dem Early Stopping ein Top-Resultat bietet. Early Stopping hat vorallemn Relevanz und Wichtigkeit im Bereich von Deep Learning.
 
-![Learning Curve für Underfitting](images/earlystopping.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/earlystopping.png} $$
 
 ## Machine Learning Projekt Lösungsansatz
 

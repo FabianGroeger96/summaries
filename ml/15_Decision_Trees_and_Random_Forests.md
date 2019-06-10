@@ -6,7 +6,7 @@ Der Aufbau eines Entscheidungsbaum wird anhand einer Einkauf Predection und Anal
 
 Die folgende Tabelle zeigt ob zum Zeitpunkt eines Einkaufs, welcher über Features definiert wird, Wäschepulver eingekauft wurde.
 
-![Verlauf für den Einkauf von Wäschepulver](images/washingpowder_history.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/washingpowder_history.png} $$
 
 Der Entscheidungsbaum wird durch filtern von non-informativen features aufgebaut. Es wird dabei versucht nach Features zu unterteilen, bis Knoten nur noch aus einem Label bestehen. Dabei werden folgende Konstruktionsregeln beachtet.
 
@@ -17,7 +17,7 @@ Der Entscheidungsbaum wird durch filtern von non-informativen features aufgebaut
 
 ## ID3: Decision Tree Learning Algorithmus
 
-![ID3 Decision Tree Learning Algorithmus](images/decision_tree_algorithm.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/decision_tree_algorithm.png} $$
 
 ## Geschichte von Entscheidungsbaum Algorithmen
 
@@ -39,7 +39,7 @@ Der Entscheidungsbaum wird durch filtern von non-informativen features aufgebaut
 
 Das Slitting Criterion beschreibt die Grundlage auf welchem Feature gesplittet werden soll. Ein Splitting wird aufgrund des Informationsgehalt eines Features durchgeführt.
 
-![Splitting Cirterion](images/splittingcriterion.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/splittingcriterion.png} $$
 
 Im gezeigten Bild ist ein Splitting nachdem Feature "On Offer" informativer als das Feature "Season".
 
@@ -57,7 +57,7 @@ Die Gini Impurity liefert dabe ein nicht-negatives Resultat. Falls ein Feature d
 
 Ein Regressions Baum mithilfe von CART, predicted den Durchschnitt aller Instanze iner Kategorie in einem Blatt Knoten. Werde dabei gleich aufgebaut wie ein Klassifikations Baum, mit jedoch unterschiedlichen Splitting Kriterien. Beim Splitting Cirterion bei Regressions Bäumen wird versucht die Varianz von Werten im gleichen Subset zu minimieren.
 
-![Regression Tree in CART](images/regression_cart.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/regression_cart.png} $$
 
 ## Vor- und Nachteile von Decision Trees
 

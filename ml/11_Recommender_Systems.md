@@ -45,32 +45,30 @@ $$ \frac{X \text{ and } Y}{X} : \frac{\neg X \text{ and } Y}{\neg X} $$
 - Berechne Vorhersagen für Elemente, die mit ? gekennzeichnet sind, basierend auf der Artikelähnlichkeit
 - Empfehlen von Artikeln mit hohen Vorhersagewert
 
-![Content-Based Recommendations](images/content_based_recommendations.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/content_based_recommendations.png} $$
 
 ### Artikelähnlichkeit
 
 - Je kleiner der Winkel zwischen den Produktvektoren, desto ähnlicher sind sie
 
-![Artikelähnlichkeit](images/item_similarity.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/item_similarity.png} $$
 
 $$ similarity = \frac{\sum_{i=1}^n A_i \times B_i}
 {\sqrt{\sum_{i=1}^n (A_i)^2} \times \sqrt{\sum_{i=1}^n(B_i)^2}} $$
 
-
-
 ### Ähnlichkeitsmatrix
 
-![Ähnlichkeitsmatrix](images/similarity_matrix.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/similarity_matrix.png} $$
 
 ### Beispiel
 
-![Content-Based Recommendation Beispiel](images/content_based_recommendation_example.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/content_based_recommendation_example.png} $$
 
 ### Vorteile und Nachteile von Content-Based Recommendations
 
 1. Benutzerunabhängigkeit und Transparenz
    1. Profil eines Benutzers wird nur aus seinen eigenen Bewertungen erstellt
-   2. Empfehlungen können durch die Enthüllung relevanter Daten erklährt werden
+   2. Empfehlungen können durch die Enthüllung relevanter Daten erklärt werden
 2. Problem mit neuen Gegenständen (Cold Start Problem)
    1. Kann neue Artikel ohne Bewertungen sofort empfehlen
 3. Begrenzte Inhaltsanalyse
@@ -91,23 +89,23 @@ $$ similarity = \frac{\sum_{i=1}^n A_i \times B_i}
 - Produkte werden empfohlen, aufgrund von Produkten, welche die Nachbarn mögen, aber der aktuelle Benutzer noch nicht bewertet oder gekauft hat
 - Keine Produktattribute nötig
 
-![User-to-User Collaborative Filtering](images/user_to_user_collaborative_filtering.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/user_to_user_collaborative_filtering.png} $$
 
 #### Beispiel
 
-![User-To-User Collaborative Filtering Example](images/user_to_user_collaborative_filtering_example.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/user_to_user_collaborative_filtering_example.png} $$
 
 ### Item-to-Item
 
 - Da sich Benutzerprofile ständig ändern, funktioniert die Vorberechnung nicht
 - Im Gegensatz dazu ist die Ähnlichkeit bei Item-Paaren stabil und kann vorberechnet werden
 
-![Item-to-Item Collaborative Filtering Formula](images/item_to_item_collaborative_filtering_formula.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/item_to_item_collaborative_filtering_formula.png} $$
 
 #### Berechnung
 
 - Berechnungen sind identisch mit content-based recommendations
-- Der einzige Unterschied besteht darin, wie die Ähnlichkeitsmatrix berechnet wird:
+- Der einzige Unterschied besteht darin, wie die Ähnlichkeitmatrix berechnet wird:
   - Im Falle von Item-to-Item Collaborative Filtering bezieht sich diese Berechnung nur auf Benutzerbewertungen
   - Im Falle von content-based recommenders bezieht sich diese Berechnung auf Elementattribute
 

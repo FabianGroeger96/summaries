@@ -18,26 +18,26 @@
 - Wähle die Anzahl an Clusters (z.B. 3)
 - Erstelle zufällig neue Cluster Centers (neue Datenpunkte)
 
-![k-Means Vorbereitung](images/k_means_clustering_preparation.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/k_means_clustering_preparation.png} $$
 
 ##### 2. Suchen nach dem nächstgelegenen Cluster für jeden Datenpunkt
 
-![k-Means suche Cluster](images/k_means_clustering_search_cluster.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/k_means_clustering_search_cluster.png} $$
 
 ##### 3. Berechnung des Mittelpunktes eines Clusters
 
 - Berechnen des Mittelwerts aller Punkte, welche momentan zu dem selben Cluster angehören
 - Verschiebung des Mittelpunktes des Clusters zu dem vorher berechneten Mittelwert aller Punkte
 
-![k-Means neuer Mittelpunkt des Clusters](images/k_means_clustering_center_cluster.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/k_means_clustering_center_cluster.png} $$
 
 ##### 4. Berechnung des Mittelpunktes für jedes Cluster
 
-![k-Means neuer Mittelpunkt für alle Cluster](images/k_means_clustering_center_all_clusters.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/k_means_clustering_center_all_clusters.png} $$
 
 ##### 5. Neustart und Fortfahren bis zur Stabilität der Mittelpunkte
 
-![k-Means Wiederholung](images/k_means_clustering_restart_continue.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/k_means_clustering_restart_continue.png} $$
 
 #### Pseudo Code
 
@@ -73,7 +73,7 @@ $$ \frac{1}{n} \sum_{i=1}^n ||x_i - \mu_{ci}||^2 $$
 - Die Ellbogenmethode verwenden, guter Kompromiss
   - Man iteriert über verschiedene Anzahlen von Clusters und berechnet die Gesamtabweichung
 
-![Ellbogenmethode](images/data_clustering_ellbow_method.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/data_clustering_ellbow_method.png} $$
 
 ## Association Rules
 
@@ -88,7 +88,7 @@ $$ support({i_1, ..., i_n}) = \frac{\text{\# purchases of }{i_1, ..., i_n}}{\tex
 
 - Support misst wie oft gewisse Items zusammen gekauft wurden
 
-![Support eines Items](images/association_rules_support.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/association_rules_support.png} $$
 
 ### Support einer Association Rule
 
@@ -98,7 +98,7 @@ $$ support(X \rightarrow Y) = support(Y \rightarrow X) $$
 
 - Richtungsunabhängig, kann daher die Qualität einer gerichteten Association Rule nicht messen!
 
-![Support einer Association Rule](images/association_rule_support_association_rule.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/association_rule_support_association_rule.png} $$
 
 ### Interpretation des Supports
 
@@ -113,7 +113,7 @@ $$ Support = Interesse $$
 
 $$ confidence(X \rightarrow Y) = \frac{support(X \cup Y)}{support(X)} $$
 
-![Confidence einer Association Rule](images/association_rule_confidence.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/association_rule_confidence.png} $$
 
 ### Interpretation der Confidence
 
@@ -129,7 +129,7 @@ $$ Confidence = Vertrauenswürdigkeit $$
 
 $$ lift(X \rightarrow Y) = \frac{support(X \cup Y)}{support(X) * support(Y)} $$
 
-![Lift Association Rule](images/association_rule_lift.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/association_rule_lift.png} $$
 
 ### Interpretation des Lifts
 
@@ -161,13 +161,13 @@ $$ Lift = \text{Stärke der Assoziation} $$
 - Wenn ein Itemset häufig ist (hoher Supportwert), müssen auch alle Subsets einen hohen Support wert aufweisen
 - Wenn ein Itemset nicht häufig ist (tiefer Supportwert), müssen alle Supersets auch nicht häufig sein
 
-![Generieren häufiger Itemsets](images/apriori_itemset_generation.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/apriori_itemset_generation.png} $$
 
 #### 2. Generieren der Regeln aus häufigen Itemsets
 
 - Wenn eine Regel den Confidence Threshold nicht erfüllen kann, dann erfüllt auch das Subset den Threshold nicht
 
-![Generieren der Regeln](images/apriori_generate_rules.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/apriori_generate_rules.png} $$
 
 ### Businessseite
 
@@ -178,4 +178,3 @@ $$ Lift = \text{Stärke der Assoziation} $$
   - $X$ oder $Y$ einen Discount geben
   - $X$ Preis erhöhen und $Y$ den Preis verringern
   - $X$ oder $Y$ werben, aber nie zusammen
-

@@ -3,17 +3,20 @@
 ## K-Nearest Neighbors Classification (k-NN)
 
 - k-NN ist der einfachste Machine Learning Algorithmus
-- k-NN mit `k = 1` weist nur das Label der nächstgelegenen Traingsprobe zu
+- k-NN mit `k = 1` weist nur das Label der nächstgelegenen Trainingsprobe zu
 - k-NN mit `k > 1` weist das Label zu, welches am meisten in den k nächsten Proben vorhanden ist
 
 ``` python
 from sklearn.neighbors import KNeighborsClassifier
-knn = KNeighborsClassifier(n_neighbors=3) knn.fit(X_train, y_train) y_pred = knn.predict(X_test) acc = accuracy_score(y_test, y_pred)
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(X_train, y_train)
+y_pred = knn.predict(X_test)
+acc = accuracy_score(y_test, y_pred)
 print("Test Set Accuracy for k=3" + ": {:.2f}".format(acc))
 ```
 
 - Nachteile
-  - sehr langsam, weil die gesamte Berechnung auf die Klassifizierungszeit verschoben wird
+  - sehr langsam, weil die gesamte Berechnung auf die Klassifizierungzeit verschoben wird
 - Vorteile
   - gute Wahl für sehr kleine Datasets
   - nicht so datenhungrig wie andere Machine Learning Algorithmen
@@ -46,11 +49,11 @@ Dichteabschätzung und kann somit als Indikator für die Erkennung von Anomalien
 
 ### Desicion Boundry
 
-![Desicion Boundry](images/desicion_boundry.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/desicion_boundry.png} $$
 
 ### Kernel Trick
 
-- Projeziere die Daten in einer höher-dimensionalen Raum (z.B. aus 2D -> 3D)
+- Projiziere die Daten in einer höher-dimensionalen Raum (z.B. aus 2D -> 3D)
 - Wird gebraucht wenn die Daten in aktueller Dimension nicht linear separierbar sind
 - Kann auch gelöst werden, wenn ein anderes Modell gewählt wird, welches eine nicht lineare Desicion Boundry hat
 
@@ -88,7 +91,7 @@ $$ 2D: x_1, x_2 \rightarrow (x_1 + x_2)^2 \rightarrow 3D: x_1^2, 2x_1x_2, x_2^2 
 - False-Negative (FN), Klassifikator sagt NEIN aber die wahre Antwort ist JA
 - True-Positive (TP), Klassifikator sagt JA und die wahre Antwort ist JA
 
-![Konfusionsmatrix](images/konfusionsmatrix.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/konfusionsmatrix.png} $$
 
 ### Genauigkeit (Accuracy) und Fehlerquote (Error Rate)
 
@@ -140,7 +143,7 @@ $$ R^2 = 1 - \frac{\frac{1}{m} \sum_{i=1}^{m}(y_i - f_i)^2}{\frac{1}{m} \sum_{i=
 
 - $R^2$ ist ein statistisches Mass dafür, wie gut die Vorhersagen den realen Datenpunkten entsprechen
 - $R^2 = 1$ bedeutet, dass die Vorhersagen perfekt zu den Daten passen
-- $R^2 = 0.53$ bedeutet, dass 53% der Varianz in den Daten durch das Modell erklährt werden
+- $R^2 = 0.53$ bedeutet, dass 53% der Varianz in den Daten durch das Modell erklärt werden
 - $R^2 < 0$ können auftreten, wenn das Modell zu den Daten schlechter passt als eine horizontale Hyperebene
 
 ## ML Qualitätsbewertung in der Praxis

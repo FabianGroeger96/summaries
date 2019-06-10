@@ -1,5 +1,6 @@
 # Gradient Descent
 
+
 ## Partial Derivates
 
 - Vorstellen, dass die Funktion nur von $x$ abhängt, alle anderen Variablen (z.B. $y$) sind Konstanten, danach gewöhnliche Ableitung berechnen
@@ -11,13 +12,15 @@ $$ \frac{df}{dx}|_{y=constant} $$
 
 Berechne die partielle Ableitung von $f(x,y) = (3x + 2y)^2$ mit Respekt zu $x$ und $y$ und vorallem im Punkt $(x,y) = (1,2)$
 
-$$ 
+$$
+\begin{aligned}
     \text{using chain rule:} \\
-    \frac{df}{dx} = 2(3x+2y) * \frac{d}{dx} (3x+2y) = 2(3x+2y) * 3 = 6(3x+2y) \\
-    \frac{df}{dy} = 2(3x+2y) * \frac{d}{dy} (3x+2y) = 2(3x+2y) * 2 = 4(3x+2y) \\
+    \frac{df}{dx} &= 2(3x+2y) * \frac{d}{dx} (3x+2y) = 2(3x+2y) * 3 = 6(3x+2y) \\
+    \frac{df}{dy} &= 2(3x+2y) * \frac{d}{dy} (3x+2y) = 2(3x+2y) * 2 = 4(3x+2y) \\
     \text{im Punkt (1,2):} \\
-    \frac{df}{dx}|_{(x,y) = (1,2)} = 6(3x+2y)|_{(x,y) = (1,2)} = 6(3*1 + 2*2) = 42 \\
-    \frac{df}{dy}|_{(x,y) = (1,2)} = 4(3x+2y)|_{(x,y) = (1,2)} = 4(3*1 + 2*2) = 28 \\
+    \frac{df}{dx}|_{(x,y) = (1,2)} &= 6(3x+2y)|_{(x,y) = (1,2)} = 6(3*1 + 2*2) = 42 \\
+    \frac{df}{dy}|_{(x,y) = (1,2)} &= 4(3x+2y)|_{(x,y) = (1,2)} = 4(3*1 + 2*2) = 28
+\end{aligned}
  $$
 
 ## Gradient
@@ -31,9 +34,11 @@ $$ \nabla f(x,y) = \Bigg[\frac{f_x (x,y)}{f_y (x,y)}\Bigg] $$
 Berechne den Gradienten von $f(x,y) = (3x + 2y)^2$ und vorallem im Punkt $(x,y) = (1,2)$
 
 $$
-    \nabla f(x,y) = \Bigg[\frac{6(3x+2y)}{4(3x+2y)}\Bigg] \\
+\begin{aligned}
+    \nabla f(x,y) &= \Bigg[\frac{6(3x+2y)}{4(3x+2y)}\Bigg] \\
     \text{im Punkt (1,2):} \\
-    \nabla f(1,2) = [\frac{42}{28}]
+    \nabla f(1,2) &= [\frac{42}{28}]
+\end{aligned}
 $$
 
 ### Eigenschaften
@@ -55,15 +60,16 @@ $$
 ### Beispiel
 
 $$
+\begin{aligned}
     f(x,y) = x^2 + 2xy + 4y^2 \\
     \nabla f(x,y) = \Bigg[\frac{2x + 2y}{2x + 8y}\Bigg]\\
-    \\\\
     \text{wir starten am Punkt } x_0 = (2,2) \text{ und gehen in die Richtung des negativen Gradienten}\\
     x_1 = x_0 - \alpha\nabla f(x_0) \\
     = \Bigg[\frac{2}{2}\Bigg] - \alpha \Bigg[\frac{8}{20}\Bigg] = \Bigg[\frac{1.2}{0}\Bigg] \\
     \text{wir haben } \alpha = 0.1 \text{ gewählt (Learningrate)}\\
     x_2 = x_1 - \alpha\nabla f (x_1)\\
-    = = \Bigg[\frac{1.2}{0}\Bigg] - \alpha \Bigg[\frac{2.4}{2.4}\Bigg] = \Bigg[\frac{0.96}{-0.24}\Bigg]
+    = \Bigg[\frac{1.2}{0}\Bigg] - \alpha \Bigg[\frac{2.4}{2.4}\Bigg] = \Bigg[\frac{0.96}{-0.24}\Bigg]
+\end{aligned}
 $$
 
 ## Batch Gradient Descent
@@ -122,4 +128,3 @@ $$ h(\theta,x) = \theta_0 + \theta_1x_1 + \theta_1x_2 + \theta_1x_3 $$
 - Zu kleine $\alpha$ für zu sehr langsamen Konvergenz
 - Bei zu grossem $\alpha$ kann es sein, dass GD nicht konvergiert
 - Starten mit $\alpha = 0.001$ und danach mit 0.003, 0.01, 0.03, 0.1, ...
-

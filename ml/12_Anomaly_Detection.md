@@ -4,7 +4,7 @@
 
 - Sind Muster in Daten, die nicht mit einem bestimmten klar definierten Ansatz von normalem Verhalten übereinstimmen
 
-![Anomalies](images/anomalies_definition.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/anomalies_definition.png} $$
 
 ## Beispiele
 
@@ -46,7 +46,7 @@
   - Entfernungsabhängige Methode in Bezug auf das globale Dataset
   - Dichteabhängige Methode in Bezug auf die lokale Nachbarschaft
 
-![Proximity-Based Methoden](images/anomaly_detection_proximity_based.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/anomaly_detection_proximity_based.png} $$
 
 #### Local Outlier Factor (LOF)
 
@@ -56,7 +56,7 @@
 - $LOF(x) > 1$, outlier
 - $LOF(x) < 1$, inlier
 
-![Local Outlier Factor Formel](images/local_outlier_factor.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/local_outlier_factor.png} $$
 
 #### K-Distance
 

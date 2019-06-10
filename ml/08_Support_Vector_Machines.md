@@ -6,17 +6,21 @@ $$ a \bullet b = a_1b_1 + a_2b_2 + ... + a_nb_n = \sum_{j=1}^n a_jb_j $$
 
 Regeln:
 $$
+\begin{aligned}
     a \bullet b = b \bullet a \\
     a \bullet (b + c) = a \bullet b + a \bullet c \\
     \lambda(a \bullet b) = (\lambda a) \bullet b = a \bullet (\lambda b)
+\end{aligned}
 $$
 
 ## Länge eines Vektors
 
 $$
+\begin{aligned}
     ||a|| = \sqrt{a \bullet a} \\
     ||a||^2 = a \bullet a \\
     ||n|| = 1
+\end{aligned}
 $$
 
 ## Zwei Vektoren senkrecht
@@ -34,11 +38,12 @@ $$
 
 ### Beispiel
 
-![Hessian Normal Form Example](images/hessian_normal_form_example.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/hessian_normal_form_example.png} $$
 
 Berechne die hessische Normalform von $\vec{n} = \frac{1}{\sqrt{13}}\begin{bmatrix}2 \\3\end{bmatrix}$
 
 $$
+\begin{aligned}
     0 = \vec{n} \bullet (\vec{x} - \vec{x_0}) = \frac{1}{\sqrt{13}}
     \begin{bmatrix}
     2 \\
@@ -68,13 +73,14 @@ $$
     \frac{2}{\sqrt{13}} \\
     \frac{3}{\sqrt{13}}
     \end{bmatrix}
+\end{aligned}
 $$
 
 --> Maybe more detailed
 
 ## Einführung
 
-![Support Vektor Machine](images/support_vector_machine_visualisation.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/support_vector_machine_visualisation.png} $$
 
 - Klassifizieren der Daten bedeutet aufspalten der Daten
 - Viele verschiedene Arten die Daten aufzuspalten
@@ -99,15 +105,17 @@ $$
 
 ## Lineare Separierbarkeit
 
-![Lineare Separierbarkeit](images/svm_linear_seperability.png)
+$$ \includegraphics[width=0.7\columnwidth]{images/svm_linear_seperability.png} $$
 
 ## Linearer Klassifikator
 
 $$
+\begin{aligned}
     \text{Linear Classifier using baised coordinates: } \\
     f(x) = \theta^Tx \\
     \text{Linear Classifier using unbaised coordinates: } \\
     f(x_b) = b + w^Tx_b
+\end{aligned}
 $$
 
 Beide Formen sind gleichwärtig und es wird die gebraucht, die besser passt
