@@ -43,11 +43,11 @@ $$ \includegraphics[width=0.7\columnwidth]{images/splittingcriterion.png} $$
 
 Im gezeigten Bild ist ein Splitting nachdem Feature "On Offer" informativer als das Feature "Season".
 
-Um den Informationsgehalt messen zu können gibt es zwei Varianten. Einerseits `Information grain` und den `Gini index`.
+Um den Informationsgehalt messen zu können gibt es zwei Varianten. Einerseits **Information grain** und den **Gini index**.
 
 ## Gini index
 
-Die Frequenz der Daten als Wahrscheindlichkeit für das Auftreten interpretiert. Mithilfe der `Gini Impurity` wird gemessen, wie oft ein zufällig Ausgesuchtes Element aus dem Set falsch gelabelt wird, falls es zufällig zur Verteilung der Labels gelablet worden wäre. Was der Frequenz des Feature zum Label entspricht.
+Die Frequenz der Daten als Wahrscheindlichkeit für das Auftreten interpretiert. Mithilfe der **Gini Impurity** wird gemessen, wie oft ein zufällig Ausgesuchtes Element aus dem Set falsch gelabelt wird, falls es zufällig zur Verteilung der Labels gelablet worden wäre. Was der Frequenz des Feature zum Label entspricht.
 
 Die Gini Impurity liefert dabe ein nicht-negatives Resultat. Falls ein Feature den gesamten Node für eine Kategorie aufteilt, ist die Gini Impurity gleich Null. Daher wird beim Gini Index das Feature mit dem tiefsten Gini Impurity Wert (Informationsgehalt) gewählt.
 

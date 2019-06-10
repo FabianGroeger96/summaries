@@ -70,7 +70,7 @@ Dabei kann eine Basis Transformation an Matrizen mit folgender Formel durchgefü
 $$ P \times X = Y $$
 
 - Geometrisch gesehen ist $P$ eine Rotation und Verzerrung von $X$ nach $Y$. Auch ausgedrückt als, $P$ führt eine Basis Transformation auf $X$ aus.
-- Die Spalten der Matrix $P$ sind die Basis Vektoren von $Y$. Auch genannt `Principal Components`.
+- Die Spalten der Matrix $P$ sind die Basis Vektoren von $Y$. Auch genannt **Principal Components**.
 
 ## Principal Component Analysis
 
@@ -113,13 +113,3 @@ Dabei ist zu beachten das $\mathbf{XX^T}$ symmetrisch ist.
 So wird für die Principal Component Analysis nur eine othonormale Matritze $\mathbf{P}$ benötigt, so dass $\mathbf{S_y} = \mathbf{P(XX^T)P^T}$ eine Diagonal Matrix ergibt.
 
 ### Einbezug von Eigenvektoren und Eigenwerten
-
-
-
-
-
-
-
-
-
-

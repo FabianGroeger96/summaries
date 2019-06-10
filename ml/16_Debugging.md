@@ -23,20 +23,20 @@ Wichtig dabei ist es nicht zufällige Veränderugnen durchzuführen. Änderungen
 
 Falls das Datenset verschiedene Fehlerquellen hat ist es schwierig diese zu isolieren. Die Learning Algorithmen werden durch solche Fehler Probleme haben, auch neben dem Trainings Set zu generalisieren.
 
-- `Bias`: Der Bias gibt den Wert für Falsche Annehmen eines Learning Algortihmus an. Ein hoher Bias führt dazu, dass der Algorithmus die eigentlichen relevanten Strukturen der Daten zwischen Features und Output nicht finden kann.
+- **Bias**: Der Bias gibt den Wert für Falsche Annehmen eines Learning Algortihmus an. Ein hoher Bias führt dazu, dass der Algorithmus die eigentlichen relevanten Strukturen der Daten zwischen Features und Output nicht finden kann.
 
-- `Varianz`: Die Varianz gibt den Einfluss von kleinsten Änderungen im Datenset an. Bei einer höheren Varianz gewichtet der Learning Algorithmus eher die zufälligen, kleinen Unterschiede als die eigentlichen Features und den Output.
+- **Varianz**: Die Varianz gibt den Einfluss von kleinsten Änderungen im Datenset an. Bei einer höheren Varianz gewichtet der Learning Algorithmus eher die zufälligen, kleinen Unterschiede als die eigentlichen Features und den Output.
 
 Aufgrund von Bias und Varianz kann bestummen werden ob ein Model Underfitted oder aber Overfitted. Folgende Koorelation zwischen Model, Bias und Varainz bestehen.
 
-- `hoher Bias` und `tiefe Varianz` führen zu `Underfitting` des Models. Die Modele sind zwar Konsistent jedoch Ungenau auf den Durchschnitt.
-- `tiefer Bias` und `hohe Varianz` führen zu `Overfitting` des Models. Die Modele sind zwar genau auf den Durchschnitt, jedoch inkonsistent.
+- **hoher Bias** und **tiefe Varianz** führen zu **Underfitting** des Models. Die Modele sind zwar Konsistent jedoch Ungenau auf den Durchschnitt.
+- **tiefer Bias** und **hohe Varianz** führen zu **Overfitting** des Models. Die Modele sind zwar genau auf den Durchschnitt, jedoch inkonsistent.
 
 ## Underfitting und Overfitting
 
-- `Underfitting`: Das Model findet keine geeignete Lösung für das Problem. Das Model bietet schlechte Resultate auf dem Trainings-, Test- sowie auf dem Evaluationset. Es wird eine zuwenig komplexe Lösung gefunden.
+- **Underfitting**: Das Model findet keine geeignete Lösung für das Problem. Das Model bietet schlechte Resultate auf dem Trainings-, Test- sowie auf dem Evaluationset. Es wird eine zuwenig komplexe Lösung gefunden.
 
-- `Overfitting`: Das Model findet eines zu optimierte Lösung für das Trainingset. Dies führt dazu, dass auf dem Trainingsset eine sehr hohe Genauigkeit erreicht wird. Auf dem Test- sowie vorallem auf dem Evaluationsset schlecht performen wird. Das Model optimiert die Lösung zu stark an die Trainingsdaten.
+- **Overfitting**: Das Model findet eines zu optimierte Lösung für das Trainingset. Dies führt dazu, dass auf dem Trainingsset eine sehr hohe Genauigkeit erreicht wird. Auf dem Test- sowie vorallem auf dem Evaluationsset schlecht performen wird. Das Model optimiert die Lösung zu stark an die Trainingsdaten.
 
 $$ \includegraphics[width=0.7\columnwidth]{images/under_overfitting.png} $$
 
@@ -123,8 +123,8 @@ Um dies zu lösen kann Principal Component Analysis (PCA) genutzt werden. Dadurc
 
 Für das selektieren sollte an Datensetz erstellt werden welcher möglichst nur relevante Features für das Problem des Model beinhaltet. Dabei soll folgendes beachtet werden.
 
-- `Redundante` Features vermeiden
-- `Irrelevante` Features vermeiden
+- **Redundante** Features vermeiden
+- **Irrelevante** Features vermeiden
 - PCA kann genutzt werden um neue Features aus dem Datensatz zu erstellen. So können andere Features reduziert werden.
 
 Gutes Features Selection bekämpft auch den "Fluch der Dimensionalität". Weiter hilft es jedoch verbessertes auch im allgemeinen die Effizienz von Machine Learning.
@@ -135,6 +135,6 @@ Gutes Features Selection bekämpft auch den "Fluch der Dimensionalität". Weiter
 
 Folgende Techniken können für die Feature Selection genutzt werden.
 
-- Korrelations Analyse, `Gute Features korrelieren stark mit dem Label, jedoch nicht untereinandner.`
+- Korrelations Analyse, **Gute Features korrelieren stark mit dem Label, jedoch nicht untereinandner.**
 - Decisions Tree
 
