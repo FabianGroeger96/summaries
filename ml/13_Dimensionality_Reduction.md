@@ -113,3 +113,46 @@ Dabei ist zu beachten das $\mathbf{XX^T}$ symmetrisch ist.
 So wird für die Principal Component Analysis nur eine othonormale Matritze $\mathbf{P}$ benötigt, so dass $\mathbf{S_y} = \mathbf{P(XX^T)P^T}$ eine Diagonal Matrix ergibt.
 
 ### Einbezug von Eigenvektoren und Eigenwerten
+
+Die Principal Component Analysis kann auch mit den Prinzipien der Eigenvektoren und Eigenvalues erweitert werden. Dabei werden folgende Definitionen beigezogen.
+
+1. $\mathbf{A}$ ist eine Quadratische Matrize mit den Werten
+2. Ein Vektor $\mathbf{v \ne 0}$ wird Eigenvektor genannt wenn $\mathbf{Av = \lambda v}$
+3. Dabei ist $\lambda$ Eigenwert für den Eigenvektor $\mathbf{v}$
+
+Um Eigenvektoren zu errechnen muss die Gleichung $\mathbf{(A-\lambda l)v = 0}$ gelöst werden.
+
+Eine symmetrisch Matrize $\mathbf{A}$ kann immer zu $\mathbf{A = EDE^T}$ faktorisiert werden. Wobei $\mathbf{D}$ eine Diagonal Matrix der Eigenwerte ist. Die Matritze $\mathbf{E}$ die Eigenvektoren in den Spalten darstellt. Dies wird als **Eigendekomposition** bezeichnet.
+
+Dies wird nun in der Principal Component Analysis miteinbezogen. Wie bereits beschrieben ist für die PCA ein $\mathbf{X}$ gegeben dazu muss ein $\mathbf{P}$ gefunden werden welches $\mathbf{P(XX^T)P^T}$ diagonalisiert. Nun kann mithilfe der Eigendekomposition wie folgt vorgegangen werden.
+
+1. Eigenvektoren von $\mathbf{XX^T}$ bestimmen
+2. Eigenvektoren in eine Matritze $\mathbf{E}$ als Spalten erstellen
+3. Anschliessend ist $\mathbf{P=E^T}$.
+4. Nun kann die eigentlich gesuchte Matrize $\mathbf{Y}$ einfach berechnet werden durch $\mathbf{Y = PX}$ 
+
+Dabei gilt für die PCA folgendes zu beachten.
+
+- Die Matritze $\mathbf{Y}$ besitzt die gleiche Anzahl Features wie die Originaldaten von $\mathbf{X}$ 
+- Jedes Feature in $\mathbf{Y}$ ist eine linear Kombination der original Features in $\mathbf{X}$ 
+- Die Transformations Matritze $\mathbf{P}$ beinhaltet die Gewichtung der linear Kombination
+
+## Dimensionality Reduction mit Eigenvalues und Eigenvektoren
+
+### Dimensionalitäts Reduktion ohne Informationsverlust
+
+- Die diagonale Kovarianz Matritze $\mathbf{S_y}$ besteht aus den Eigenwerten von $\mathbf{XX^T}$ 
+- Jeder Eigenwert gehört zu einer Varianz der Features in  $\mathbf{Y}$
+- Features mit Varianz $0$ besitzen keinen Informationsgehalt
+- So können alle Features mit Varianz $0$ entfernt werden.
+
+### Dimensionalitäts Reduktion ohne Informationsverlust
+
+- Die Summe der Eigenwerte in $\mathbf{S_y}$ korrespondiert mit der totalen Varianz der Daten
+- Es kann errechnet werden wie viel $\%$ ein Feature zur totalen Varianz beiträgt
+- So kann bestummen werden wie viel $\%$ der Infromationen verloren gehen, wenn ein Feature entfernt wird
+
+
+
+
+
