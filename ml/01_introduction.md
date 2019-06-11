@@ -10,16 +10,16 @@
 
 ## Machine Learning Disziplinen
 
-- Supervised Learning
+- **Supervised Learning**
   - Algorithmus bekommt gelabelte Trainingsdaten
   - Algorithmus lernt das Label vorherzusagen von ungesehenen Daten
-- Unsupervised Learning
+- **Unsupervised Learning**
   - Algorithmus bekommt ungelabelte Daten
   - Algorithmus erkennt und nützt die grundlegende Struktur der Daten
-- Semi-Supervised Learning
+- **Semi-Supervised Learning**
   - Mix aus Supervised und Unsupervised Learning
   - Wird meist gebraucht wenn es nur sehr wenig gelabelte Daten gibt
-- Reinforcement Learning
+- **Reinforcement Learning**
   - Keine Daten verfügbar aber der Algorithmus wird durch eine Reward Funktion gelenkt
   - Sucht das optimale Verhalten, welches die Reward Funktion maximiert
 
@@ -135,7 +135,7 @@ $$ \includegraphics[width=0.7\columnwidth]{images/quartile.png} $$
 
 ### Boxplots
 
-$$ \includegraphics[width=0.7\columnwidth]{images/boxplots.png} $$
+$$ \includegraphics[width=0.3\columnwidth]{images/boxplots.png} $$
 
 - Werte welche mindestens 1.5 * IQR oberhalb des dritten Quartils oder unterhalb des ersten Quartils sind gelten als Ausreisser
 
@@ -143,14 +143,27 @@ $$ \includegraphics[width=0.7\columnwidth]{images/boxplots.png} $$
 
 ### Pairplots
 
-$$ \includegraphics[width=0.7\columnwidth]{images/pairplots.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/pairplots.png} $$
 
 `sns.pairplot()`
 
 ### Messen der Datenverteilung
 
 - **Stichprobenvarianz** einer Reihe von numerischen Beobachtungen misst, wie viel die Werte im Durchschnitt verteilt sind, berechnet als die Summe der quadrierten Abweichungen vom Mittelwert
+
+$$
+\begin{aligned}
+    Var(X) = \frac{1}{n - 1} \sum_{i=1}^n (x_i - \mu_X)^2
+\end{aligned}
+$$
+
 - Quadratwurzel der Varianz wird als **Standardabweichung** bezeichnet
+
+$$
+\begin{aligned}
+    \sigma = \sqrt{Var(X)}
+\end{aligned}
+$$
 
 ### Kovarianz
 
@@ -160,6 +173,12 @@ $$ \includegraphics[width=0.7\columnwidth]{images/pairplots.png} $$
 - Bei unabhängigen Verteilungen heben positive und negative Werte sich gegenseitig auf, so dass die Kovarianz ungefähr Null wird
 - Kovarianz Matrix zeigt die Kovarianzen aller Attribute eines Datasets mit jedem anderen Attribut
 - Problem der Kovarianz, dass ihre Skala von den Daten abhängt
+
+$$
+\begin{aligned}
+    Cov(X, Y) =  \frac{1}{n - 1} \sum_{i=1}^n (x_i - \mu_X)(y_i - \mu_Y)
+\end{aligned}
+$$
 
 `data.cov()`
 
@@ -177,7 +196,7 @@ und 1 für perfekte Korrelation
 
 - Viele Machine Learning Algorithmen können nicht mit Null Werten umgehen
 - Ersetzungsstrategie je nach Anwendung wählen:
-  - Zeilen mit Null Werten lösen -> wenn genügend Daten vorhanden
+  - Zeilen mit Null Werten löschen -> wenn genügend Daten vorhanden
   - Fehlende Werte manuell eingeben -> Werte aus anderen Quellen übernehmen
   - Füllen der Werte mit einer globalen Konstante -> z.B. UNKNOWN oder $-\infty$
   - Mass für zentrale Tendenz verwenden -> Mittelwert für symmetrische Daten, Median für schiefe Daten
@@ -200,7 +219,7 @@ und 1 für perfekte Korrelation
 
 $$ dist(X, Y) = \sqrt{\sum_{i=1}^{n}(x_i - y_i)^2}$$
 
-### Euklidische Distanz
+### Euklidische Distanz (als $L^2$ Norm geschrieben)
 
 $$ \Vert{X - Y}\Vert_2 = \sqrt{\sum_{i=1}^{n}(x_i - y_i)^2} $$
 
@@ -208,20 +227,29 @@ Umso kleiner die Distanz, umso grösser ist die Ähnlichkeit
 
 ### Cosinus Ähnlichkeit
 
-$$ sim(X, Y) = \frac{X * Y}{||X|| * ||Y||} $$
-$$ dist(X, Y) = 1 - sim(X, Y) $$
+- Betrachtet den Winkel $\theta$ zwischen zwei Vektoren $X$ und $Y$
+- im Gegensatz zu der direkten Distanz, welche bei der Euklidischen Ähnlichkeit betrachtet wird
+
+$$
+\begin{aligned}
+    sim(X, Y) &= \frac{\sum_{i=1}^n x_i y_i}
+                {\sqrt{\sum_{i=1}^n x_i^2} \sqrt{\sum_{i=1}^n y_i^2}} \\
+    \\
+    dist(X, Y) &= 1 - sim(X, Y)
+\end{aligned}
+$$
 
 ### Levenshtein Distanz
 
 Zählen der minimalen Anzahl von Änderungen, die erforderlich sind, um eine Zeichenkette in eine andere umzuwandeln:
 
-- Anzahl +1 beim Löschen eines Zeichens[d]
-- Anzahl +1 beim Hinzufügen eines Zeichens[a]
-- Anzahl +2 beim Ändern eines Zeichens[c]
+- Anzahl +1 beim Löschen eines Zeichens
+- Anzahl +1 beim Hinzufügen eines Zeichens
+- Anzahl +2 beim Ändern eines Zeichens
 
 ### Normalisierung
 
-- Der Prozess, jedes Attribut auf ungefähr die gleiche Skala zu bringen -> Normalisierung
+- Der Prozess, jedes Attribut auf ungefähr die gleiche Skala zu bringen
 - Die Skala in jeder Dimension hängt von den Daten ab: der größte Preis in einer Autodatenbank ist 698000 CHF, die größte Anzahl der Türen beträgt nur 6
 - Eine Preisabweichung von 15% hat einen viel stärkeren Einfluss auf Ähnlichkeit und Entfernung als eine Abweichung von 15% in der Anzahl der Türen
 - Solche starken Einflüsse auf die Attribute verfälschen die Ergebnisse der Algorithmen insbesondere wenn sie auf Distanz oder Ähnlichkeit beruhen
