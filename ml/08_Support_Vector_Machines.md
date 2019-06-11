@@ -180,7 +180,7 @@ $$ y^{(j)}(\mathbf{w^T}x^{(j)}+b) \geq 1 - \zeta_j $$
 
 $$ y^{(k)}(\mathbf{w^T}x^{(k)}+b) \geq 1 - \zeta_k $$
 
-mit $x^{(i)}, x^{(j)}, x^{(k)} > 0$.¨
+mit $x^{(i)}, x^{(j)}, x^{(k)} > 0$.
 
 Weiter wird eine **Regularisierungs Parameter** $C$ eingeführt. So wird das minimierungs Problem erweitert.
 
@@ -212,7 +212,7 @@ $$ \zeta_i = \max{(0,1-y^{(i)}f(x^{(i)}))} $$
 
 und daraus folgt das ungebundene optimierungs Problem,
 
-$$ \min_{\mathbf{w} \in \R^m} \frac{2}{\parallel\mathbf{w}\parallel} + C\sum_{i=1}^n \max{(0,1-y^{(i)}f(x^{(i)}))} $$
+$$ \min_{\mathbf{w} \in R^m} \frac{2}{\parallel\mathbf{w}\parallel} + C\sum_{i=1}^n \max{(0,1-y^{(i)}f(x^{(i)}))} $$
 
 ## Kernel Trick
 
@@ -222,11 +222,11 @@ Beispiele sind,
 
 Für die Umwandlung von Cartesian Koordinaten zu Polarkoordinaten
 
-$$ \mathbf{\phi}: \R^2 \rightarrow \R^2, \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} \mapsto \begin{bmatrix} r \\ \Theta \end{bmatrix} = \begin{bmatrix} \sqrt{x_1^2 + x_2^2} \\ \arctan(\frac{x_2}{x_1} \pm \pi) \end{bmatrix}$$
+$$ \mathbf{\phi}: R^2 \rightarrow R^2, \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} \mapsto \begin{bmatrix} r \\ \Theta \end{bmatrix} = \begin{bmatrix} \sqrt{x_1^2 + x_2^2} \\ \arctan(\frac{x_2}{x_1} \pm \pi) \end{bmatrix}$$
 
 Für die Umwandlung von 2-D Raum in den 3-D Raum
 
-$$ \mathbf{\phi}: \R^2 \rightarrow \R^3, (x_1, x_2) \mapsto (z_1,z_2,z_31) = (x_1^2, \sqrt{2}x_1x_2,x_2^2) $$
+$$ \mathbf{\phi}: R^2 \rightarrow R^3, (x_1, x_2) \mapsto (z_1,z_2,z_31) = (x_1^2, \sqrt{2}x_1x_2,x_2^2) $$
 
 Weitere allgemeine Formen sind,
 
