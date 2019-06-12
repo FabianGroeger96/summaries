@@ -14,17 +14,22 @@
 ### Die best passende Linie
 
 - Welche Linie passt am besten zu den Stichprobenpunkten?
-- Wie wählen wir am besten die parameter $\theta_0$ und $\theta_1$?
+- Wie wählen wir am besten die Parameter $\theta_0$ und $\theta_1$?
 
 $$ \includegraphics[width=0.7\columnwidth]{images/linear_regression.png} $$
 
 ### Linie des Modells (Hypothese) oder Regressionslinie
 
-$$ y = h_\theta(x) = \theta_0 + \theta_1 * x $$
+$$ y = h_\theta(x) = \theta_0 + \theta_1 x $$
 
 ### Residual
 
-$$ e^{(i)} = y^{(i)} - (\theta_0 + \theta_1x^{(1)}), i=1, ..., n $$
+$$
+\begin{aligned}
+    e^{(i)} &= y^{(i)} - (\theta_0 + \theta_1x^{(1)}), i=1, ..., n \\
+    \text{Residual} &= \text{wahrer y Wert} - \text{vorhergesagter y Wert}
+\end{aligned}
+$$
 
 ### Least squares method
 
@@ -32,35 +37,33 @@ $$ e^{(i)} = y^{(i)} - (\theta_0 + \theta_1x^{(1)}), i=1, ..., n $$
 - $\bar{x}$ und $\bar{y}$ sind die Mittelwerte der x- und y-Werte
 - $\theta_1$ ist der Regressions Koeffizient
 
-$$ \bar{x} = \frac{1}{n} \sum_{i=1}^n x^{(i)} $$
-
-$$ \bar{y} = \frac{1}{n} \sum_{i=1}^n y^{(i)} $$
-
 $$
 \begin{aligned}
+    \bar{x} &= \frac{1}{n} \sum_{i=1}^n x^{(i)} \\
+    \bar{y} &= \frac{1}{n} \sum_{i=1}^n y^{(i)} \\
+    \\
     S_{xy} &= \sum_{i=1}^{n}(x^{(i)} - \bar{x})(y^{(i)} - \bar{y}) \\
     S_{xx} &= \sum_{i=1}^{n}(x^{(i)} - \bar{x})^2 \\
     S_{yy} &= \sum_{i=1}^{n}(y^{(i)} - \bar{y})^2 \\
+    \\
+    \theta_1 &= \frac{\sum_{i=1}^n (x^{(i)} - \bar{x})(y^{(i)} - \bar{y})}
+        {\sum_{i=1}^n (x^{(i)} - \bar{x})^2} = \frac{S_{xy}}{S_{xx}} \\
+    \theta_0 &= \bar{y} - \theta_1 \bar{x}
 \end{aligned}
 $$
 
-$$ \theta_1 = \frac{
-    \sum_{i=1}^n
-    (x^{(i)} - \bar{x})
-    (y^{(i)} - \bar{y})}
-    {\sum_{i=1}^n
-    (x^{(i)} - \bar{x})^2} = \frac{S_{xy}}{S_{xx}} $$
-
-$$ \theta_0 = \bar{y} - \theta_1 \bar{x} $$
-
 #### Beispiel
 
-Die folgenden Zahlenpaare geben den Volumenabfall y (in %) von Leder unter dem Druck x in (MPa) an: **(4, 2.3)**, **(6, 4.1)**, **(8, 5.7)** und **(10, 6.9)**. Berechnen Sie die am besten passende Linie, d.h. die **Regressionslinie**.
+Die folgenden Zahlenpaare geben den Volumenabfall $y$ (in %) von Leder unter dem Druck x in (MPa) an: **(4, 2.3)**, **(6, 4.1)**, **(8, 5.7)** und **(10, 6.9)**. Berechnen Sie die am besten passende Linie, d.h. die **Regressionslinie**.
 
 1. Berechnen der Mittelwerte $\bar{x}$ und $\bar{y}$
 
-$$ \bar{x} = \frac{1}{4} (4 + 6 + 8 + 10) = 7 $$
-$$ \bar{y} = \frac{1}{4} (2.3 + 4.1 + 5.7 + 6.9) = \frac{19}{4} = 4.75 $$
+$$
+\begin{aligned}
+    \bar{x} &= \frac{1}{4} (4 + 6 + 8 + 10) = 7 \\
+    \bar{y} &= \frac{1}{4} (2.3 + 4.1 + 5.7 + 6.9) = \frac{19}{4} = 4.75
+\end{aligned}
+$$
 
 2. Berechnen vom Regressions Koeffizient $\theta_1$
 
@@ -78,19 +81,22 @@ $$ \theta_0 = \bar{y} - \theta_1 \bar{x} = 4.75 - 0.77 * 7 = -0.64 $$
 
 4. Berechnen der Regressionslinie $y$
 
-$$ y = \theta_0 + \theta_1 * x = \underline{\underline{-0.64 + 0.77x}} $$
+$$ y = \theta_0 + \theta_1 x = \underline{\underline{-0.64 + 0.77x}} $$
 
 ### Coefficient of Determination (R-Squared)
 
 - Die Summe der quadratischen Fehlern ohne Regression, wird als **total sum of squares (SST)** bezeichnet
 - **sum of the squared errors (SSE)**
 - **sum of squares explained by regression (SSR)**
+- $\hat{y}$, ist der vorhergesagte Wert von $y$
 
-$$ SSE = \sum_{i=1}^n (y^{(i)} - \hat{y}^{(i)})^2 $$
-
-$$ SSR = \sum_{i=1}^n (\hat{y}^{(i)} - \bar{y})^2 $$
-
-$$ SST =  SSE + SSR $$
+$$
+\begin{aligned}
+    SSE &= \sum_{i=1}^n (y^{(i)} - \hat{y}^{(i)})^2 \\
+    SSR &= \sum_{i=1}^n (\hat{y}^{(i)} - \bar{y})^2 \\
+    SST &=  SSE + SSR
+\end{aligned}
+$$
 
 - R-Squared sagt etwas über die Genauigkeit der Regression aus, wie gut die Regressionsgerade zu den Datenpunkten passt
 - Umso grösser der Wert von $R^2$ ist, umso besser ist die Regression
@@ -101,11 +107,11 @@ $$ R^2 = 1 - \frac{SSE}{SST} $$
 
 #### Beispiel
 
-Die folgenden Zahlenpaare geben den Volumenabfall y (in %) von Leder unter dem Druck x in (MPa) an: **(4, 2.3)**, **(6, 4.1)**, **(8, 5.7)** und **(10, 6.9)**. Berechnen Sie **SSE**, **SST** und $\bold{R^2}$.
+Die folgenden Zahlenpaare geben den Volumenabfall $y$ (in %) von Leder unter dem Druck x in (MPa) an: **(4, 2.3)**, **(6, 4.1)**, **(8, 5.7)** und **(10, 6.9)**. Berechnen Sie **SSE**, **SST** und $\bold{R^2}$.
 
 1. Berechnen von $SSE$
 
-$$ \text{predicted value of y} = \hat{y} = \theta_0 + \theta_1 * x $$
+$$ \text{predicted value of y} = \hat{y} = \theta_0 + \theta_1 x $$
 
 $$ SSE = (2.3 - 2.44)^2 + (4.1 - 3.98)^2 + (5.7 - 5.52)^2 + (6.9 - 7.06)^2
 = \underline{\underline{0.092}} $$
@@ -129,15 +135,17 @@ $$ R^2 = 1 - \frac{SSE}{SST} = 1 - \frac{0.092}{11.95} = \underline{\underline{0
 - Misst die Stärke der linearen Beziehung zwischen zwei Variablen $x$ und $y$
 - Liegt immer zwischen -1 und 1, d.h. $-1 \leq r \leq 1$
 - $r = 1$, gerade Linie mit positiver Steigung, linear verwandt, stark korreliert
-- $r = 1$, gerade Linie mit negativer Steigung, linear verwandt, start korreliert
+- $r = -1$, gerade Linie mit negativer Steigung, linear verwandt, start korreliert
+- $r = 0$, sind nicht linear verwandt, unkorreliert
 - $0 < r \leq 0.5$, schwach korreliert
 - $0.5 < r \leq 0.8$, korreliert
-- $r = 0$, sind nicht linear verwandt, unkorreliert
 - Umso weiter $r$ von 0 entfernt ist, umso stärker ist die lineare Beziehung
-- $S_{xy}$ = Summierte Abweichung vom Mittelwert aller Punkte von x und y  
-- $s_{xy}$ = Bereich, in dem sich alle Punkte befinden
 
 $$ \includegraphics[width=0.7\columnwidth]{images/pearson_correlation.png} $$
+
+- Unterschied zwischen $S_{xy}$ und $s_{xy}$
+  - $S_{xy}$ = Summierte Abweichung vom Mittelwert aller Punkte von x und y
+  - $s_{xy}$ = Bereich, in dem sich alle Punkte befinden
 
 $$ r = \frac{\sum_{i=1}^n (x^{(i)} - \bar{x}) (y^{(i)} - \bar{y})}
         {\sqrt{\sum_{i=1}^n (x^{(i)} - \bar{x})^2}
@@ -162,7 +170,7 @@ Die folgenden Zahlenpaare geben den Volumenabfall y (in %) von Leder unter dem D
 $$ 
 \begin{aligned}
     r &= \frac{(4 - 7)(2.3 - 4.75) + (6 - 7)(4.1 - 4.75) + (8 - 7)(5.7 - 4.75) + (10 - 7)(6.9 - 4.75)}
-        {\sqrt{((4 - 7)^2 + (6 - 7)^2 + (8 - 7)^2 + (10 - 7)^2)}*\sqrt{((2.3 - 4.75)^2 + (4.1 - 4.75)^2 + (5.7 - 4.75)^2 + (6.9 - 4.75)^2)}} \\
+        {\sqrt{((4 - 7)^2 + (6 - 7)^2 + (8 - 7)^2 + (10 - 7)^2)}\sqrt{((2.3 - 4.75)^2 + (4.1 - 4.75)^2 + (5.7 - 4.75)^2 + (6.9 - 4.75)^2)}} \\
         &= \underline{\underline{0.99614}}
 \end{aligned}
 $$
@@ -183,14 +191,16 @@ $$
 $$
 
 - Um das $100 (1 - \alpha)\%$ Confidence Intervall für $\theta_0$ und $\theta_1$ zu berechnen muss man zuerst einen t Test machen, mit $t[1 - \frac{\alpha}{2}; n - 2]$
+
 ```python
 from scipy.stats import t
 t_quant = t.ppf(0.95, n-2)
 print("t_quant = ", t_quant)
 ```
+
 - Um die Confidence Intervalle zu bekommen
 
-$$ 
+$$
 \begin{aligned}
     \theta_0 &\pm t_{quant} * s_{\theta_0} \\
     \theta_1 &\pm t_{quant} * s_{\theta_1}
@@ -221,8 +231,8 @@ $$ s_{\theta_0} = \sqrt{0.046} \Bigg [\frac{1}{4} + \frac{7^2}
 
 $$
 \begin{aligned}
-    \hat{\mu_x} &= \bar{x} = \frac{1}{n} \sum_{i=1}^n x^{(i)} \\
-    \hat{\sigma_x} &= s_x = \frac{1}{n - 1} \sum_{i=1}^n (x^{(i)} - \hat{\mu_x})^2
+    \hat{\mu}_x &= \bar{x} = \frac{1}{n} \sum_{i=1}^n x^{(i)} \\
+    \hat{\sigma}_x &= s_x = \frac{1}{n - 1} \sum_{i=1}^n (x^{(i)} - \hat{\mu}_x)^2
 \end{aligned}
 $$
 

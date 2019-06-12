@@ -47,7 +47,7 @@ Wir gehen davon aus, dass der Algorithmus $\theta_0 = -100$ und $\theta_1 = 0.6c
 $$ 
 \begin{aligned}
     P(male|h = 155cm) &= \hat{y} = \frac{1}{1 + exp(-(\theta_0 + \theta_1x))} = \frac{1}{1 + exp(100 - 0.6 * 155)} \\
-    &= \frac{1}{1 + exp(7)} = 0.9 x 10^{-3}
+    &= \frac{1}{1 + exp(7)} = 0.9 \times 10^{-3}
 \end{aligned}
 $$
 

@@ -37,7 +37,7 @@ $$
 \begin{aligned}
     \nabla f(x,y) &= \Bigg[\frac{6(3x+2y)}{4(3x+2y)}\Bigg] \\
     \text{im Punkt (1,2):} \\
-    \nabla f(1,2) &= [\frac{42}{28}]
+    \nabla f(1,2) &= \Bigg[\frac{42}{28}\Bigg]
 \end{aligned}
 $$
 
@@ -61,14 +61,26 @@ $$
 
 $$
 \begin{aligned}
-    f(x,y) = x^2 + 2xy + 4y^2 \\
-    \nabla f(x,y) = \Bigg[\frac{2x + 2y}{2x + 8y}\Bigg]\\
-    \text{wir starten am Punkt } x_0 = (2,2) \text{ und gehen in die Richtung des negativen Gradienten}\\
-    x_1 = x_0 - \alpha\nabla f(x_0) \\
-    = \Bigg[\frac{2}{2}\Bigg] - \alpha \Bigg[\frac{8}{20}\Bigg] = \Bigg[\frac{1.2}{0}\Bigg] \\
-    \text{wir haben } \alpha = 0.1 \text{ gewählt (Learningrate)}\\
-    x_2 = x_1 - \alpha\nabla f (x_1)\\
-    = \Bigg[\frac{1.2}{0}\Bigg] - \alpha \Bigg[\frac{2.4}{2.4}\Bigg] = \Bigg[\frac{0.96}{-0.24}\Bigg]
+    f(x,y) &= x^2 + 2xy + 4y^2 \\
+    \nabla f(x,y) &= \Bigg[\frac{2x + 2y}{2x + 8y}\Bigg]\\
+\end{aligned}
+$$
+
+- wir starten am Punkt $x_0 = (2,2)$ und gehen in die Richtung des negativen Gradienten
+
+$$
+\begin{aligned}
+    x_1 &= x_0 - \alpha\nabla f(x_0) \\
+    &= \Bigg[\frac{2}{2}\Bigg] - \alpha \Bigg[\frac{8}{20}\Bigg] = \Bigg[\frac{1.2}{0}\Bigg] \\
+\end{aligned}
+$$
+
+- wir haben $\alpha = 0.1$ gewählt (Learningrate)
+
+$$
+\begin{aligned}
+    x_2 &= x_1 - \alpha\nabla f (x_1)\\
+    &= \Bigg[\frac{1.2}{0}\Bigg] - \alpha \Bigg[\frac{2.4}{2.4}\Bigg] = \Bigg[\frac{0.96}{-0.24}\Bigg]
 \end{aligned}
 $$
 
@@ -107,7 +119,7 @@ $$ \theta_{k+1} = \theta_k - \alpha\nabla J(\theta_k), k = 1,2,3,... $$
 
 $$ h(\theta,x) = \theta_0 + \theta_1x + \theta_1x^2 + \theta_1x^3 $$
 
-- Könnten wir die gewählten features $x_1 = x, x_2 = x^2, x_3 = x^3$ wählen und wir haben wieder eine lineare regression
+- Könnten wir die gewählten Features $x_1 = x, x_2 = x^2, x_3 = x^3$ wählen und wir haben wieder eine lineare Regression
 
 $$ h(\theta,x) = \theta_0 + \theta_1x_1 + \theta_1x_2 + \theta_1x_3 $$
 
