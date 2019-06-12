@@ -49,7 +49,7 @@ Dichteabschätzung und kann somit als Indikator für die Erkennung von Anomalien
 
 ### Desicion Boundry
 
-$$ \includegraphics[width=0.7\columnwidth]{images/desicion_boundry.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/desicion_boundry.png} $$
 
 ### Kernel Trick
 
@@ -95,7 +95,7 @@ $$ \includegraphics[width=0.7\columnwidth]{images/desicion_boundry.png} $$
 - False-Negative (FN), Klassifikator sagt NEIN aber die wahre Antwort ist JA
 - True-Positive (TP), Klassifikator sagt JA und die wahre Antwort ist JA
 
-$$ \includegraphics[width=0.5\columnwidth]{images/konfusionsmatrix.png} $$
+$$ \includegraphics[width=0.3\columnwidth]{images/konfusionsmatrix.png} $$
 
 ### Genauigkeit (Accuracy) und Fehlerquote (Error Rate)
 
@@ -165,7 +165,7 @@ $$
 \end{aligned}
 $$
 
-$$ \includegraphics[width=0.4\columnwidth]{images/regression_residuals.png} $$
+$$ \includegraphics[width=0.3\columnwidth]{images/regression_residuals.png} $$
 
 ### $R^2$ Coefficient of Determination
 

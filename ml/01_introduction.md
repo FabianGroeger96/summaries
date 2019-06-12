@@ -123,7 +123,7 @@ $$ \includegraphics[width=0.7\columnwidth]{images/datenneigung.png} $$
 
 ### Quartile & Interquartile Range (IQR)
 
-$$ \includegraphics[width=0.7\columnwidth]{images/quartile.png} $$
+$$ \includegraphics[width=0.5 \columnwidth]{images/quartile.png} $$
 
 ### 5 Kennzahlen um eine Datenverteilung zusammenzufassen
 
