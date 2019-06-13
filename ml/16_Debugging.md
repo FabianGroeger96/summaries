@@ -58,7 +58,7 @@ Modele mit Underfitting sind grundsätzlich einfacher zu verbessern. Die relevan
 
 Beim Overfitting kann eine Lernkurve eines Model wie folgt aussehen. Die Performenz auf den Trainingsdaten ist sehr gut (klassisches Overfitting Phänomen) der Validation Error ist jedoch nicht an der gewünschten Performenz. Die Error-Kurven flachen ab. Und werden sich nicht an die Gewünschte Performenz annähern.
 
-$$ \includegraphics[width=0.7\columnwidth]{images/learningcurve_overfitting.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/learningcurve_overfitting.png} $$
 
 #### Gegenmassnahmen für Overfitting
 

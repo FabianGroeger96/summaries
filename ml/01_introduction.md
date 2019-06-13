@@ -135,7 +135,7 @@ $$ \includegraphics[width=0.5 \columnwidth]{images/quartile.png} $$
 
 ### Boxplots
 
-$$ \includegraphics[width=0.3\columnwidth]{images/boxplots.png} $$
+$$ \includegraphics[width=0.2\columnwidth]{images/boxplots.png} $$
 
 - Werte welche mindestens 1.5 * IQR oberhalb des dritten Quartils oder unterhalb des ersten Quartils sind gelten als Ausreisser
 

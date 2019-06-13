@@ -16,7 +16,7 @@
 - Welche Linie passt am besten zu den Stichprobenpunkten?
 - Wie wählen wir am besten die Parameter $\theta_0$ und $\theta_1$?
 
-$$ \includegraphics[width=0.7\columnwidth]{images/linear_regression.png} $$
+$$ \includegraphics[width=0.3\columnwidth]{images/linear_regression.png} $$
 
 ### Linie des Modells (Hypothese) oder Regressionslinie
 
@@ -141,7 +141,7 @@ $$ R^2 = 1 - \frac{SSE}{SST} = 1 - \frac{0.092}{11.95} = \underline{\underline{0
 - $0.5 < r \leq 0.8$, korreliert
 - Umso weiter $r$ von 0 entfernt ist, umso stärker ist die lineare Beziehung
 
-$$ \includegraphics[width=0.7\columnwidth]{images/pearson_correlation.png} $$
+$$ \includegraphics[width=0.4\columnwidth]{images/pearson_correlation.png} $$
 
 - Unterschied zwischen $S_{xy}$ und $s_{xy}$
   - $S_{xy}$ = Summierte Abweichung vom Mittelwert aller Punkte von x und y
@@ -246,6 +246,6 @@ $$ \tilde{x}^{(i)} = \frac{1}{s_x} (x^{(i)} - \bar{x}) $$
 
 ### Beispiel
 
-$$ \includegraphics[width=0.7\columnwidth]{images/multiple_linear_regression_example.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/multiple_linear_regression_example.png} $$
 
-$$ \includegraphics[width=0.7\columnwidth]{images/multiple_linear_regression_example_solution.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/multiple_linear_regression_example_solution.png} $$

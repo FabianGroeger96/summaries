@@ -4,7 +4,7 @@
 
 - Sind Muster in Daten, die nicht mit einem bestimmten klar definierten Ansatz von normalem Verhalten übereinstimmen
 
-$$ \includegraphics[width=0.7\columnwidth]{images/anomalies_definition.png} $$
+$$ \includegraphics[width=0.4\columnwidth]{images/anomalies_definition.png} $$
 
 ## Beispiele
 

@@ -80,7 +80,7 @@ $$
 
 ## Einführung
 
-$$ \includegraphics[width=0.7\columnwidth]{images/support_vector_machine_visualisation.png} $$
+$$ \includegraphics[width=0.4\columnwidth]{images/support_vector_machine_visualisation.png} $$
 
 - Klassifizieren der Daten bedeutet aufspalten der Daten
 - Viele verschiedene Arten die Daten aufzuspalten

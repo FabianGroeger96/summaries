@@ -14,7 +14,7 @@ $$ \includegraphics[width=0.7\columnwidth]{images/under_overfitting.png} $$
 - **Low Variance**: Werte sind nicht weit verteilt
 - **High Variance**: Werte sind weit verteilt
 
-$$ \includegraphics[width=0.7\columnwidth]{images/high_low_bias_and_high_low_variance.png} $$
+$$ \includegraphics[width=0.4\columnwidth]{images/high_low_bias_and_high_low_variance.png} $$
 
 ## Adressing Overfitting
 

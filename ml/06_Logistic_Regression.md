@@ -31,7 +31,7 @@ $$ y = \sigma(\theta_0 + \theta_1x) = \frac{1}{1 + e^{-(\theta_0 + \theta_1x)}} 
 
 $$ z = \theta_0 + \theta_1x $$
 
-$$ \includegraphics[width=0.7\columnwidth]{images/sigmoid_funktion.png} $$
+$$ \includegraphics[width=0.4\columnwidth]{images/sigmoid_funktion.png} $$
 
 - blaue Punkte: $y = 1$, Prüfung bestanden
 - grüne Punkte: $y = 0$, Prüfung nicht bestanden
@@ -62,7 +62,7 @@ $$ h(\theta, x) = x^T\theta = \theta_0 + \theta_1x_1 + \theta_2x_2 = 0 $$
 
 ### Beispiel
 
-$$ \includegraphics[width=0.7\columnwidth]{images/linear_decision_boundaries.png} $$
+$$ \includegraphics[width=0.4\columnwidth]{images/linear_decision_boundaries.png} $$
 
 Decision Boundary ist gegeben durch $\theta = [-1.8, -3.9, 4.5]^T$, dies ergibt die Gleichung der roten Linie $-1.8 - 3.9x_1 + 4.5x_2 = 0$
 

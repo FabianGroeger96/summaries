@@ -19,7 +19,7 @@ Künstliche Neuronale Netzwerke unterscheiden sich in
 
 Dabei versuchen ANN biologische Neuronen zu abstrahieren. Dies soll anhand von einem Beispiel aufgezeigt werden.
 
- $$ \includegraphics[width=0.4\columnwidth]{images/neurons.png} $$
+ $$ \includegraphics[width=0.3\columnwidth]{images/neurons.png} $$
 
  Dabei wird für jeden Output Node $j$ die Funktion $net_j$ berechnet. Dabei entsteht eine gewichtete Summe der Input Signale.
 
