@@ -23,15 +23,15 @@ $$ \frac{X \text{ and } Y}{X} : \frac{\neg X \text{ and } Y}{\neg X} $$
 ### Vorteile und Nachteile von Assoziationen
 
 1. Einfach, schnell und günstig
-   1. Wenn Transaktionsdaten verwendet werden, ist keine Datenerfassung erforderlich
+   - Wenn Transaktionsdaten verwendet werden, ist keine Datenerfassung erforderlich
 2. Assoziationen sind kontextbewust
-   1. Werden Produktpaare empfohlen, die gut zusammenpassen
+   - Werden Produktpaare empfohlen, die gut zusammenpassen
 3. Assoziationen können auf bestimmte Unternehmen zugeschnitten werden
-   1. Zeitlich begrenzte Assoziationen
-   2. "Kunden die gekauft haben" vs. "Kunden die angeschaut haben"
+   - Zeitlich begrenzte Assoziationen
+   - "Kunden die gekauft haben" vs. "Kunden die angeschaut haben"
 4. Nicht personalisierte Empfehlungen
-   1. Assoziationen betrachten Warenkörbe, nicht Einzelpersonen
-   2. Berücksichtigen keine persönlichen Preferenzen
+   - Assoziationen betrachten Warenkörbe, nicht Einzelpersonen
+   - Berücksichtigen keine persönlichen Preferenzen
 
 ## Implizite & Explizite Präferenzen
 
@@ -40,7 +40,7 @@ $$ \frac{X \text{ and } Y}{X} : \frac{\neg X \text{ and } Y}{\neg X} $$
 
 ## Content-Based Recommendations
 
-- Manuelle oder automatische auswertung der Katalogdaten
+- Manuelle oder automatische Auswertung der Katalogdaten
 - So viele Benutzerpräferenzen wie möglich sammeln
 - Berechne Vorhersagen für Elemente, die mit ? gekennzeichnet sind, basierend auf der Artikelähnlichkeit
 - Empfehlen von Artikeln mit hohen Vorhersagewert
@@ -53,7 +53,7 @@ $$ \includegraphics[width=0.7\columnwidth]{images/content_based_recommendations.
 
 $$ \includegraphics[width=0.7\columnwidth]{images/item_similarity.png} $$
 
-$$ similarity = \frac{\sum_{i=1}^n A_i \times B_i}
+$$ \text{similarity} = \frac{\sum_{i=1}^n A_i \times B_i}
 {\sqrt{\sum_{i=1}^n (A_i)^2} \times \sqrt{\sum_{i=1}^n(B_i)^2}} $$
 
 ### Ähnlichkeitsmatrix
@@ -67,18 +67,18 @@ $$ \includegraphics[width=0.7\columnwidth]{images/content_based_recommendation_e
 ### Vorteile und Nachteile von Content-Based Recommendations
 
 1. Benutzerunabhängigkeit und Transparenz
-   1. Profil eines Benutzers wird nur aus seinen eigenen Bewertungen erstellt
-   2. Empfehlungen können durch die Enthüllung relevanter Daten erklärt werden
+   - Profil eines Benutzers wird nur aus seinen eigenen Bewertungen erstellt
+   - Empfehlungen können durch die Enthüllung relevanter Daten erklärt werden
 2. Problem mit neuen Gegenständen (Cold Start Problem)
-   1. Kann neue Artikel ohne Bewertungen sofort empfehlen
+   - Kann neue Artikel ohne Bewertungen sofort empfehlen
 3. Begrenzte Inhaltsanalyse
-   1. Spiegeln Attribute wirklich wieder, wie Benutzer entscheiden?
+   - Spiegeln Attribute wirklich wieder, wie Benutzer entscheiden?
 4. Überspezialisierung
-   1. Findet nie etwas Unerwartetes
-   2. Profile werden nur aus der Einkaufshistorie erstellt
+   - Findet nie etwas Unerwartetes
+   - Profile werden nur aus der Einkaufshistorie erstellt
 5. Problem mit neuen Nutzern (Cold Start Problem)
-   1. Auch bei anonymen Benutzern
-   2. Hängt von Implementation ab, aber oft kein grosses Problem
+   - Auch bei anonymen Benutzern
+   - Hängt von Implementation ab, aber oft kein grosses Problem
 
 ## Collaborative Filtering
 
@@ -100,7 +100,7 @@ $$ \includegraphics[width=0.7\columnwidth]{images/user_to_user_collaborative_fil
 - Da sich Benutzerprofile ständig ändern, funktioniert die Vorberechnung nicht
 - Im Gegensatz dazu ist die Ähnlichkeit bei Item-Paaren stabil und kann vorberechnet werden
 
-$$ \includegraphics[width=0.7\columnwidth]{images/item_to_item_collaborative_filtering_formula.png} $$
+$$ \includegraphics[width=0.4\columnwidth]{images/item_to_item_collaborative_filtering_formula.png} $$
 
 #### Berechnung
 
@@ -112,15 +112,15 @@ $$ \includegraphics[width=0.7\columnwidth]{images/item_to_item_collaborative_fil
 ### Vorteile und Nachteile von Collaborative Filtering
 
 1. Kategorieübergreifende Empfehlungen
-   1. Produkte aus verschiedenen Kategorien können empfohlen werden
+   - Produkte aus verschiedenen Kategorien können empfohlen werden
 2. Viele Personen müssen teilnehmen
-   1. In kleinen Matrizen werden keine Nachbarn gefunden
+   - In kleinen Matrizen werden keine Nachbarn gefunden
 3. Problem mit neuen Benutzern (Coldstart problem)
-   1. System muss zunächst die Präferenz eines Benutzers aus seinen Bewertungen entnehmen
+   - System muss zunächst die Präferenz eines Benutzers aus seinen Bewertungen entnehmen
 4. Problem mit neuen Gegenständen (Coldstart problem)
-   1. Viele Benutzer müssen neue Gegenstände bewerten, bevor sie empfohlen werden können
+   - Viele Benutzer müssen neue Gegenstände bewerten, bevor sie empfohlen werden können
 5. Grey Sheep Problem
-   1. Benutzer mit ungewöhnlichem Geschmeck erhalten keine genauen Empfehlungen
+   - Benutzer mit ungewöhnlichem Geschmeck erhalten keine genauen Empfehlungen
 
 ## Hybride Recommender Systeme
 

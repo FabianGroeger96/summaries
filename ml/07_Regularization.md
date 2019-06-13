@@ -71,7 +71,7 @@ $$ \tilde{J} = J(\theta;X,y) + \lambda[r\Omega_L(\theta) +  (1 - r)\Omega(\theta
   - Pfad 2: $\lambda = 0.01 \rightarrow min J_{train}(\theta) \rightarrow \theta^{(2)} \rightarrow J_{CV}(\theta^{(2)})$
   - Pfad 3: $\lambda = 0.01 \rightarrow min J_{train}(\theta) \rightarrow \theta^{(3)} \rightarrow J_{CV}(\theta^{(3)})$
   - ...
-- Für jeden Wert des Regularisierungshyperparameters $\lambda$ zeichne den Fehler auf dem Trainingsset $J_{train}(\lambda^{(\lambda)}$ und den Fehler auf dem Cross Validation Set $J_{CV}(\theta^{(\lambda)}$
+- Für jeden Wert des Regularisierungshyperparameters $\lambda$ zeichne den Fehler auf dem Trainingsset $J_{train}(\lambda^{(\lambda)})$ und den Fehler auf dem Cross Validation Set $J_{CV}(\theta^{(\lambda)})$
 - Wähle $\lambda$ so, dass der Fehler auf dem Cross Validation Set am kleinsten ist
 
 ## Wie verhindert man Under- oder Overfitting

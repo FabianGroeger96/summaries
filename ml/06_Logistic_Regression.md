@@ -112,7 +112,7 @@ $$
 - Für alle diese 3 Fälle findet man einen Parametervektor $\theta_i (i = 1,2,3)$
 - Feature Vektor $x$ ist in der Klasse $i$, wenn der Wert von $\sigma(x^T\theta_k)$ in der Klasse $i$ am grössten ist
 
-$$ i = argmax \sigma(x^T\theta_k) $$
+$$ i = \text{argmax } \sigma(x^T\theta_k) $$
 
 ### Beispiel
 

@@ -18,34 +18,34 @@
 - Wähle die Anzahl an Clusters (z.B. 3)
 - Erstelle zufällig neue Cluster Centers (neue Datenpunkte)
 
-$$ \includegraphics[width=0.7\columnwidth]{images/k_means_clustering_preparation.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/k_means_clustering_preparation.png} $$
 
 ##### 2. Suchen nach dem nächstgelegenen Cluster für jeden Datenpunkt
 
-$$ \includegraphics[width=0.7\columnwidth]{images/k_means_clustering_search_cluster.png} $$
+$$ \includegraphics[width=0.3\columnwidth]{images/k_means_clustering_search_cluster.png} $$
 
 ##### 3. Berechnung des Mittelpunktes eines Clusters
 
 - Berechnen des Mittelwerts aller Punkte, welche momentan zu dem selben Cluster angehören
 - Verschiebung des Mittelpunktes des Clusters zu dem vorher berechneten Mittelwert aller Punkte
 
-$$ \includegraphics[width=0.7\columnwidth]{images/k_means_clustering_center_cluster.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/k_means_clustering_center_cluster.png} $$
 
 ##### 4. Berechnung des Mittelpunktes für jedes Cluster
 
-$$ \includegraphics[width=0.7\columnwidth]{images/k_means_clustering_center_all_clusters.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/k_means_clustering_center_all_clusters.png} $$
 
 ##### 5. Neustart und Fortfahren bis zur Stabilität der Mittelpunkte
 
-$$ \includegraphics[width=0.7\columnwidth]{images/k_means_clustering_restart_continue.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/k_means_clustering_restart_continue.png} $$
 
 #### Pseudo Code
 
 1. Input: number of clusters $k > 0$ and data points $x_1, ..., x_n$
 2. Randomly choose $k$ cluster centers $\mu_1, ..., \mu_k$
 3. Repeat until convergence
-  a. Assign each data point $x_i$ to its nearest cluster center $\mu_j$
-  b. Update each cluster center to the mean of all assigned data points
+   - Assign each data point $x_i$ to its nearest cluster center $\mu_j$
+   - Update each cluster center to the mean of all assigned data points
 
 ### Clustering Abweichung (Distortion)
 
@@ -73,7 +73,7 @@ $$ \frac{1}{n} \sum_{i=1}^n ||x_i - \mu_{ci}||^2 $$
 - Die Ellbogenmethode verwenden, guter Kompromiss
   - Man iteriert über verschiedene Anzahlen von Clusters und berechnet die Gesamtabweichung
 
-$$ \includegraphics[width=0.7\columnwidth]{images/data_clustering_ellbow_method.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/data_clustering_ellbow_method.png} $$
 
 ## Association Rules
 
@@ -84,19 +84,19 @@ $$ \includegraphics[width=0.7\columnwidth]{images/data_clustering_ellbow_method.
 
 - Support ist der Anteil der Transaktionen, welcher ein spezifisches Itemset enthält
 
-$$ support({i_1, ..., i_n}) = \frac{\text{\# purchases of }{i_1, ..., i_n}}{\text{\# transactions}} $$
+$$ \text{support}({i_1, ..., i_n}) = \frac{\text{\# purchases of }{i_1, ..., i_n}}{\text{\# transactions}} $$
 
 - Support misst wie oft gewisse Items zusammen gekauft wurden
 
-$$ \includegraphics[width=0.7\columnwidth]{images/association_rules_support.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/association_rules_support.png} $$
 
 ### Support einer Association Rule
 
-$$ support(X \rightarrow Y) = support(X \cup Y) $$
-
-$$ support(X \rightarrow Y) = support(Y \rightarrow X) $$
+$$ \text{support}(X \rightarrow Y) = \text{support}(X \cup Y) $$
 
 - Richtungsunabhängig, kann daher die Qualität einer gerichteten Association Rule nicht messen!
+
+$$ \text{support}(X \rightarrow Y) = \text{support}(Y \rightarrow X) $$
 
 $$ \includegraphics[width=0.7\columnwidth]{images/association_rule_support_association_rule.png} $$
 
@@ -107,11 +107,11 @@ $$ \includegraphics[width=0.7\columnwidth]{images/association_rule_support_assoc
 - Niedrige Supportregeln können aus geschäftlicher Sicht uninteressant sein
 - Eine gute Association Rule hat ein höhen Support
   
-$$ Support = Interesse $$
+$$ \text{Support} = \text{Interesse} $$
 
 ### Confidence einer Association Rule
 
-$$ confidence(X \rightarrow Y) = \frac{support(X \cup Y)}{support(X)} $$
+$$ \text{confidence}(X \rightarrow Y) = \frac{\text{support}(X \cup Y)}{\text{support}(X)} $$
 
 $$ \includegraphics[width=0.7\columnwidth]{images/association_rule_confidence.png} $$
 
@@ -123,23 +123,23 @@ $$ \includegraphics[width=0.7\columnwidth]{images/association_rule_confidence.pn
 - Confidence misst die Zuverlässigkeit oder Vertrauenswürdigkeit einer Association Rule
 - Eine gute Association Rule hat eine hohe Confidence
   
-$$ Confidence = Vertrauenswürdigkeit $$
+$$ \text{Confidence} = \text{Vertrauenswürdigkeit} $$
 
 ### Lift einer Association Rule
 
-$$ lift(X \rightarrow Y) = \frac{support(X \cup Y)}{support(X) * support(Y)} $$
+$$ \text{lift}(X \rightarrow Y) = \frac{\text{support}(X \cup Y)}{\text{support}(X) * \text{support}(Y)} $$
 
 $$ \includegraphics[width=0.7\columnwidth]{images/association_rule_lift.png} $$
 
 ### Interpretation des Lifts
 
 - Misst wie oft $X$ und $Y$ zusammen aufgetaucht sind, wenn sie statistisch unabhängig sind
-- $Lift = 1$, $X$ und $Y$ sind statistisch unabhängig
-- $Lift < 1$, $X$ und $Y$ erscheinen seltener zusammen als erwartet, sie sind antikorreliert
-- $Lift > 1$, $X$ und $Y$ erscheinen häufiger zusammen als erwartet, sie sind korreliert
+- $\text{Lift} = 1$, $X$ und $Y$ sind statistisch unabhängig
+- $\text{Lift} < 1$, $X$ und $Y$ erscheinen seltener zusammen als erwartet, sie sind antikorreliert
+- $\text{Lift} > 1$, $X$ und $Y$ erscheinen häufiger zusammen als erwartet, sie sind korreliert
 - Je grösser der Liftwert, desto stärker ist die Assoziation zwischen $X$ und $Y$
 
-$$ Lift = \text{Stärke der Assoziation} $$
+$$ \text{Lift} = \text{Stärke der Assoziation} $$
 
 ### Vertrauenswürdige, aber uninteressante Regeln
 
@@ -161,13 +161,13 @@ $$ Lift = \text{Stärke der Assoziation} $$
 - Wenn ein Itemset häufig ist (hoher Supportwert), müssen auch alle Subsets einen hohen Support wert aufweisen
 - Wenn ein Itemset nicht häufig ist (tiefer Supportwert), müssen alle Supersets auch nicht häufig sein
 
-$$ \includegraphics[width=0.7\columnwidth]{images/apriori_itemset_generation.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/apriori_itemset_generation.png} $$
 
 #### 2. Generieren der Regeln aus häufigen Itemsets
 
 - Wenn eine Regel den Confidence Threshold nicht erfüllen kann, dann erfüllt auch das Subset den Threshold nicht
 
-$$ \includegraphics[width=0.7\columnwidth]{images/apriori_generate_rules.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/apriori_generate_rules.png} $$
 
 ### Businessseite
 

@@ -19,7 +19,7 @@ Künstliche Neuronale Netzwerke unterscheiden sich in
 
 Dabei versuchen ANN biologische Neuronen zu abstrahieren. Dies soll anhand von einem Beispiel aufgezeigt werden.
 
- $$ \includegraphics[width=0.7\columnwidth]{images/neurons.png} $$
+ $$ \includegraphics[width=0.4\columnwidth]{images/neurons.png} $$
 
  Dabei wird für jeden Output Node $j$ die Funktion $net_j$ berechnet. Dabei entsteht eine gewichtete Summe der Input Signale.
 
@@ -34,7 +34,7 @@ Dabei versuchen ANN biologische Neuronen zu abstrahieren. Dies soll anhand von e
 - $w_{ji}$: Gewicht des Signals der Verknüpfung von Node $i$ zu Node $j$
 - $w_{j0}$: Bias ($\Theta = -w_{j0}$ ist der Threshold von Node $j$)
 
-Damit das Model nun auf dem richtigen Output-Node $j$ feuert müssen wir die **Activation Function* auf den net-Input anwenden.
+Damit das Model nun auf dem richtigen Output-Node $j$ feuert müssen wir die **Activation Function** auf den net-Input anwenden.
 
 $$ y_j = \sigma(net_j) = \sigma(\sum_{i=0}^{N_i}w_{ji}x_i) = \sigma(w_{j0}x_0 + w_{j1}x_1 + w_{j2}x_2 + \ldots w_{jN_i}x_{N_i}) $$
 

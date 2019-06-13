@@ -23,27 +23,27 @@ Dabei können Strategien zur reduktion der Dimensionalität angewandt werden. Zw
 
 Hier wird ein Beispiel für die Projektion eine 2D-Datensatz aufgezeigt. Folgender Datensatz sei in 2D so aufgebaut.
 
-$$ \includegraphics[width=0.7\columnwidth]{images/2d_projection.png} $$
+$$ \includegraphics[width=0.3\columnwidth]{images/2d_projection.png} $$
 
 Dieser Datensatz soll jetzt in 1D abgebildet werden und dabei möglichst wenig Informationsgehalt zuverlieren.
 
-#### Einfache Projektion zu einem Basis Vektor
+### Einfache Projektion zu einem Basis Vektor
 
 Der Datensatz kann auf die Basis der beiden Achsen projeziert werden. Dies würde einer Verteilung der Datenpunkt aus Sicht von Area/Price entsprechen.
 
 $$ \includegraphics[width=0.7\columnwidth]{images/projection_basevectors.png} $$
 
-#### Projektion anhand von Transformation
+### Projektion anhand von Transformation
 
 Eine Projektion die den Informationsgehalt weiter konserviert ist die Transformation. Dabei wird ein Punkt des 2D-Plot mit über eine Achse gelegt. Dabei werden die zwei neue Achsen definiert, welche sich über die Winkel der Rotation und den ursprünglichen X/Y-Werten berrechnet wird.
 
-$$ \includegraphics[width=0.7\columnwidth]{images/projection_rotation.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/projection_rotation.png} $$
 
 // Formel für x' und y'
 
 Anschliessend kann wieder die Verteilung der Basis Vektoren durchgeführt werden. Diese liegen nun auf der schneideten Achse.
 
-$$ \includegraphics[width=0.7\columnwidth]{images/projection_rotation_base.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/projection_rotation_base.png} $$
 
 Wenn nun die drei Variationen visualisiert werden. Ergeben sich folgende 1D-Representationen.
 
@@ -51,7 +51,7 @@ $$ \includegraphics[width=0.7\columnwidth]{images/projection_comparsion.png} $$
 
 Dabei wird ersichtlich die Projektion über die Transformation beinhaltet weiter die Werte beider Dimensionen, Area und Price.
 
-#### Messen von Informationsgehalt
+### Messen von Informationsgehalt
 
 Dabei stellt sich die Frage wie diese drei Projektionen verglichen werden können. Dies geschieht über den Fehler welcher entsteht von der 1D-Projektion zum Wert in 2D. Dabei gilt,
 

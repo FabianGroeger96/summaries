@@ -44,7 +44,7 @@ $$ \includegraphics[width=0.7\columnwidth]{images/under_overfitting.png} $$
 
 Untenstehend ein Bild das die Learning Curve eines Models, welches Underfitted, zeigt. Man sieht die Error-Kurven schmiegen sich gegenseitig an. Die gewünschte Performance ist nur früh im Training-Set ersichtlich. Anschliessend konvergieren beide Kurven zu einem zu hohen Error.
 
-$$ \includegraphics[width=0.7\columnwidth]{images/learningcurve_underfitting.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/learningcurve_underfitting.png} $$
 
 #### Gegenmassnahmen für Underfitting
 
@@ -75,7 +75,7 @@ Overfitting tritt im Vergleich zu Underfitting weit öfter auf. Auch ist der Auf
 
 Beim Early Stopping wird das Training des Models an einem Punkt gestoppt, an dem das Overfitting für das Model noch nicht eingetreten ist. Dabei kann man für ein Model, welches Overfitten würde, doch noch ein brauchbares Resultat ziehen. Bedeutet jedoch nicht, dass mit dem Early Stopping ein Top-Resultat bietet. Early Stopping hat vorallemn Relevanz und Wichtigkeit im Bereich von Deep Learning.
 
-$$ \includegraphics[width=0.7\columnwidth]{images/earlystopping.png} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/earlystopping.png} $$
 
 ## Machine Learning Projekt Lösungsansatz
 
@@ -137,4 +137,3 @@ Folgende Techniken können für die Feature Selection genutzt werden.
 
 - Korrelations Analyse, **Gute Features korrelieren stark mit dem Label, jedoch nicht untereinandner.**
 - Decisions Tree
-

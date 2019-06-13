@@ -7,9 +7,9 @@ $$ a \bullet b = a_1b_1 + a_2b_2 + ... + a_nb_n = \sum_{j=1}^n a_jb_j $$
 Regeln:
 $$
 \begin{aligned}
-    a \bullet b = b \bullet a \\
-    a \bullet (b + c) = a \bullet b + a \bullet c \\
-    \lambda(a \bullet b) = (\lambda a) \bullet b = a \bullet (\lambda b)
+    a \bullet b &= b \bullet a \\
+    a \bullet (b + c) &= a \bullet b + a \bullet c \\
+    \lambda(a \bullet b) &= (\lambda a) \bullet b = a \bullet (\lambda b)
 \end{aligned}
 $$
 
@@ -17,9 +17,9 @@ $$
 
 $$
 \begin{aligned}
-    ||a|| = \sqrt{a \bullet a} \\
-    ||a||^2 = a \bullet a \\
-    ||n|| = 1
+    ||a|| &= \sqrt{a \bullet a} \\
+    ||a||^2 &= a \bullet a \\
+    ||n|| &= 1
 \end{aligned}
 $$
 
@@ -38,13 +38,13 @@ $$
 
 ### Beispiel
 
-$$ \includegraphics[width=0.7\columnwidth]{images/hessian_normal_form_example.png} $$
+$$ \includegraphics[width=0.4\columnwidth]{images/hessian_normal_form_example.png} $$
 
 Berechne die hessische Normalform von $\vec{n} = \frac{1}{\sqrt{13}}\begin{bmatrix}2 \\3\end{bmatrix}$
 
 $$
 \begin{aligned}
-    0 = \vec{n} \bullet (\vec{x} - \vec{x_0}) = \frac{1}{\sqrt{13}}
+    0 = \vec{n} \bullet (\vec{x} - \vec{x_0}) &= \frac{1}{\sqrt{13}}
     \begin{bmatrix}
     2 \\
     3
@@ -64,12 +64,12 @@ $$
     x - 0.5 \\
     y - 2
     \end{bmatrix} \\
-    = \frac{1}{\sqrt{13}} (2(x-0.5) + 3(y-2)) \\
-    = \frac{1}{\sqrt{13}} (2x + 3y -1 -6) \\
-    = \frac{2}{\sqrt{13}}x + \frac{3}{\sqrt{13}}y - \frac{7}{\sqrt{13}} \\
-    \text{(von der Form ax + by + c = 0)} \\
+    &= \frac{1}{\sqrt{13}} (2(x-0.5) + 3(y-2)) \\
+    &= \frac{1}{\sqrt{13}} (2x + 3y -1 -6) \\
+    &= \frac{2}{\sqrt{13}}x + \frac{3}{\sqrt{13}}y - \frac{7}{\sqrt{13}} \\
+    &\text{(von der Form ax + by + c = 0)} \\
     \\
-    \vec{n} = \begin{bmatrix}
+    \vec{n} &= \begin{bmatrix}
     \frac{2}{\sqrt{13}} \\
     \frac{3}{\sqrt{13}}
     \end{bmatrix}
@@ -111,10 +111,10 @@ $$ \includegraphics[width=0.7\columnwidth]{images/svm_linear_seperability.png} $
 
 $$
 \begin{aligned}
-    \text{Linear Classifier using unbaised coordinates: } \\
-    f(x) = \theta^Tx \\
-    \text{Linear Classifier using baised coordinates: } \\
-    f(x_b) = b + w^Tx_b
+    \text{Linear Classifier } & \text{using unbaised coordinates: } \\
+    f(x) &= \theta^Tx \\
+    \text{Linear Classifier } & \text{using baised coordinates: } \\
+    f(x_b) &= b + w^Tx_b
 \end{aligned}
 $$
 
@@ -124,7 +124,7 @@ Beide Formen sind gleichwärtig und es wird die gebraucht, die besser passt.
 
 Es sei ein 2D-Problem gegeben und soll mit einem Linearen Klassifikator gelöst werden.
 
-$$ \includegraphics[width=0.7\columnwidth]{images/2d_linearclassificator.png} $$
+$$ \includegraphics[width=0.4\columnwidth]{images/2d_linearclassificator.png} $$
 
 Dabei gibt es mehrere Lösungen für die Gleichung,
 
@@ -146,11 +146,11 @@ Die Funktion $f(x)$ wird auch als **Decision Function** bezeichnet.
 
 Bei einer Support Vektor Machine wird die Idee dieser **Decision Function** weiter verwendet. Um die beste **Decision Function** aus den möglichen Lösungen zu finden, wird der Abstand zu den Support Vektoren von der **Decision Function** maximiert.
 
-$$ \includegraphics[width=0.7\columnwidth]{images/basicidea_svm.png} $$
+$$ \includegraphics[width=0.4\columnwidth]{images/basicidea_svm.png} $$
 
 Dabei wird die **Decision Function** komplett an diesen Support Vektoren aufgebaut. Diese sind dabei (teilweise) nur Teil der Training Daten. Dieses maximierungs-Problem ist ein quadratisches Problem.
 
-Dabei gilt für die Support Vektoren 
+Dabei gilt für die Support Vektoren:
 
 $$\mathbf{w} \ \bullet \mathbf{x_b} + b = 1 \quad \text{bzw.} \quad \mathbf{w} \ \bullet \mathbf{x_b} + b = -1 $$ 
 
@@ -166,7 +166,7 @@ Wie bereits erwähnt wird dabei $\frac{2}{\parallel\mathbf{w}\parallel}$ maximie
 
 Bei der Hard Margin Lösung gibt es ein entscheidentens Problem. Falls es Outliner gibt welche die Decision Function überschreiten ist das Problem nicht separierbar. Dafür gibt es jedoch eine Lösung welche sich **Soft Margin** nennt. Dabei wird für jeden Datenpunkt $x^{(i)}$ eine sogennante **Slack Variable** (Schlupfvariabel) definiert. Die Slack Variable $\zeta_i$ gibt an um wieviel der Datenpunkt $x^{(i)}$ gegen die Grenze verstossen darf. Dadurch ist es möglich Outliners speziell zu behandeln.
 
-$$ \includegraphics[width=0.7\columnwidth]{images/softmargin.png} $$
+$$ \includegraphics[width=0.4\columnwidth]{images/softmargin.png} $$
 
 Dabei gilt für alle Punkte $x^{(l)}$,
 

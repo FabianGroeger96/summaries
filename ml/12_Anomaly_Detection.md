@@ -14,9 +14,9 @@ $$ \includegraphics[width=0.7\columnwidth]{images/anomalies_definition.png} $$
 
 ## Typen von Anomalien
 
-1. Globale Ausreisser: weichen deutlich vom Rest des Datensatzes ab (z.B. Muster einer bösartigen Kreditkartentransaktion)
-2. Kontektuelle Ausreisser: weichen in Bezug auf einen bestimmten Kontekt erheblich voneinander ab (z.B. Temperatur 25 in der Schweiz, für Mai normal, für Dezember ein Ausreisser)
-3. Kollektive Ausreisser: weichen als Gruppe vom gesamten Datensatz ab, aber nicht unbedingt als Individuen (z.B. ein Manager betrachtet einen verzögerten Auftrag nicht als Ausreisser, jedoch 100 verzögerte Ausreisser am selben Tag sind aussergewöhnlich)
+1. **Globale Ausreisser**: weichen deutlich vom Rest des Datensatzes ab (z.B. Muster einer bösartigen Kreditkartentransaktion)
+2. **Kontektuelle Ausreisser**: weichen in Bezug auf einen bestimmten Kontekt erheblich voneinander ab (z.B. Temperatur 25 in der Schweiz, für Mai normal, für Dezember ein Ausreisser)
+3. **Kollektive Ausreisser**: weichen als Gruppe vom gesamten Datensatz ab, aber nicht unbedingt als Individuen (z.B. ein Manager betrachtet einen verzögerten Auftrag nicht als Ausreisser, jedoch 100 verzögerte Ausreisser am selben Tag sind aussergewöhnlich)
 
 ## Outlier Erkennung mit Machine Learning
 
