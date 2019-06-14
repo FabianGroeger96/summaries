@@ -35,8 +35,8 @@ $$ \frac{X \text{ and } Y}{X} : \frac{\neg X \text{ and } Y}{\neg X} $$
 
 ## Implizite & Explizite Präferenzen
 
-- Implizite: z.B. lesen, klicken
-- Explizite: z.B. bewerten
+- Implizite: z.B. suchanfragen, seitenaufrufe, letztes login
+- Explizite: z.B. bewerten, geburtstag, bildungslevel, sprache, like/dislike
 
 ## Content-Based Recommendations
 

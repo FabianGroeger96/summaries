@@ -140,6 +140,8 @@ $$ \text{Precision} = \frac{TP}{\text{Predicted YES}} = \frac{TP}{TP + FP} $$
 - Eigenschaft: F1 ist stark voreingenommen in Richtung der schlechteren Punktzahl
 - Bei einem Klassifizierungsproblem mit schiefen Daten verwenden
 
+$$ \text{F1} = \frac{2 * \text{precision} * \text{sensitivity}}{\text{precision} + \text{sensitivity}} $$
+
 ## Messung der Qualität der Regression
 
 ### Wie misst man Regressionsfehler

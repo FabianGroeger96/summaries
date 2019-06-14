@@ -13,15 +13,28 @@
 - **Supervised Learning**
   - Algorithmus bekommt gelabelte Trainingsdaten
   - Algorithmus lernt das Label vorherzusagen von ungesehenen Daten
+  - Beispiele:
+    - Calculating product recommendations with collaborative filtering techniques
+    - Medical image analysis for detection of skin diseases based on human expert markings
+    - Prediction of selling prices for the real estate market
+    - Detecting animals on high-resolution photographs
 - **Unsupervised Learning**
   - Algorithmus bekommt ungelabelte Daten
   - Algorithmus erkennt und nützt die grundlegende Struktur der Daten
+  - Beispiele:
+    - Identifying target groups for marketing campaigns using clustering techniques
+    - Market basket analysis using association rules
+    - Search query analysis for e-commerce by semantical clustering
+    - Dimensionality reduction for data visualization
+    - Identifying most-valuable customers on e-commerce platforms using transactions and tracking data
 - **Semi-Supervised Learning**
   - Mix aus Supervised und Unsupervised Learning
   - Wird meist gebraucht wenn es nur sehr wenig gelabelte Daten gibt
 - **Reinforcement Learning**
   - Keine Daten verfügbar aber der Algorithmus wird durch eine Reward Funktion gelenkt
   - Sucht das optimale Verhalten, welches die Reward Funktion maximiert
+  - Beispiel:
+    - Learning to play Jass by self-play
 
 ## Supervised Learning
 
@@ -85,8 +98,11 @@ Die Überprüfung der Datenqualität kommt immer als erstes!
 Daten können verbessert werden, durch bereinigung der Daten:
 
 - doppelte Datensätze können identifiziert und entfernt werden
+- entfernen von redundanten Features (welche eine Korrelation von 1 haben), haben keinen neuen Informationsgehalt
 - Nullwerte können ersetzt werden
 - Datenformate maschinenlesbar machen
+- Datum in separate Features aufteilen (Jahr, Monat, Tag)
+- Ändern des feature Typs von String zu kategorisch
 
 Auch wenn die Datenqualität manuell verbessert wird, nie vergessen:
 
@@ -225,6 +241,26 @@ $$ \Vert{X - Y}\Vert_2 = \sqrt{\sum_{i=1}^{n}(x_i - y_i)^2} $$
 
 Umso kleiner die Distanz, umso grösser ist die Ähnlichkeit
 
+#### Beispiel
+
+Berechne die Euklidische Distanz von BMW zu Audi. und was sagt die Euklidische Distanz aus?
+
+| Name     | Preis | Meilen | PS  |
+| -------- | ----- | ------ | --- |
+| Mercedes | 70    | 13     | 394 |
+| BMW      | 22    | 18     | 286 |
+| Audi     | 183   | 1      | 350 |
+
+$$
+\begin{aligned}
+    \Vert \text{BMW - Audi} \Vert_2 &=
+        \sqrt{(22 - 183)^2 + (18 - 1)^2 + (286 - 350)^2} \\
+    &= \underline{\underline{174.086}}
+\end{aligned}
+$$
+
+Die Euklidische Distanz sagt etwas über die Ähnlichkeit zweier Objekte zueinander aus. Wenn die Distanz sehr gering ist, heist das, das die Objekte sehr ähnlich sind.
+
 ### Cosinus Ähnlichkeit
 
 - Betrachtet den Winkel $\theta$ zwischen zwei Vektoren $X$ und $Y$
@@ -236,6 +272,18 @@ $$
                 {\sqrt{\sum_{i=1}^n x_i^2} \sqrt{\sum_{i=1}^n y_i^2}} \\
     \\
     dist(X, Y) &= 1 - sim(X, Y)
+\end{aligned}
+$$
+
+#### Beispiel
+
+Berechne die Cosinus Ähnlichkeit zwischen den zwei Datenpunkten $X_1 = (3, 14, 18, 23)$ und $X_2 = (12, 16, 21, 29)$.
+
+$$
+\begin{aligned}
+    sim(X_1, Y_1) &= \frac{3 * 12 + 14 * 16 + 18 * 21 + 23 * 29}
+        {\sqrt{3^2 + 14^2 + 18^2 + 23^2} \sqrt{12^2 + 16^2 + 21^2 + 29^2}} \\
+    &= \underline{\underline{0.978261}}
 \end{aligned}
 $$
 
