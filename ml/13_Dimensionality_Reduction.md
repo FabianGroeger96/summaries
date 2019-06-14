@@ -102,11 +102,29 @@ $$ Var(X) = \frac{1}{n-1}\sum_{i=1}^n x_i \cdot x_i $$
 
 $$ Cov(X, Y) = \frac{1}{n-1}\sum_{i=1}^n x_i \cdot y_i $$
 
-- Daraus folgt das die Kovarianz-Matrix $\mathbf{S_Y}$ einer Matrix $\mathbf{Y}$ sich ergibt aus.
+- Daraus folgt das die Kovarianz-Matrix $\mathbf{S_X}$ einer Matrix $\mathbf{Y}$ sich ergibt aus.
 
-$$ \mathbf{S_Y} = \frac{1}{n-1}\mathbf{Y}\mathbf{Y^T} $$
+$$ \mathbf{S_X} = \frac{1}{n-1}\mathbf{X}\mathbf{X^T} $$
 
 - Dabei sind die diagonalen Terme Varianz, und nicht-Diagonale Terme Kovarianz.
+
+$$ \mathbf{XX^T} = \begin{bmatrix}
+\sum_{i=1}^n x_{1i} \times x_{1i} \ \sum_{i=1}^n x_{1i} \times x_{2i} \ \sum_{i=1}^n x_{1i} \times x_{3i} \\
+\sum_{i=1}^n x_{2i} \times x_{1i} \ \sum_{i=1}^n x_{2i} \times x_{2i}  \ \sum_{i=1}^n x_{2i} \times x_{3i} \\
+\sum_{i=1}^n x_{3i} \times x_{1i} \ \sum_{i=1}^n x_{3i} \times x_{2i} \ \sum_{i=1}^n x_{3i} \times x_{3i} 
+\end{bmatrix}$$
+
+Wird zu $\mathbf{S_x}$
+
+$$\mathbf{S_x} = \frac{1}{n-1}\mathbf{XX^T} = \begin{bmatrix}
+Var(x_{1}) \ Cov(x_1,x_2) \ Cov(x_1, x_3) \\
+Cov(x_2, x_1) \ Var(x_2) \ Cov(x_2, x_3) \\
+Cov(x_3, x_1) \ Cov(x_3, x_2) \ Var(x_3)
+\end{bmatrix}$$
+
+$$ \mathbf{S_x} = \text{Kovarianz Matrix} $$
+
+\\ Siehe oben
 
 $$
 \mathbf{S_Y} = \begin{bmatrix}
@@ -117,10 +135,10 @@ $$
 
 #### Beispiel
 
-$Y$ ist eine 11 dimensionale Feature Matrix und wurde bereits Mittelwert-Standartisiert.
+$X$ ist eine 11 dimensionale Feature Matrix und wurde bereits Mittelwert-Standartisiert.
 
 $$
-    YY^T = \begin{bmatrix}
+    XX^T = \begin{bmatrix}
         250 & 20 \\
         20 & 40
     \end{bmatrix}
@@ -128,11 +146,11 @@ $$
 
 Berechne die Pearson Korrelation zwischen Feature 1 & Feature 2 von $Y$
 
-1. Berechnen von $S_Y$
+1. Berechnen von $S_X$
 
 $$
 \begin{aligned}
-    S_Y &= \frac{1}{n-1}YY^T \\
+    S_X &= \frac{1}{n-1}XX^T \\
     &= \frac{1}{10}\begin{bmatrix}
         250 & 20 \\
         20 & 40
@@ -144,26 +162,26 @@ $$
 \end{aligned}
 $$
 
-2. Berechnen der $Conv(Y, Y^T)$
+2. Berechnen der $Cov(X, X^T)$
 
 - Ist gegeben durch die Kovarianz-Matrix $S_Y$
 
-$$ Conv(Y, Y^T) = 2 $$
+$$ Cov(x_1, x_2) = 2 $$
 
-3. Berechnen der Standardabweichung von $Y$ und $Y^T$
+3. Berechnen der Standardabweichung von $X$ und $X^T$
 
-- Durch die Kovarianz-Matrix $S_Y$ wissen wir, wie gross die Varianz von $Y$ und $Y^T$ ist
+- Durch die Kovarianz-Matrix $S_X$ wissen wir, wie gross die Varianz von $X$ und $X^T$ ist
 
 $$
 \begin{aligned}
-    \sigma(Y) &= \sqrt{Var(Y)} = \sqrt{25} = 5 \\
-    \sigma(Y^T) &= \sqrt{Var(Y^T)} = \sqrt{4} = 2
+    \sigma(X) &= \sqrt{Var(X)} = \sqrt{25} = 5 \\
+    \sigma(X^T) &= \sqrt{Var(X^T)} = \sqrt{4} = 2
 \end{aligned}
 $$
 
-4. Berechnen der Pearson Korrelation $p(Y, Y^T)$
+4. Berechnen der Pearson Korrelation $p(X, X^T)$
 
-$$ p(Y, Y^T) = \frac{2}{5 \cdot 2} = \frac{2}{10} = \underline{\underline{0.2}}$$
+$$ p(X, X^T) = \frac{2}{5 \cdot 2} = \frac{2}{10} = \underline{\underline{0.2}}$$
 
 ### Vorgehen Principal Component Analysis
 
