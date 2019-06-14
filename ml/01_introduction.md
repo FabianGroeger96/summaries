@@ -200,7 +200,7 @@ $$
 
 ### Pearson Korrelation
 
-$$ p(X, Y) = \frac{Conv(X, Y)}{\sigma_X \sigma_Y} $$
+$$ p(X, Y) = \frac{Cov(X, Y)}{\sigma_X \sigma_Y} $$
 
 - Pearson-Korrelation liegt immer zwischen -1 für eine perfekte Anti-Korrelation
 und 1 für perfekte Korrelation

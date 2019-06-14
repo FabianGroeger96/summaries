@@ -140,7 +140,10 @@ $$ \text{Precision} = \frac{TP}{\text{Predicted YES}} = \frac{TP}{TP + FP} $$
 - Eigenschaft: F1 ist stark voreingenommen in Richtung der schlechteren Punktzahl
 - Bei einem Klassifizierungsproblem mit schiefen Daten verwenden
 
+
 $$ \text{F1} = \frac{2 * \text{precision} * \text{sensitivity}}{\text{precision} + \text{sensitivity}} $$
+
+- Es existieren zwei Methoden des F1-Score. Durchschnitt F1 über alle K-Fold. Oder F1-Score über alle zusammengesetzen Predictions. Zweiteres liefert eher weniger einen undefinierten F1-Score
 
 ## Messung der Qualität der Regression
 
@@ -202,3 +205,4 @@ $$ R^2 = 1 - \frac{\frac{1}{m} \sum_{i=1}^{m}(y_i - f_i)^2}{\frac{1}{m} \sum_{i=
 - Wenn nicht genügend Daten vorhanden sind um einen Trainings/Validierungs/Test Split zu machen, sollte man eine Cross Validation verwenden
 - Teilen der Daten in Trainings- (80%) und Testdaten (20%), die Testdaten werden weggesperrt
 - Das Trainingsset wird nun in $k$ verschiedene Blöcke unterteilt, aus denen bei jedem Durchgang einer gewählt wird und als Validierungsset verwendet wird, der Rest wird als Trainingsset verwendet
+- Dabei kann auch ein Leave-One-Out cross-validation getätigt werden. Dort ist $k = N$ mit $N = \text{Anzahl der Elemente}$
