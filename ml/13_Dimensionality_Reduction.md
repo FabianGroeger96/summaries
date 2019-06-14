@@ -39,7 +39,12 @@ Eine Projektion die den Informationsgehalt weiter konserviert ist die Transforma
 
 $$ \includegraphics[width=0.5\columnwidth]{images/projection_rotation.png} $$
 
-// Formel für x' und y'
+$$
+\begin{aligned}
+    x^{\prime} = x \cdot cos \theta + y \cdot sin \theta \\
+    y^{\prime} = - x \cdot cos \theta + y \cdot sin \theta
+\end{aligned}
+$$
 
 Anschliessend kann wieder die Verteilung der Basis Vektoren durchgeführt werden. Diese liegen nun auf der schneideten Achse.
 
@@ -74,23 +79,91 @@ $$ P \times X = Y $$
 
 ## Principal Component Analysis
 
+### Anwendungsbereich
+
+- Kompression
+  - Reduzieren des Speichers, um Daten zu speichern
+  - Schnelleres trainieren eines Learning Algorithmus
+- Visualisation
+- **Nie verwenden um overfitting zu vermeiden!**
+
+### Ziel
+
+- Einen "lower dimensional Surface/Vektoren" (z.B. Fläche/Linie) finden, welcher den Projektionsfehler minimiert
+- Dieser Vektor kann negativ oder positiv sein, spielt keine Rolle in welche richtung dieser zeigt
+
 ### Recap Varianz und Kovarianz
 
-Als Recap,
-
-Die Varianz eines einzelnen Feature $X$ mit dem Median Null.
+- Die Varianz eines einzelnen Feature $X$ mit dem Mittelwert Null.
 
 $$ Var(X) = \frac{1}{n-1}\sum_{i=1}^n x_i \cdot x_i $$
 
-Die Covarainz zweier Feature $X$ und $Y$ mit Median Null ergibt sich aus.
+- Die Covarainz zweier Feature $X$ und $Y$ mit Mittelwert Null ergibt sich aus.
 
 $$ Cov(X, Y) = \frac{1}{n-1}\sum_{i=1}^n x_i \cdot y_i $$
 
-Daraus folgt das die Kovarianz-Matrix $\mathbf{S_y}$ einer Matrix $\mathbf{Y}$ sich ergibt aus.
+- Daraus folgt das die Kovarianz-Matrix $\mathbf{S_Y}$ einer Matrix $\mathbf{Y}$ sich ergibt aus.
 
-$$ \mathbf{S_y} = \frac{1}{n-1}\mathbf{Y}\mathbf{Y^T} $$
+$$ \mathbf{S_Y} = \frac{1}{n-1}\mathbf{Y}\mathbf{Y^T} $$
 
-Dabei sind die diagonalen Terme Varianz, und nicht-Diagonale Terme Kovarianz.
+- Dabei sind die diagonalen Terme Varianz, und nicht-Diagonale Terme Kovarianz.
+
+$$
+\mathbf{S_Y} = \begin{bmatrix}
+    Var(Y) && Cov(Y,Y^T) \\
+    Cov(Y^T,Y) && Var(Y^T)
+    \end{bmatrix}
+$$
+
+#### Beispiel
+
+$Y$ ist eine 11 dimensionale Feature Matrix und wurde bereits Mittelwert-Standartisiert.
+
+$$
+    YY^T = \begin{bmatrix}
+        250 & 20 \\
+        20 & 40
+    \end{bmatrix}
+$$
+
+Berechne die Pearson Korrelation zwischen Feature 1 & Feature 2 von $Y$
+
+1. Berechnen von $S_Y$
+
+$$
+\begin{aligned}
+    S_Y &= \frac{1}{n-1}YY^T \\
+    &= \frac{1}{10}\begin{bmatrix}
+        250 & 20 \\
+        20 & 40
+    \end{bmatrix}
+    &= \begin{bmatrix}
+        25 & 2 \\
+        2 & 4
+    \end{bmatrix}
+\end{aligned}
+$$
+
+2. Berechnen der $Conv(Y, Y^T)$
+
+- Ist gegeben durch die Kovarianz-Matrix $S_Y$
+
+$$ Conv(Y, Y^T) = 2 $$
+
+3. Berechnen der Standardabweichung von $Y$ und $Y^T$
+
+- Durch die Kovarianz-Matrix $S_Y$ wissen wir, wie gross die Varianz von $Y$ und $Y^T$ ist
+
+$$
+\begin{aligned}
+    \sigma(Y) &= \sqrt{Var(Y)} = \sqrt{25} = 5 \\
+    \sigma(Y^T) &= \sqrt{Var(Y^T)} = \sqrt{4} = 2
+\end{aligned}
+$$
+
+4. Berechnen der Pearson Korrelation $p(Y, Y^T)$
+
+$$ p(Y, Y^T) = \frac{2}{5 \cdot 2} = \frac{2}{10} = \underline{\underline{0.2}}$$
 
 ### Vorgehen Principal Component Analysis
 
@@ -98,7 +171,7 @@ Dabei sind die diagonalen Terme Varianz, und nicht-Diagonale Terme Kovarianz.
 2. Diagonale Terme von $\mathbf{S_y}$ zeigen die Varianz in der eigenen Dimension. Diese Terme können genutzt werden um Features mit geringer Varianz zu ermitteln.
 
 Betrachten wir nocheinmal das Schema der Principal Component Analysis.
-Sei $\mathbf{X}$ eine Median-Normalisierte Matritze. Wir suchen für diese eine Matrize $\mathbf{P}$.
+Sei $\mathbf{X}$ eine Mittelwert-Normalisierte Matritze. Wir suchen für diese eine Matrize $\mathbf{P}$. Vor dem Anwenden von PCA müssen die Features immer einen Mittelwert von 0 haben.
 
 $$\mathbf{PX = Y}\qquad \text{und} \qquad \mathbf{S_y} = \frac{1}{n-1}\mathbf{Y}\mathbf{Y^T}$$
 
@@ -117,10 +190,10 @@ So wird für die Principal Component Analysis nur eine othonormale Matritze $\ma
 Die Principal Component Analysis kann auch mit den Prinzipien der Eigenvektoren und Eigenvalues erweitert werden. Dabei werden folgende Definitionen beigezogen.
 
 1. $\mathbf{A}$ ist eine Quadratische Matrize mit den Werten
-2. Ein Vektor $\mathbf{v \ne 0}$ wird Eigenvektor genannt wenn $\mathbf{Av = \lambda v}$
+2. Ein Vektor $\mathbf{v \ne 0}$ wird Eigenvektor genannt wenn $Av = \lambda v$
 3. Dabei ist $\lambda$ Eigenwert für den Eigenvektor $\mathbf{v}$
 
-Um Eigenvektoren zu errechnen muss die Gleichung $\mathbf{(A-\lambda l)v = 0}$ gelöst werden.
+Um Eigenvektoren zu errechnen muss die Gleichung $(A-\lambda l)v = 0$ gelöst werden.
 
 Eine symmetrisch Matrize $\mathbf{A}$ kann immer zu $\mathbf{A = EDE^T}$ faktorisiert werden. Wobei $\mathbf{D}$ eine Diagonal Matrix der Eigenwerte ist. Die Matritze $\mathbf{E}$ die Eigenvektoren in den Spalten darstellt. Dies wird als **Eigendekomposition** bezeichnet.
 
