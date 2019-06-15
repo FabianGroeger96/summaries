@@ -20,9 +20,12 @@ $$ \mathbf{S_x} = \text{Kovarianz Matrix} $$
 
 ### Pearson Correlation
 
-$$ p(X, Y) = \frac{Cov(X, Y)}{\sigma_X \sigma_Y}
-\\
- \sigma_x = \sqrt{Var(x)} $$
+$$
+\begin{aligned}
+    p(X, Y) = \frac{Cov(X, Y)}{\sigma_X \sigma_Y} \\
+     \sigma_x = \sqrt{Var(x)}
+\end{aligned}
+$$
 
 ## PCA
 

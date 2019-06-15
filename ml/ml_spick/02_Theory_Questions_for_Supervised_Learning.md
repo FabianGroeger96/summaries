@@ -46,7 +46,7 @@ $$ \text{Precision} = \frac{TP}{\text{Predicted YES}} = \frac{TP}{TP + FP} $$
 - Bei einem Klassifizierungsproblem mit schiefen Daten verwenden
 
 
-$$ \text{F1} = \frac{2 * \text{precision} * \text{sensitivity}}{\text{precision} + \text{sensitivity}} $$
+$$ \text{F1} = \frac{2 \cdot \text{precision} \cdot \text{sensitivity}}{\text{precision} + \text{sensitivity}} $$
 
 - Es existieren zwei Methoden des F1-Score. Durchschnitt F1 über alle K-Fold. Oder F1-Score über alle zusammengesetzen Predictions. Zweiteres liefert eher weniger einen undefinierten F1-Score
 

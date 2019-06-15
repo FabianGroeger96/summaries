@@ -103,7 +103,3 @@ $$ \text{lift}(X \rightarrow Y) = \frac{\text{support}(X \cup Y)}{\text{support}
 - Je grösser der Liftwert, desto stärker ist die Assoziation zwischen $X$ und $Y$
 
 $$ \text{Lift} = \text{Stärke der Assoziation} $$
-
-
-
-

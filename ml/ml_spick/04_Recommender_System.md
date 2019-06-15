@@ -48,12 +48,12 @@ $$P_{uj} = \text{How much does User u likes item j}$$
 - Produkte werden empfohlen, aufgrund von Produkten, welche die Nachbarn mögen, aber der aktuelle Benutzer noch nicht bewertet oder gekauft hat
 - Keine Produktattribute nötig
 
- $$P_{uj} = \bar{r}_u + \frac{\sum_{i \in {N_u}}sim(u, i) \times (r_{ij} - \bar{r_i})}{\sum_{i \in {N_u}}sim(u, i)}$$
+ $$P_{uj} = \bar{r}_u + \frac{\sum_{i \in {N_u}}sim(u, i) \times (r_{ij} - \bar{r}_i)}{\sum_{i \in {N_u}}sim(u, i)}$$
 
-$$P_{uj} = \text{How much does User u likes item j}
-$$\bar{r_u} = \text{Average rating of user U}$$
+$$P_{uj} = \text{How much does User u likes item j}$$
+$$\bar{r}_u = \text{Average rating of user U}$$
 $$r_ij = \text{Rating that neighbor i gave to item j}$$
-$$\bar{r_i} = \text{Average Rating of neighbor i}$$
+$$\bar{r}_i = \text{Average Rating of neighbor i}$$
 
 ### Item-to-Item
 
