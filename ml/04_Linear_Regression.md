@@ -190,7 +190,8 @@ $$
 \end{aligned}
 $$
 
-- Um das $100 (1 - \alpha)\%$ Confidence Intervall für $\theta_0$ und $\theta_1$ zu berechnen muss man zuerst einen t Test machen, mit $t[1 - \frac{\alpha}{2}; n - 2]$
+- Um das $100 (1 - \alpha)\%$ Confidence Intervall für $\theta_0$ und $\theta_1$ zu berechnen muss man zuerst einen t Test machen, mit $t[1 - \frac{\alpha}{2}; n - 2]$, z.B. t-Test mit einem 95% Confidence Intervall und mit 7 Datenpunkten $= t[0.95; 5 \text{ Freiheitsgraden}]$
+- $t_{quant}$, Kritische Grenzen der t-Verteilung, berechnen mit Python
 
 ```python
 from scipy.stats import t
@@ -198,12 +199,16 @@ t_quant = t.ppf(0.95, n-2)
 print("t_quant = ", t_quant)
 ```
 
+- $t_{quant}$, Kritische Grenzen der t-Verteilung, auslesen
+
+$$ \includegraphics[width=0.7\columnwidth]{images/CriticalBordersTInterval.png} $$
+
 - Um die Confidence Intervalle zu bekommen
 
 $$
 \begin{aligned}
-    \theta_0 &\pm t_{quant} * s_{\theta_0} \\
-    \theta_1 &\pm t_{quant} * s_{\theta_1}
+    \theta_0 &\pm t_{quant} \cdot s_{\theta_0} \\
+    \theta_1 &\pm t_{quant} \cdot s_{\theta_1}
 \end{aligned}
 $$
 
@@ -217,10 +222,44 @@ $$ MSE = \frac{SSE}{n - 2} = \frac{0.092}{4 - 2} = 0.046 $$
 
 2. Berechne $s_{\theta_0}$
 
-$$ s_{\theta_0} = \sqrt{0.046} \Bigg [\frac{1}{4} + \frac{7^2}
-                                                    {(4^2 - 4*7^2) + (6^2 - 4*7^2) + (8^2 - 4*7^2) + (10^2 - 4*7^2)} \Bigg]^{\frac{1}{2}} $$
+$$
+\begin{aligned}
+    s_{\theta_0} &= \sqrt{0.046} \cdot \sqrt{\frac{1}{4} + \frac{7^2}
+                                    {(4 - 7)^2 + (6 - 7)^2 + (8 - 7)^2 + (10 - 7)^2}} \\
+                &= 0.35242
+\end{aligned}
+$$
 
-...TODO
+3. Berechne $s_{\theta_1}$
+
+$$
+\begin{aligned}
+    s_{\theta_1} &= \sqrt{0.046} \cdot \sqrt{\frac{1}
+                                    {(4 - 7)^2 + (6 - 7)^2 + (8 - 7)^2 + (10 - 7)^2}} \\
+                &= 0.047958
+\end{aligned}
+$$
+
+4. Auslesen von $t_{quant}$ aus der Tabelle
+
+$$
+\begin{aligned}
+    \text{Freiheitsgraden} &= n - 2 = 4 - 2 = 2 \\
+    \alpha &= 0.05 \\
+    t_{quant} &= 4.30
+\end{aligned}$$
+
+5. Berechnen der Confidence Intervalle
+
+$$
+\begin{aligned}
+    \text{Intervall }\theta_0 &= [\theta_0 - t_{quant} \cdot s_{\theta_0}; \theta_0 + t_{quant} \cdot s_{\theta_0}] = [-0.64 - 4.3 \cdot 0.35242; -0.64 + 4.3 \cdot 0.35242] \\
+    &= \underline{\underline{[-2.155; 0.875]}} \\
+    \\
+    \text{Intervall }\theta_1 &= [\theta_1 - t_{quant} \cdot s_{\theta_1}; \theta_1 + t_{quant} \cdot s_{\theta_1}] = [0.77 - 4.3 \cdot 0.047958; 0.77 + 4.3 \cdot 0.047958] \\
+    &= \underline{\underline{[0.563781; 0.976]}}
+\end{aligned}
+$$
 
 ### Standardisierung oder Neuskalierung von Variablen
 
