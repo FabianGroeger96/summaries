@@ -14,7 +14,7 @@ $$
         {\sum_{i=1}^n (x^{(i)} - \bar{x})^2} = \frac{\sum_{i=1}^7 (x^{(i)} - 38.7143)(y^{(i)} - 9.42857)}{\sum_{i=1}^7 (x^{(i)} - 38.7143)^2} = 0.243757 \\
     &\theta_0 = \bar{y} - \theta_1 \cdot \bar{x} = 9.42857 - 0.243757 \cdot 38.7143 = -0.0083 \\
     \\
-    &y = \hat{y} = \theta_0 + \theta_1 x = \underline{\underline{-0.0083 + 0.2438x}} \\
+    &y = \hat{y} = \theta_0 + \theta_1 x = \underline{\underline{-0.0083 + 0.243757 \cdot x}} \\
     \\
     &SSE = \sum_{i=1}^n (y^{(i)} - \hat{y}^{(i)})^2 = \sum_{i=1}^7 (y^{(i)} - (-0.0083 + 0.2438 \cdot x^{(i)}))^2 = 5.86891 \\
     &SSR = \sum_{i=1}^n (\hat{y}^{(i)} - \bar{y})^2 = \sum_{i=1}^7 ((-0.0083 + 0.2438 \cdot x^{(i)}) - 9.42857)^2 = 199.917 \\
@@ -39,7 +39,7 @@ $$
     &\text{Intervall }\theta_0 = [\theta_0 - t \cdot s_{\theta_0}; \theta_0 + t \cdot s_{\theta_0}] = [-0.0083 - 2.57 \cdot 0.831106; -0.0083 + 2.57 \cdot 0.831106] \\
     &= \underline{\underline{[-2.14424; 2.12764]}} \\
     \\
-    &\text{Intervall }\theta_1 = [\theta_1 - t \cdot s_{\theta_1}; \theta_1 + t \cdot s_{\theta_1}] = [0.2438 - 2.57 \cdot 0.018681; 0.2438 + 2.57 \cdot 0.018681] \\
+    &\text{Intervall }\theta_1 = [\theta_1 - t \cdot s_{\theta_1}; \theta_1 + t \cdot s_{\theta_1}] = [0.243757 - 2.57 \cdot 0.018681; 0.243757 + 2.57 \cdot 0.018681] \\
     &= \underline{\underline{[0.19579; 0.29181]}}
 \end{aligned}
 $$
