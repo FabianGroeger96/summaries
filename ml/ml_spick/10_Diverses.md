@@ -1,5 +1,11 @@
 # Diverses
 
+## Maximum Likelihood Estimation (MLE)
+
+- Wie gross ist die Wahrscheinlichkeit, dass ein $x$ richtig klassifiziert wird?
+
+$$ p(y|x) = \hat{y}^y (1 - \hat{y})^{1 - y} $$
+
 ## Normalisierung
 
 - Der Prozess, jedes Attribut auf ungefähr die gleiche Skala zu bringen
