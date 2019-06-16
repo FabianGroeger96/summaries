@@ -11,7 +11,7 @@
 
 - Manuelle oder automatische Auswertung der Katalogdaten
 - So viele Benutzerpräferenzen wie möglich sammeln
-- Berechne Vorhersagen für Elemente, die mit ? gekennzeichnet sind, basierend auf der Artikelähnlichkeit
+- Berechne Vorhersagen für Elemente basierend auf der Artikelähnlichkeit
 - Empfehlen von Artikeln mit hohen Vorhersagewert
 - Only applicable to homogenous product catalogs
 - Can also provide recommendation to anonymous users

@@ -123,7 +123,6 @@ $$
 
 - Probenkovarianz beschreibt die gemeinsame Variabilität von zwei gleich grossen Verteilungen
 - Wenn zwei Datenpunkte beide über oder unter ihrem jeweiligen Mittelwert liegen, wird die Kovarianz positiv, d.h. die Verteilungen zeigen eine ähnliche Tendenz
-- Wenn ein Datenpunkt über seinem Mittelwert liegt und der andere unten, ist die Kovarianz negativ, d.h. die Verteilung zeigen gegenläufige Tendenz
 - Bei unabhängigen Verteilungen heben positive und negative Werte sich gegenseitig auf, so dass die Kovarianz ungefähr Null wird
 - Kovarianz Matrix zeigt die Kovarianzen aller Attribute eines Datasets mit jedem anderen Attribut
 - Problem der Kovarianz, dass ihre Skala von den Daten abhängt

@@ -13,10 +13,10 @@ $$ p(y|x) = \hat{y}^y (1 - \hat{y})^{1 - y} $$
 - Eine Preisabweichung von 15% hat einen viel stärkeren Einfluss auf Ähnlichkeit und Entfernung als eine Abweichung von 15% in der Anzahl der Türen
 - Solche starken Einflüsse auf die Attribute verfälschen die Ergebnisse der Algorithmen insbesondere wenn sie auf Distanz oder Ähnlichkeit beruhen
 - Strategien:
-  - **Min-Max Normalisierung**, transformiert die Daten in einen Intervall [0,1]
-  $$ X_{norm} = \frac{X - X_{min}}{X_{max}-X_{min}} $$
-  - **Z-Score Normalisierung**, transformiert die Daten so, dass der Mittelwert 0 und die Standardabweichung 1 wird
-  $$ z = \frac{x - \mu}{\sigma} $$
+- **Min-Max Normalisierung**, transformiert die Daten in einen Intervall [0,1]
+$$ X_{norm} = \frac{X - X_{min}}{X_{max}-X_{min}} $$
+- **Z-Score Normalisierung**, transformiert die Daten so, dass der Mittelwert 0 und die Standardabweichung 1 wird
+$$ z = \frac{x - \mu}{\sigma} $$
 
 ## Levenshtein Distanz
 
@@ -29,13 +29,13 @@ Zählen der minimalen Anzahl von Änderungen, die erforderlich sind, um eine Zei
 ## Wie misst man Regressionsfehler
 
 - Residuum (residuals) sind berechnete Grössen welche den vertikalen Abstand zwischen Beobachtungspunkt und der Regressionsgerade messen
-- Mean Absolut Error (MAE), macht Sinn
 
-$$ \frac{1}{m} \sum_{i=1}^m |y_i - \hat{y_i}| $$
+### Einfachster Machine Learning Workflow
 
-- Mean Squared Error (MSE), macht Sinn
-
-$$ \frac{1}{m} \sum_{i=1}^m (y_i - \hat{y_i})^2 $$
+- Teile das Dataset in Trainings- und Test-Daten
+- Trainiere ein Regressor / Klassifikator auf dem Trainingsset
+- Evaluiere die Performance des Modells anhand noch nie gesehenen Daten vom Testset
+- funktioniert nur mit viel Daten und fixen Hyperparametern
 
 ## $R^2$ Coefficient of Determination
 
