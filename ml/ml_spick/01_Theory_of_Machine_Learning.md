@@ -21,7 +21,7 @@
 ## 01 - Machine Learning Disciplines
 - Supervised Machine Learning
     - Calculating product recommendation with collaborative filtering techniques
-    - Medical image analysis for detection of skin diseas based on human expert markings
+    - Medical image analysis for detection of skin disease based on human expert markings
     - Prediction of selling prices for the real estate market
     - Detecting animals on high-resolution images
 - Unsupervised Machine Learning
@@ -33,10 +33,10 @@
 - Reinforcement Machine Learning
     - Learning to play Jass by self-play
 
-## 02 - Nummerical vs Categorical Variables
+## 02 - Numerical vs Categorical Variables
 
-- Nummerical -> Represented by a number with actual value
-- Categorical -> Represented as group, can be number's, but without value-assignment
+- Numerical $\rightarrow$ Represented by a number with actual value
+- Categorical $\rightarrow$ Represented as group, can be number's, but without value-assignment
 
 ## 03 - Similarity Vector Space Model
 
@@ -86,7 +86,7 @@ Auch wenn die Datenqualität manuell verbessert wird, nie vergessen:
 - den Datenanbieter über Probleme mit der Datenqualität zu informieren
 - die Ursachen von Problemen mit der Datenqualität zu untersuchen
 
-## 05 - Boxplots for Outliner Detection
+## 05 - Boxplots for Outlier Detection
 
 ### Zentrale Tendenz
 

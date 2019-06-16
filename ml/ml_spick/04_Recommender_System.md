@@ -52,7 +52,7 @@ $$P_{uj} = \text{How much does User u likes item j}$$
 
 $$P_{uj} = \text{How much does User u likes item j}$$
 $$\bar{r}_u = \text{Average rating of user U}$$
-$$r_ij = \text{Rating that neighbor i gave to item j}$$
+$$r_{ij} = \text{Rating that neighbor i gave to item j}$$
 $$\bar{r}_i = \text{Average Rating of neighbor i}$$
 
 ### Item-to-Item
@@ -90,7 +90,6 @@ Berechnung sind identisch mit Content-based Rechnungen.
 5. Grey Sheep Problem
    - Benutzer mit ungewöhnlichem Geschmeck erhalten keine genauen Empfehlungen
 
-
 ## Amazons Approach
 
 The key to item-to-item collaborative filtering’s scalability and performance is that it creates
@@ -98,7 +97,6 @@ the expensive similar-items table offline. The algorithm’s online component �
 similar items for the user’s purchases and ratings — scales independently of the catalog size or
 the total number of customers; it is dependent only on how many titles the user has purchased
 or rated. Thus, the algorithm is fast even for extremely large data sets.
-
 
 ## Artikelähnlichkeit
 
@@ -117,14 +115,6 @@ $$ \text{similarity} = \frac{\sum_{i=1}^n A_i \times B_i}
   - Empfehlungsmethode verfeiner das Ergebnis einer anderen Methode
 - Wechselansatz
   - Online-shops können an verschiedenen Orten unterschiedliche Methoden anwenden
-
-### Berechnung von Assoziationen
-
-- Prozent von $X$ Käufern welche ausserdem $Y$ gekauft haben
-
-$$ \frac{X \text{ and } Y}{X} : \frac{\neg X \text{ and } Y}{\neg X} $$
-
-- Kompensiert die Gesamtpopularität von Y
 
 ### Vorteile und Nachteile von Assoziationen
 

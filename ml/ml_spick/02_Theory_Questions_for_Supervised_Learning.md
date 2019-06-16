@@ -9,9 +9,9 @@
 
 $$
 \begin{aligned}
-    Accuracy &= \frac{TP + TN}{Total} \\
+    \text{Accuracy} &= \frac{TP + TN}{\text{Total}} \\
     \\
-    Error Rate &= \frac{FP + FN}{Total} = 1 - Accuracy
+    \text{Error Rate} &= \frac{FP + FN}{\text{Total}} = 1 - \text{Accuracy}
 \end{aligned}
 $$
 

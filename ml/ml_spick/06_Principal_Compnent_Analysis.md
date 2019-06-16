@@ -60,4 +60,3 @@ Dabei gilt für die PCA folgendes zu beachten.
 - Es kann errechnet werden wie viel $\%$ ein Feature zur totalen Varianz beiträgt
 - So kann bestummen werden wie viel $\%$ der Infromationen verloren gehen, wenn ein Feature entfernt wird
 
-

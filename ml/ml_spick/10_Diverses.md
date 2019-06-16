@@ -56,25 +56,13 @@ Zählen der minimalen Anzahl von Änderungen, die erforderlich sind, um eine Zei
 ### Wie misst man Regressionsfehler
 
 - Residuum (residuals) sind berechnete Grössen welche den vertikalen Abstand zwischen Beobachtungspunkt und der Regressionsgerade messen
-- Summe der Fehler macht keinen Sinn, weil positive und negative Fehler sich wegstreichen
+- Mean Absolut Error (MAE), macht Sinn
 
-$$ \frac{1}{m} \sum_{i=1}^m (y_i - f_i) $$
+$$ \frac{1}{m} \sum_{i=1}^m |y_i - \hat{y_i}| $$
 
-- Mean Absolut Error, macht Sinn
+- Mean Squared Error (MSE), macht Sinn
 
-$$ \frac{1}{m} \sum_{i=1}^m |y_i - f_i| $$
-
-- Mean Squared Error, macht Sinn
-
-$$ \frac{1}{m} \sum_{i=1}^m (y_i - f_i)^2 $$
-
-$$
-\begin{aligned}
-    i &= \text{Datenpunkte (data points)} \\
-    f_i &= \text{Vorhersagen (predictions)} \\
-    y_i &= \text{Datenwerte (data value)}
-\end{aligned}
-$$
+$$ \frac{1}{m} \sum_{i=1}^m (y_i - \hat{y_i})^2 $$
 
 ### $R^2$ Coefficient of Determination
 
@@ -183,3 +171,4 @@ Folgende Techniken können für die Feature Selection genutzt werden.
 
 - Korrelations Analyse, **Gute Features korrelieren stark mit dem Label, jedoch nicht untereinandner.**
 - Decisions Tree
+

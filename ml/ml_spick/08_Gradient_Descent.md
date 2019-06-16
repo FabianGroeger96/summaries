@@ -7,11 +7,15 @@ Berechne die partielle Ableitung von $f(x,y) = (3x + 2y)^2$ mit Respekt zu $x$ u
 $$
 \begin{aligned}
     \text{using chain rule:} \\
-    \frac{df}{dx} &= 2(3x+2y) * \frac{d}{dx} (3x+2y) = 2(3x+2y) * 3 = 6(3x+2y) \\
-    \frac{df}{dy} &= 2(3x+2y) * \frac{d}{dy} (3x+2y) = 2(3x+2y) * 2 = 4(3x+2y) \\
+    \frac{df}{dx} &= 2(3x+2y) \cdot \frac{d}{dx} (3x+2y) \\
+    &= 2(3x+2y) \cdot 3 = \underline{\underline{6(3x+2y)}} \\
+    \frac{df}{dy} &= 2(3x+2y) \cdot \frac{d}{dy} (3x+2y) \\
+    &= 2(3x+2y) \cdot 2 = \underline{\underline{4(3x+2y)}} \\
     \text{im Punkt (1,2):} \\
-    \frac{df}{dx}|_{(x,y) = (1,2)} &= 6(3x+2y)|_{(x,y) = (1,2)} = 6(3*1 + 2*2) = 42 \\
-    \frac{df}{dy}|_{(x,y) = (1,2)} &= 4(3x+2y)|_{(x,y) = (1,2)} = 4(3*1 + 2*2) = 28
+    \frac{df}{dx}|_{(x,y) = (1,2)} &= 6(3x+2y)|_{(x,y) = (1,2)} \\
+    &= 6(3\cdot1 + 2\cdot2) = \underline{\underline{42}} \\
+    \frac{df}{dy}|_{(x,y) = (1,2)} &= 4(3x+2y)|_{(x,y) = (1,2)} \\
+    &= 4(3\cdot1 + 2\cdot2) = \underline{\underline{28}}
 \end{aligned}
  $$
 
@@ -21,16 +25,15 @@ $$
 
 $$ \nabla f(x,y) = \Bigg[\frac{f_x (x,y)}{f_y (x,y)}\Bigg] $$
 
-
 ### Beispiel
 
 Berechne den Gradienten von $f(x,y) = (3x + 2y)^2$ und vorallem im Punkt $(x,y) = (1,2)$
 
 $$
 \begin{aligned}
-    \nabla f(x,y) &= \Bigg[\frac{6(3x+2y)}{4(3x+2y)}\Bigg] \\
+    \nabla f(x,y) &= \underline{\underline{\Bigg[\frac{6(3x+2y)}{4(3x+2y)}\Bigg]}} \\
     \text{im Punkt (1,2):} \\
-    \nabla f(1,2) &= \Bigg[\frac{42}{28}\Bigg]
+    \nabla f(1,2) &= \underline{\underline{\Bigg[\frac{42}{28}\Bigg]}}
 \end{aligned}
 $$
 

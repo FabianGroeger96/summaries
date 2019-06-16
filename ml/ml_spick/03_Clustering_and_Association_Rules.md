@@ -70,9 +70,6 @@ $$ \text{support}({i_1, ..., i_n}) = \frac{\text{\# purchases of }{i_1, ..., i_n
 $$ \text{support}(X \rightarrow Y) = \text{support}(X \cup Y) $$
 
 - Richtungsunabhängig, kann daher die Qualität einer gerichteten Association Rule nicht messen!
-
-$$ \text{support}(X \rightarrow Y) = \text{support}(Y \rightarrow X) $$
-
 - Misst, wie häufig ein Itemset/Assoziation in den Daten vorkommt
 - Regeln mit geringem Support können einfach durch Zufall entstehen
 - Niedrige Supportregeln können aus geschäftlicher Sicht uninteressant sein
@@ -94,7 +91,7 @@ $$ \text{Confidence} = \text{Vertrauenswürdigkeit} $$
 
 ### Lift einer Association Rule
 
-$$ \text{lift}(X \rightarrow Y) = \frac{\text{support}(X \cup Y)}{\text{support}(X) * \text{support}(Y)} $$
+$$ \text{lift}(X \rightarrow Y) = \frac{\text{support}(X \cup Y)}{\text{support}(X) \cdot \text{support}(Y)} $$
 
 - Misst wie oft $X$ und $Y$ zusammen aufgetaucht sind, wenn sie statistisch unabhängig sind
 - $\text{Lift} = 1$, $X$ und $Y$ sind statistisch unabhängig
