@@ -22,7 +22,6 @@ $$P_{uj} = \frac{\sum_{i \in {N_j}}sim(j, i) \times r_{ui}}{\sum_{i \in {N_j}}si
 
 $$P_{uj} = \text{How much does User u likes item j}$$
 
-
 ### Vorteile und Nachteile von Content-Based Recommendations
 
 1. Benutzerunabhängigkeit und Transparenz
@@ -90,14 +89,6 @@ Berechnung sind identisch mit Content-based Rechnungen.
 5. Grey Sheep Problem
    - Benutzer mit ungewöhnlichem Geschmeck erhalten keine genauen Empfehlungen
 
-## Amazons Approach
-
-The key to item-to-item collaborative filtering’s scalability and performance is that it creates
-the expensive similar-items table offline. The algorithm’s online component — looking up
-similar items for the user’s purchases and ratings — scales independently of the catalog size or
-the total number of customers; it is dependent only on how many titles the user has purchased
-or rated. Thus, the algorithm is fast even for extremely large data sets.
-
 ## Artikelähnlichkeit
 
 - Je kleiner der Winkel zwischen den Produktvektoren, desto ähnlicher sind sie
@@ -106,6 +97,7 @@ $$ \text{similarity} = \frac{\sum_{i=1}^n A_i \times B_i}
 {\sqrt{\sum_{i=1}^n (A_i)^2} \times \sqrt{\sum_{i=1}^n(B_i)^2}} $$
 
 ## Hybrid Systems
+
 - Kombinieren von verschiedenen Algorithmen mit unterschiedlichen Vor- und Nachteilen, z.B. um das Cold Start Problem zu mildern, indem man content-based und collaborative recommenders kombiniert
 - Gewichteter Ansatz
   - Bewerten von Gegenständen als gewichtete Summe der Punkte aus verschiedenen Maschienen

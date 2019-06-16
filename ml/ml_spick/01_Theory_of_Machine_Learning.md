@@ -40,8 +40,8 @@
 
 ## 03 - Similarity Vector Space Model
 
-- Vector Space Model -> Datenset welches nur aus numerischen Daten besteht
-- Kategorische Datensets können einfach in numerische umgewandelt werden -> aus jeder möglichen Option der kategorischen Spalte eine neue Spalte erstellen und eine 1 vergeben wenn die Zeile zu dieser Kategorie gehört
+- Vector Space Model $\rightarrow$ Datenset welches nur aus numerischen Daten besteht
+- Kategorische Datensets können einfach in numerische umgewandelt werden $\rightarrow$ aus jeder möglichen Option der kategorischen Spalte eine neue Spalte erstellen und eine 1 vergeben wenn die Zeile zu dieser Kategorie gehört
 
 ### Pythagoras Distanz
 
@@ -98,9 +98,6 @@ Der Mittelwert, Modus und Median geben wertvolle Informationen über die Neigung
 
 - links-geneigte Daten: $Mittelwert - Modus < 0$
 - rechts-geneigte Daten: $Mittelwert - Modus > 0$
-- Median Q2
-- Quartile Q1 & Q3
-- Kleinster und grösster Wert
 - Interquantil Range: $IQR = Q_3 - Q_1$
 - Werte welche mindestens 1.5 * IQR oberhalb des dritten Quartils oder unterhalb des ersten Quartils sind gelten als Ausreisser
 

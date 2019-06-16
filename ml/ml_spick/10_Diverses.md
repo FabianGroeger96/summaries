@@ -26,34 +26,7 @@ Zählen der minimalen Anzahl von Änderungen, die erforderlich sind, um eine Zei
 - Anzahl +1 beim Hinzufügen eines Zeichens
 - Anzahl +2 beim Ändern eines Zeichens
 
-## Varianten von Machine Learning Models
-
-### Typische Regressions Modelle
-
-- Linear Regression
-- Polynomial Regression
-- k-Nearest Neighbor Regression
-- Support Vector Regression
-- Regression Trees
-- Neural Networks
-
-### Typische Klassifikations Modelle
-
-- Logistic Regressions
-- Naive Bayes
-- k-Nearest Neighbors
-- Support Vector Machines
-- Desicion Trees
-- Neural Networks
-
-### Einfachster Machine Learning Workflow
-
-- Teile das Dataset in Trainings- und Test-Daten
-- Trainiere ein Regressor / Klassifikator auf dem Trainingsset
-- Evaluiere die Performance des Modells anhand noch nie gesehenen Daten vom Testset
-- funktioniert nur mit viel Daten und fixen Hyperparametern
-
-### Wie misst man Regressionsfehler
+## Wie misst man Regressionsfehler
 
 - Residuum (residuals) sind berechnete Grössen welche den vertikalen Abstand zwischen Beobachtungspunkt und der Regressionsgerade messen
 - Mean Absolut Error (MAE), macht Sinn
@@ -64,7 +37,7 @@ $$ \frac{1}{m} \sum_{i=1}^m |y_i - \hat{y_i}| $$
 
 $$ \frac{1}{m} \sum_{i=1}^m (y_i - \hat{y_i})^2 $$
 
-### $R^2$ Coefficient of Determination
+## $R^2$ Coefficient of Determination
 
 $$ R^2 = 1 - \frac{\frac{1}{m} \sum_{i=1}^{m}(y_i - f_i)^2}{\frac{1}{m} \sum_{i=1}^m(y_i - \bar{y})^2} = 1 - \frac{\sum_{i=1}^{m}(y_i - f_i)^2}{\sum_{i=1}^m(y_i - \bar{y})^2} $$
 
@@ -73,7 +46,7 @@ $$ R^2 = 1 - \frac{\frac{1}{m} \sum_{i=1}^{m}(y_i - f_i)^2}{\frac{1}{m} \sum_{i=
 - $R^2 = 0.53$ bedeutet, dass 53% der Varianz in den Daten durch das Modell erklärt werden
 - $R^2 < 0$ können auftreten, wenn das Modell zu den Daten schlechter passt als eine horizontale Hyperebene
 
-### Standardisierung oder Neuskalierung von Variablen
+## Standardisierung oder Neuskalierung von Variablen
 
 - Wenn die unabhängigen Variablen von sehr unterschiedlicher Grösse und Streuung sind, muss man diese standarisieren
 - Standardisierte Variable hat einen Mittelwert von 0 und eine Standardabweichung von 1
@@ -110,7 +83,7 @@ $$ \tilde{x}^{(i)} = \frac{1}{s_x} (x^{(i)} - \bar{x}) $$
 - Kleine Änderungen im Datenset können zu grossen Änderungen im Entscheidungsbaum führen.
     - Sehr sensitiv auf Data quality
 
-### Möglichkeiten um das Data Set zu debuggen
+## Möglichkeiten um das Data Set zu debuggen
 
 - Mehr oder "bessere" Trainingsdaten
 - kleineres Set an Features
