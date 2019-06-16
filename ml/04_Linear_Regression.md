@@ -271,7 +271,7 @@ $$
 $$
 \begin{aligned}
     \hat{\mu}_x &= \bar{x} = \frac{1}{n} \sum_{i=1}^n x^{(i)} \\
-    \hat{\sigma}_x &= s_x = \frac{1}{n - 1} \sum_{i=1}^n (x^{(i)} - \hat{\mu}_x)^2
+    \hat{\sigma}_x &= s_x = \sqrt{\frac{1}{n - 1} \sum_{i=1}^n (x^{(i)} - \hat{\mu}_x)^2}
 \end{aligned}
 $$
 
