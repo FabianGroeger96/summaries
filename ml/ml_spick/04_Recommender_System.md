@@ -27,14 +27,14 @@ $$P_{uj} = \text{How much does User u likes item j}$$
 1. Benutzerunabhängigkeit und Transparenz
    - Profil eines Benutzers wird nur aus seinen eigenen Bewertungen erstellt
    - Empfehlungen können durch die Enthüllung relevanter Daten erklärt werden
-2. Problem mit neuen Gegenständen (Cold Start Problem)
+2. Kein Problem mit neuen Gegenständen (Cold Start Problem)
    - Kann neue Artikel ohne Bewertungen sofort empfehlen
 3. Begrenzte Inhaltsanalyse
    - Spiegeln Attribute wirklich wieder, wie Benutzer entscheiden?
 4. Überspezialisierung
    - Findet nie etwas Unerwartetes
    - Profile werden nur aus der Einkaufshistorie erstellt
-5. Problem mit neuen Nutzern (Cold Start Problem)
+5. Kein Problem mit neuen Nutzern (Cold Start Problem)
    - Auch bei anonymen Benutzern
    - Hängt von Implementation ab, aber oft kein grosses Problem
 
@@ -63,18 +63,12 @@ $$\bar{r}_i = \text{Average Rating of neighbor i}$$
 
 - Berechnungen sind identisch mit content-based recommendations
 - Der einzige Unterschied besteht darin, wie die Ähnlichkeitmatrix berechnet wird:
-  - Im Falle von Item-to-Item Collaborative Filtering bezieht sich diese Berechnung nur auf Benutzerbewertungen
-  - Im Falle von content-based recommenders bezieht sich diese Berechnung auf Elementattribute
+  - Im Falle von Item-to-Item Collaborative Filtering bezieht sich diese Berechnung auf Benutzerbewertungen (miteinbezogen, nicht nur)
+  - Im Falle von content-based recommenders bezieht sich diese Berechnung auf Elementattribute (Itemattribute)
 
 $$P_{uj} = \frac{\sum_{i \in {N_j}}sim(j, i) \times r_{ui}}{\sum_{i \in {N_j}}sim(j, i)}$$
 
 $$P_{uj} = \text{How much does User u likes item j}$$
-
-
-Berechnung sind identisch mit Content-based Rechnungen.
-
-- Bei Item-to-Item Collaborative Fitlering werden die Userbewertungen mit einbezogen
-- Bei content-based die Item Attribute
 
 ### Vorteile und Nachteile von Collaborative Filtering
 

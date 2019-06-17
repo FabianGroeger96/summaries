@@ -1,4 +1,4 @@
-# Quiz 01 - Theory Questions for Introduction
+# Introduction & Theory
 
 ## Typische Regressions Modelle
 
@@ -18,7 +18,7 @@
 - Desicion Trees
 - Neural Networks
 
-## 01 - Machine Learning Disciplines
+## Machine Learning Disciplines
 - Supervised Machine Learning
     - Calculating product recommendation with collaborative filtering techniques
     - Medical image analysis for detection of skin disease based on human expert markings
@@ -33,12 +33,12 @@
 - Reinforcement Machine Learning
     - Learning to play Jass by self-play
 
-## 02 - Numerical vs Categorical Variables
+## Numerical vs Categorical Variables
 
 - Numerical $\rightarrow$ Represented by a number with actual value
 - Categorical $\rightarrow$ Represented as group, can be number's, but without value-assignment
 
-## 03 - Similarity Vector Space Model
+## Similarity Vector Space Model
 
 - Vector Space Model $\rightarrow$ Datenset welches nur aus numerischen Daten besteht
 - Kategorische Datensets können einfach in numerische umgewandelt werden $\rightarrow$ aus jeder möglichen Option der kategorischen Spalte eine neue Spalte erstellen und eine 1 vergeben wenn die Zeile zu dieser Kategorie gehört
@@ -64,7 +64,7 @@ $$
 \end{aligned}
 $$
 
-## 04 - Data Cleaning for small Datasets
+## Data Cleaning for small Datasets
 
 ## Bereinigung der Daten
 
@@ -86,7 +86,7 @@ Auch wenn die Datenqualität manuell verbessert wird, nie vergessen:
 - den Datenanbieter über Probleme mit der Datenqualität zu informieren
 - die Ursachen von Problemen mit der Datenqualität zu untersuchen
 
-## 05 - Boxplots for Outlier Detection
+## Boxplots for Outlier Detection
 
 ### Zentrale Tendenz
 
@@ -138,6 +138,5 @@ $$
 $$ p(X, Y) = \frac{Cov(X, Y)}{\sigma_X \sigma_Y} $$
 
 - Pearson-Korrelation liegt immer zwischen -1 für eine perfekte Anti-Korrelation
-und 1 für perfekte Korrelation
+und 1 für perfekte Korrelation und 0 für nicht korreliert
 - Durch die Normalisierung der Kovarianz können die Korrelationen der verschiedenen Attribute verglichen werden
-

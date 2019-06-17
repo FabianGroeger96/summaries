@@ -30,13 +30,6 @@ Zählen der minimalen Anzahl von Änderungen, die erforderlich sind, um eine Zei
 
 - Residuum (residuals) sind berechnete Grössen welche den vertikalen Abstand zwischen Beobachtungspunkt und der Regressionsgerade messen
 
-### Einfachster Machine Learning Workflow
-
-- Teile das Dataset in Trainings- und Test-Daten
-- Trainiere ein Regressor / Klassifikator auf dem Trainingsset
-- Evaluiere die Performance des Modells anhand noch nie gesehenen Daten vom Testset
-- funktioniert nur mit viel Daten und fixen Hyperparametern
-
 ## $R^2$ Coefficient of Determination
 
 $$ R^2 = 1 - \frac{\frac{1}{m} \sum_{i=1}^{m}(y_i - f_i)^2}{\frac{1}{m} \sum_{i=1}^m(y_i - \bar{y})^2} = 1 - \frac{\sum_{i=1}^{m}(y_i - f_i)^2}{\sum_{i=1}^m(y_i - \bar{y})^2} $$
@@ -127,12 +120,10 @@ Aufgrund von Bias und Varianz kann bestummen werden ob ein Model Underfitted ode
 
 ## Machine Learning Projekt Lösungsansatz
 
-Von M. Pouly wird vorgeschlagen folgendermassen für Machine Learning Projekte vorzugehen.
-
 1. Data Quality Assessment ist seine Zeit IMMER Wert
 2. Daten visualisieren
 3. Quality Assessment Workflow verwenden der gut durchdacht und spezifiert ist
-4. Ausprobieren mit einfachen ML Ansätzen. Wie das schnelle erstellen eines einfachen Classifier oder Regressor
+4. Ausprobieren mit einfachen ML Ansätzen (schnelle erstellen eines einfachen Classifier oder Regressor)
 5. Fehlerquellen-Analyse und Diagnostik anwenden
 6. Iterative das Model verbessern. Auch durch eventuelle kombination von Ansätzen
 
@@ -144,4 +135,3 @@ Folgende Techniken können für die Feature Selection genutzt werden.
 
 - Korrelations Analyse, **Gute Features korrelieren stark mit dem Label, jedoch nicht untereinandner.**
 - Decisions Tree
-

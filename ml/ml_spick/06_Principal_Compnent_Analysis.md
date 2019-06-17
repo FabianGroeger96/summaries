@@ -1,22 +1,24 @@
-# Quiz 6 - Principal Component Analysis
+# Principal Component Analysis
 
 ## Correlation
 
-$$ \mathbf{XX^T} = \begin{bmatrix}
-\sum_{i=1}^n x_{1i} \times x_{1i} \ \sum_{i=1}^n x_{1i} \times x_{2i} \ \sum_{i=1}^n x_{1i} \times x_{3i} \\
-\sum_{i=1}^n x_{2i} \times x_{1i} \ \sum_{i=1}^n x_{2i} \times x_{2i}  \ \sum_{i=1}^n x_{2i} \times x_{3i} \\
-\sum_{i=1}^n x_{3i} \times x_{1i} \ \sum_{i=1}^n x_{3i} \times x_{2i} \ \sum_{i=1}^n x_{3i} \times x_{3i} 
-\end{bmatrix}$$
-
-Wird zu $\mathbf{S_x}$
-
-$$\mathbf{S_x} = \frac{1}{n-1}\mathbf{XX^T} = \begin{bmatrix}
-Var(x_{1}) \ Cov(x_1,x_2) \ Cov(x_1, x_3) \\
-Cov(x_2, x_1) \ Var(x_2) \ Cov(x_2, x_3) \\
-Cov(x_3, x_1) \ Cov(x_3, x_2) \ Var(x_3)
-\end{bmatrix}$$
-
-$$ \mathbf{S_x} = \text{Kovarianz Matrix} $$
+$$
+\begin{aligned}
+    &\mathbf{XX^T} = \begin{bmatrix}
+    \sum_{i=1}^n x_{1i} \times x_{1i} \ \sum_{i=1}^n x_{1i} \times x_{2i} \ \sum_{i=1}^n x_{1i} \times x_{3i} \\
+    \sum_{i=1}^n x_{2i} \times x_{1i} \ \sum_{i=1}^n x_{2i} \times x_{2i}  \ \sum_{i=1}^n x_{2i} \times x_{3i} \\
+    \sum_{i=1}^n x_{3i} \times x_{1i} \ \sum_{i=1}^n x_{3i} \times x_{2i} \ \sum_{i=1}^n x_{3i} \times x_{3i}
+    \end{bmatrix} \\
+    \\
+    &\text{Wird zu } \mathbf{S_x} \\
+    &\mathbf{S_x} = \frac{1}{n-1}\mathbf{XX^T} = \begin{bmatrix}
+    Var(x_{1}) \ Cov(x_1,x_2) \ Cov(x_1, x_3) \\
+    Cov(x_2, x_1) \ Var(x_2) \ Cov(x_2, x_3) \\
+    Cov(x_3, x_1) \ Cov(x_3, x_2) \ Var(x_3)
+    \end{bmatrix} \\
+    &\mathbf{S_x} = \text{Kovarianz Matrix}
+\end{aligned}
+$$
 
 ### Pearson Correlation
 
@@ -51,12 +53,11 @@ Dabei gilt für die PCA folgendes zu beachten.
 
 - Die diagonale Kovarianz Matritze $\mathbf{S_y}$ besteht aus den Eigenwerten von $\mathbf{XX^T}$ 
 - Jeder Eigenwert gehört zu einer Varianz der Features in  $\mathbf{Y}$
-- Features mit Varianz $0$ besitzen keinen Informationsgehalt
-- So können alle Features mit Varianz $0$ entfernt werden.
+- Features mit Varianz $0$ besitzen keinen Informationsgehalt & können entfernt werden
 
 ### Dimensionalitäts Reduktion mit Informationsverlust
 
 - Die Summe der Eigenwerte in $\mathbf{S_y}$ korrespondiert mit der totalen Varianz der Daten
-- Es kann errechnet werden wie viel $\%$ ein Feature zur totalen Varianz beiträgt
-- So kann bestummen werden wie viel $\%$ der Infromationen verloren gehen, wenn ein Feature entfernt wird
+- Es kann errechnet werden wie viel $\%$ ein Feature zur totalen Varianz beiträgt & und wie viel Informationen verloren gehen, wenn ein Feature entfernt wird
 
+$$ \text{\% der }\lambda\text{ beiträgt} = \frac{\lambda}{\sum_{i=1}^n \lambda^{(i)}} \cdot 100 $$

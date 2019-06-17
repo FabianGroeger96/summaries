@@ -1,6 +1,18 @@
 # Gradient Descent
 
-### Partielle Ableitung
+## Ableitungsregeln
+
+$$
+\begin{aligned}
+    x^n &\rightarrow n \cdot x^{n-1} \\
+    g(x) \cdot h(x) &\rightarrow g(x) \cdot h^{\prime}(x) + g^{\prime}(x) \cdot h(x) \\
+    (g(x))^n &\rightarrow n\cdot (g(x))^{n-1} \cdot g^{\prime}(x) \\
+    \frac{g(x)}{h(x)} &\rightarrow \frac{h(x) \cdot g^{\prime}(x)-g(x)\cdot h^{\prime}(x)}{(h(x))^2} \\
+    h(g(x)) &\rightarrow h^{\prime}(g(x)) \cdot g^{\prime}(x)
+\end{aligned}
+$$
+
+## Partielle Ableitung
 
 Berechne die partielle Ableitung von $f(x,y) = (3x + 2y)^2$ mit Respekt zu $x$ und $y$ und vorallem im Punkt $(x,y) = (1,2)$
 
@@ -23,7 +35,11 @@ $$
 
 - Der Gradient $\nabla f$ ist ein Vektor, welcher aus den partiellen Ableitungen zusammengesetzt wird
 
-$$ \nabla f(x,y) = \Bigg[\frac{f_x (x,y)}{f_y (x,y)}\Bigg] $$
+$$ \nabla f(x,y) = \begin{bmatrix}
+    f_x (x,y) \\
+    f_y (x,y)
+\end{bmatrix}
+$$
 
 ### Beispiel
 
@@ -31,9 +47,17 @@ Berechne den Gradienten von $f(x,y) = (3x + 2y)^2$ und vorallem im Punkt $(x,y) 
 
 $$
 \begin{aligned}
-    \nabla f(x,y) &= \underline{\underline{\Bigg[\frac{6(3x+2y)}{4(3x+2y)}\Bigg]}} \\
+    \nabla f(x,y) &= \underline{\underline{
+        \begin{bmatrix}
+            6(3x+2y) \\
+            4(3x+2y)
+        \end{bmatrix}}} \\
     \text{im Punkt (1,2):} \\
-    \nabla f(1,2) &= \underline{\underline{\Bigg[\frac{42}{28}\Bigg]}}
+    \nabla f(1,2) &= \underline{\underline{
+        \begin{bmatrix}
+            42 \\
+            28
+        \end{bmatrix}}}
 \end{aligned}
 $$
 
@@ -58,24 +82,41 @@ $$
 $$
 \begin{aligned}
     f(x,y) &= x^2 + 2xy + 4y^2 \\
-    \nabla f(x,y) &= \Bigg[\frac{2x + 2y}{2x + 8y}\Bigg]\\
+    \nabla f(x,y) &= 
+        \begin{bmatrix}
+            2x + 2y \\
+            2x + 8y
+        \end{bmatrix}
 \end{aligned}
 $$
 
 - wir starten am Punkt $x_0 = (2,2)$ und gehen in die Richtung des negativen Gradienten
-
-$$
-\begin{aligned}
-    x_1 &= x_0 - \alpha\nabla f(x_0) \\
-    &= \Bigg[\frac{2}{2}\Bigg] - \alpha \Bigg[\frac{8}{20}\Bigg] = \Bigg[\frac{1.2}{0}\Bigg] \\
-\end{aligned}
-$$
-
 - wir haben $\alpha = 0.1$ gewählt (Learningrate)
 
 $$
 \begin{aligned}
+    x_1 &= x_0 - \alpha\nabla f(x_0) \\
+    &= \begin{bmatrix}
+            2 \\
+            2
+        \end{bmatrix} - \alpha \begin{bmatrix}
+            8 \\
+            20
+        \end{bmatrix} = \begin{bmatrix}
+            1.2 \\
+            0
+        \end{bmatrix} \\
+    \\
     x_2 &= x_1 - \alpha\nabla f (x_1)\\
-    &= \Bigg[\frac{1.2}{0}\Bigg] - \alpha \Bigg[\frac{2.4}{2.4}\Bigg] = \Bigg[\frac{0.96}{-0.24}\Bigg]
+    &= \begin{bmatrix}
+            1.2 \\
+            0
+        \end{bmatrix} - \alpha \begin{bmatrix}
+            2.4 \\
+            2.4
+        \end{bmatrix} = \begin{bmatrix}
+            0.96 \\
+            -0.24
+        \end{bmatrix}
 \end{aligned}
 $$

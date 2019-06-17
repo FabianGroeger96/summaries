@@ -63,7 +63,7 @@
 
 $$ \text{support}({i_1, ..., i_n}) = \frac{\text{\# purchases of }{i_1, ..., i_n}}{\text{\# transactions}} $$
 
-- Support misst wie oft gewisse Items zusammen gekauft wurden
+- Support misst **wie oft gewisse Items zusammen gekauft** wurden
 
 ### Support einer Association Rule
 
@@ -73,7 +73,7 @@ $$ \text{support}(X \rightarrow Y) = \text{support}(X \cup Y) $$
 - Misst, wie häufig ein Itemset/Assoziation in den Daten vorkommt
 - Regeln mit geringem Support können einfach durch Zufall entstehen
 - Niedrige Supportregeln können aus geschäftlicher Sicht uninteressant sein
-- Eine gute Association Rule hat ein höhen Support
+- Eine **gute Association Rule hat ein höhen Support**
   
 $$ \text{Support} = \text{Interesse} $$
 
@@ -83,9 +83,9 @@ $$ \text{confidence}(X \rightarrow Y) = \frac{\text{support}(X \cup Y)}{\text{su
 
 - Legt fest, wie häufig Elemente in $Y$ in Transaktionen erscheinen, die $X$ enthalten
 - Für eine bestimmte Regel $X \rightarrow Y$, je höher die Confidence ist, desto wahrscheinlicher ist es für $Y$, in Transaktionen, die $X$ enthalten, vorhanden zu sein
-- Confidence liefert eine Schätzung der bedingten Wahrscheinlichkeit
-- Confidence misst die Zuverlässigkeit oder Vertrauenswürdigkeit einer Association Rule
-- Eine gute Association Rule hat eine hohe Confidence
+- Confidence liefert eine **Schätzung der bedingten Wahrscheinlichkeit**
+- Confidence misst die **Zuverlässigkeit oder Vertrauenswürdigkeit** einer Association Rule
+- Eine **gute Association Rule hat eine hohe Confidence**
   
 $$ \text{Confidence} = \text{Vertrauenswürdigkeit} $$
 
@@ -97,6 +97,6 @@ $$ \text{lift}(X \rightarrow Y) = \frac{\text{support}(X \cup Y)}{\text{support}
 - $\text{Lift} = 1$, $X$ und $Y$ sind statistisch unabhängig
 - $\text{Lift} < 1$, $X$ und $Y$ erscheinen seltener zusammen als erwartet, sie sind antikorreliert
 - $\text{Lift} > 1$, $X$ und $Y$ erscheinen häufiger zusammen als erwartet, sie sind korreliert
-- Je grösser der Liftwert, desto stärker ist die Assoziation zwischen $X$ und $Y$
+- Je **grösser der Liftwert, desto stärker ist die Assoziation zwischen $X$ und $Y$**
 
 $$ \text{Lift} = \text{Stärke der Assoziation} $$

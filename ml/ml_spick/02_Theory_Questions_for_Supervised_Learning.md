@@ -1,4 +1,4 @@
-# Theory Questions for Supervised Learning
+# Supervised Learning
 
 ## Genauigkeit (Accuracy) und Fehlerquote (Error Rate)
 
