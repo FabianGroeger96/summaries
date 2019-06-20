@@ -16,20 +16,18 @@ s = sum((-1).^k./factorial(2*k+1).*x.^(2*k+1));
 ```matlab
 clear;
 
-v = [1 2 3 4];
-w = [1 1 1 1];
+v=[1 2 3 4];
+%w=[1 1 1];
+w=[1 1 1 1];
 
-if ~isrow(v) || ~isrow(w)
-    error('Einer der Vektoren ist kein Zeilenvektor.');
-else
-    n = length(v);
-    m = length(w);
-    v = [v zeros(1,m-1)];
-    w = [w zeros(1,n-1)];
-    for k = 1: (n+m-1)
-        f(k) = v(1:k) * w(k:-1:1)';
-    end
+n=length(v);
+m=length(w);
+v=[v zeros(1,m-1)];
+w=[w zeros(1,n-1)];
+for k=1:(n+m-1)
+  f(k)=v(1:k)*w(k:-1:1)';
 end
+
 ```
 
 ## Aufgabe: LGS (4x4) Wassertanks
