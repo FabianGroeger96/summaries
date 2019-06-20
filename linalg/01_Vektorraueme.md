@@ -94,15 +94,13 @@ $$
 \end{aligned}
 $$
 
-
-
 ## Lineare Unabhängigkeit
 
 Die Vektoren $v_1,\cdots,v_n$ werden als linear unabhängig bezeichnet wenn eine Linearkombinationen der Vektoren Null ist, dann müssel alle Koeffizieten $s_1,\cdots,s_n$ Null sein. Anderfalls heissen sie linear abhängig.
 
-Also gilt für beliebige $s_1,\cdots,s_n \in{\R}$,
+Also gilt für beliebige $s_1, \cdots, s_n \in{\mathbb{R}}$,
 
-$$ s_1v_1+ \cdots + s_nv_n = 0 \quad \rArr \quad  s_1 = \cdots = s_n = 0 \rArr s = [0,\cdots,0]^\mathbf{T}$$
+$$ s_1 v_1 + \cdots + s_n v_n = 0 \quad \Rightarrow \quad  s_1 = \cdots = s_n = 0 \Rightarrow s = [0,\cdots,0]^{\mathbf{T}} $$
 
 ## Basis
 
@@ -117,24 +115,25 @@ $$\begin{aligned}
 $$
 
 ### Beispiel im Vektorraum
+
 Sind die Vektoren,
 
 $$ w_1 = \begin{bmatrix} 2 \\ 1 \\ 0\end{bmatrix} \quad
  w_2 = \begin{bmatrix} 1 \\ 2 \\ 0\end{bmatrix} \quad
  w_3 = \begin{bmatrix} -1 \\ -1 \\ 2\end{bmatrix}$$
 
-eine Basis des Raum $\R^3$. Falls ja stellen Sie den Vektor $v = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$ in dieser Basis dar.
+eine Basis des Raum $\mathbb{R}^3$. Falls ja stellen Sie den Vektor $v = \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix}$ in dieser Basis dar.
 
 $$
 \begin{aligned}
 &U_1) \ \text{Beweis der linearen Unabhängigkeit zwischen $w_1,w_2,w_3$}
 \\
-&U_1) \ s_1v_1+ \cdots + s_1v_1 = 0 \rArr \text{Liefert ein LGS}
+&U_1) \ s_1v_1+ \cdots + s_1v_1 = 0 \Rightarrow \text{Liefert ein LGS}
 \\
 &U_1) \ s_1\begin{bmatrix} 2\\1\\0\end{bmatrix} +
 s_2\begin{bmatrix} 1\\2\\0\end{bmatrix} +
 s_3\begin{bmatrix} -1\\-1\\2\end{bmatrix} = \begin{bmatrix}
-0 \\ 0 \\ 0\end{bmatrix} = 0 \lrArr \begin{pmatrix}
+0 \\ 0 \\ 0\end{bmatrix} = 0 \Leftrightarrow \begin{pmatrix}
 2s_1 + s_2 - s_3 = 0 \\
 s_1 + 2s_2 - s_3 = 0 \\
 2s_3 = 0 \\\end{pmatrix}
@@ -143,17 +142,17 @@ s_1 + 2s_2 - s_3 = 0 \\
 2 & 1 & -1 & 0 \\
 1 & 2 & -1 & 0 \\
 0 & 0 & 2 & 0 \end{array}
-Z_{12}(-1/2) \lrArr
+Z_{12}(-1/2) \Leftrightarrow
 \begin{array}{ccc|c}
 2 & 1 & -1 & 0 \\
 0 & 3/2 & -1/2 & 0 \\
 0 & 0 & 2 & 0 \end{array}
 \\
-&U_1) \ 2s_3 = 0 \rArr s_3 = 0
+&U_1) \ 2s_3 = 0 \Rightarrow s_3 = 0
 \\
-&U_1) \ 3/2s_2 - 0 = 0 \rArr s_2 = 0
+&U_1) \ 3/2s_2 - 0 = 0 \Rightarrow s_2 = 0
 \\
-&U_1) \ 2s_1 + 0 - 0 = 0 \rArr s_1 = 0
+&U_1) \ 2s_1 + 0 - 0 = 0 \Rightarrow s_1 = 0
 \end{aligned}
 $$
 
@@ -161,17 +160,17 @@ $U_1)$ beweist das die Vektoren $w_1, w_2, w_3$ linear unabhängig sind.
 
 $$
 \begin{aligned}
-&U_2) \ \text{Beweis das $w_1,w_2,w_3$ den gesamten Raum $\R^3$ aufspannen.}
+&U_2) \ \text{Beweis das $w_1,w_2,w_3$ den gesamten Raum $\mathbb{R}^3$ aufspannen.}
 \\
-&U_2) \ \R^3 = span(w_1,w_2,w_3)
+&U_2) \ \mathbb{R}^3 = span(w_1,w_2,w_3)
 \\
 &U_2) \ s_1v_1+ \cdots + s_1v_1 = \begin{bmatrix}
-x_1 \\ x_2 \\ x_3 \end{bmatrix} \rArr \text{Liefert ein LGS}
+x_1 \\ x_2 \\ x_3 \end{bmatrix} \Rightarrow \text{Liefert ein LGS}
 \\
 &U_2) \ s_1\begin{bmatrix} 2\\1\\0\end{bmatrix} +
 s_2\begin{bmatrix} 1\\2\\0\end{bmatrix} +
 s_3\begin{bmatrix} -1\\-1\\2\end{bmatrix} = \begin{bmatrix}
-x_1 \\ x_2 \\ x_3\end{bmatrix}\lrArr \begin{pmatrix}
+x_1 \\ x_2 \\ x_3\end{bmatrix}\Leftrightarrow \begin{pmatrix}
 2s_1 + s_2 - s_3 = x_1 \\
 s_1 + 2s_2 - s_3 = x_2 \\
 2s_3 = x_3 \\\end{pmatrix}
@@ -180,17 +179,17 @@ s_1 + 2s_2 - s_3 = x_2 \\
 2 & 1 & -1 & x_1 \\
 1 & 2 & -1 & x_2 \\
 0 & 0 & 2 & x_3 \end{array}
-Z_{12}(-1/2) \lrArr
+Z_{12}(-1/2) \Leftrightarrow
 \begin{array}{ccc|c}
 2 & 1 & -1 & x_1 \\
 0 & 3/2 & -1/2 & x_2 - \frac{x_1}{2} \\
 0 & 0 & 2 & x_3 \end{array}
 \\
-&U_2) \ 2s_3 = x_3 \rArr s_3 = \frac{x_3}{2}
+&U_2) \ 2s_3 = x_3 \Rightarrow s_3 = \frac{x_3}{2}
 \\
-&U_2) \ \frac{3}{2}s_2 - \frac{x_3}{4} = x_2 - \frac{x_1}{2} \rArr s_2 = \frac{x_2 - \frac{x_1}{2} + \frac{x_3}{4}}{1.5}
+&U_2) \ \frac{3}{2}s_2 - \frac{x_3}{4} = x_2 - \frac{x_1}{2} \Rightarrow s_2 = \frac{x_2 - \frac{x_1}{2} + \frac{x_3}{4}}{1.5}
 \\
-&U_2) \ 2s_1 + \frac{x_2 - \frac{x_1}{2} + \frac{x_3}{4}}{1.5} - \frac{x_3}{2}   = x_1 \rArr s_1 = \frac{\frac{x_2 - \frac{x_1}{2} + \frac{x_3}{4}}{1.5} + \frac{x_3}{2}}{2}
+&U_2) \ 2s_1 + \frac{x_2 - \frac{x_1}{2} + \frac{x_3}{4}}{1.5} - \frac{x_3}{2}   = x_1 \Rightarrow s_1 = \frac{\frac{x_2 - \frac{x_1}{2} + \frac{x_3}{4}}{1.5} + \frac{x_3}{2}}{2}
 \end{aligned}
 $$
 
@@ -203,12 +202,12 @@ $$
 &U_3) \ \text{oder berechnung mithilfe der Zeilenumformung}
 \\
 &U_3) \ s_1v_1+ \cdots + s_1v_1 = \begin{bmatrix}
-1 \\ 1 \\ 1 \end{bmatrix} \rArr \text{Liefert ein LGS}
+1 \\ 1 \\ 1 \end{bmatrix} \Rightarrow \text{Liefert ein LGS}
 \\
 &U_3) \ s_1\begin{bmatrix} 2\\1\\0\end{bmatrix} +
 s_2\begin{bmatrix} 1\\2\\0\end{bmatrix} +
 s_3\begin{bmatrix} -1\\-1\\2\end{bmatrix} = \begin{bmatrix}
-1 \\ 1 \\ 1\end{bmatrix}\lrArr \begin{pmatrix}
+1 \\ 1 \\ 1\end{bmatrix}\Leftrightarrow \begin{pmatrix}
 2s_1 + s_2 - s_3 = 1 \\
 s_1 + 2s_2 - s_3 = 1 \\
 2s_3 = 1 \\\end{pmatrix}
@@ -217,17 +216,17 @@ s_1 + 2s_2 - s_3 = 1 \\
 2 & 1 & -1 & 1 \\
 1 & 2 & -1 & 1 \\
 0 & 0 & 2 & 1 \end{array}
-Z_{12}(-1/2) \lrArr
+Z_{12}(-1/2) \Leftrightarrow
 \begin{array}{ccc|c}
 2 & 1 & -1 & 1 \\
 0 & 3/2 & -1/2 & \frac{1}{2} \\
 0 & 0 & 2 & 1 \end{array}
 \\
-&U_3) \ 2s_3 = 1 \rArr s_3 = \frac{1}{2}
+&U_3) \ 2s_3 = 1 \Rightarrow s_3 = \frac{1}{2}
 \\
-&U_3) \ \frac{3}{2}s_2 - \frac{1}{4} = \frac{1}{2} \rArr s_2 = \frac{1}{2}
+&U_3) \ \frac{3}{2}s_2 - \frac{1}{4} = \frac{1}{2} \Rightarrow s_2 = \frac{1}{2}
 \\
-&U_3) \ 2s_1 + \frac{1}{2} - \frac{1}{2} = 1 \rArr s_1 = \frac{1}{2}
+&U_3) \ 2s_1 + \frac{1}{2} - \frac{1}{2} = 1 \Rightarrow s_1 = \frac{1}{2}
 \end{aligned}
 $$
 
@@ -246,16 +245,17 @@ $$ \begin{bmatrix} 1 \\ 1 \\1 \\ \end{bmatrix} =
 ## Aufgespannte Unterraum
 
 - Der von einer Menge Vektoren aufgespannte Unterraum ist der Raum welche alle Linearkombination von $U = span(v_1,\cdots,v_n)$ enthält.
-- Der aufgespannte Unterraum $U$ durch die Vektoren $v_1,v_2,v_3$ wird als $U = span(v_1,v_2,v_3)$ bezeichnet. 
-- Die Basis eines aufgespannten Unterraums lässt sich bilden in dem die Vektoren $v_1,\dots,v_n \in{U}$ in eine Treppenform überführt werden. 
+- Der aufgespannte Unterraum $U$ durch die Vektoren $v_1,v_2,v_3$ wird als $U = span(v_1,v_2,v_3)$ bezeichnet.
+- Die Basis eines aufgespannten Unterraums lässt sich bilden in dem die Vektoren $v_1,\dots,v_n \in{U}$ in eine Treppenform überführt werden.
 - Alle Spalten mit Pivot-Element $v_1,\dots,v_j$ bilden die Basis von $U = span(v_1,\cdots,v_n)$. -> Vektoren der ursprünglichen Form verwenden!
 
 Daraus folgt,
 
-$$\begin{aligned}
-&a) \ \text{Ein Vektor der Form} \quad t_1v_1+\cdots+t_kv_k \quad \text{mit} \quad t_1,\cdots,t_k \in{\R} \\
-&\text{heisst Linearkombination von $v_1,\cdots,v_k$.} \\
-&b) \ \text{Die Menge der Linearkombinationen von $v_1,\cdots,v_k$ ist $span(v_1,\cdots,v_k)$.} \\
-&span(v_1,\cdots,v_k) = {t_1v_1+\cdots+t_kv_k|t_1,\cdots,t_k \in{\R}}
-
-\end{aligned}$$
+$$
+\begin{aligned}
+    &a) \ \text{Ein Vektor der Form} \quad t_1 v_1 + \cdots + t_k v_k \quad \text{mit} \quad t_1,\cdots,t_k \in{\mathbb{R}} \\
+    &\text{heisst Linearkombination von $v_1,\cdots,v_k$.} \\
+    &b) \ \text{Die Menge der Linearkombinationen von $v_1,\cdots,v_k$ ist $span(v_1,\cdots,v_k)$.} \\
+    &span(v_1,\cdots,v_k) = {t_1v_1+\cdots+t_kv_k|t_1,\cdots,t_k \in{\mathbb{R}}}
+\end{aligned}
+$$
