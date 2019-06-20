@@ -34,4 +34,10 @@ $$
 \end{aligned}
 $$
 
+### Symmetrisch
+
 Matrix $A$ gilt als **symmetrisch**, falls $A^T = A$
+
+### Quadratisch
+
+Matrix $A$ gilt als **quadratisch**, falls die Anzahl der Zeilen mit der Anzahl der Spalten übereinstimmt $m = n$
