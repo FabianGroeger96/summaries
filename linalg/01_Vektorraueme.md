@@ -102,7 +102,7 @@ Die Vektoren $v_1,\cdots,v_n$ werden als linear unabhängig bezeichnet wenn eine
 
 Also gilt für beliebige $s_1,\cdots,s_n \in{\R}$,
 
-$$ s_1v_1+ \cdots + s_1v_1 = 0 \quad \rArr \quad  s_1 = \cdots = s_n = 0 \rArr s = [0,\cdots,0]^\mathbf{T}$$
+$$ s_1v_1+ \cdots + s_nv_n = 0 \quad \rArr \quad  s_1 = \cdots = s_n = 0 \rArr s = [0,\cdots,0]^\mathbf{T}$$
 
 ## Basis
 
@@ -190,7 +190,7 @@ Z_{12}(-1/2) \lrArr
 \\
 &U_2) \ \frac{3}{2}s_2 - \frac{x_3}{4} = x_2 - \frac{x_1}{2} \rArr s_2 = \frac{x_2 - \frac{x_1}{2} + \frac{x_3}{4}}{1.5}
 \\
-&U_2) \ 2s_1 + \frac{x_2 - \frac{x_1}{2} + \frac{x_3}{4}}{1.5} - \frac{x_3}{2}   = x_1 \rArr s_1 = (\frac{x_2 - \frac{x_1}{2} + \frac{x_3}{4}}{1.5} + \frac{x_3}{2}) / 2
+&U_2) \ 2s_1 + \frac{x_2 - \frac{x_1}{2} + \frac{x_3}{4}}{1.5} - \frac{x_3}{2}   = x_1 \rArr s_1 = \frac{\frac{x_2 - \frac{x_1}{2} + \frac{x_3}{4}}{1.5} + \frac{x_3}{2}}{2}
 \end{aligned}
 $$
 
