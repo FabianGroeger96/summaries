@@ -79,3 +79,9 @@ $$
     &U_3) \quad = s\cdot x_1 + s\cdot2x_2 = (sx_1) + 2(sx_2) = 0 \quad \checkmark \\
 \end{aligned}
 $$
+
+## Aufgespannte Unterraum
+
+- Der von einer Menge Vektoren aufgespannte Unterraum ist der kleinste Unterraum, der diese Vektoren enthält
+- Der von einem Vektor $v$ erzeugte Unterraum ist also eine Gerade, wenn $v \neq 0$
+- Der von zwei Vektoren aufgespannte Unterraum ist eine Ebene, wenn die beiden Vektoren linear unabhängig sind (kein skalares Vielfaches gibt um aus dem einten Vektor den anderen zu machen)
