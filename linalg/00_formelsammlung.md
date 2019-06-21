@@ -4,7 +4,7 @@
 
 ### Zeilen & Spalten
 
-$$ \includegraphics[width=0.5\columnwidth]{images/zeilen_spalten.gif} $$
+$$ \includegraphics[width=0.5\columnwidth]{images/zeilen_spalten.png} $$
 
 ### Rechenregeln
 
