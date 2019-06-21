@@ -30,8 +30,7 @@ $$
 
 ## Funktionsräume
 
-
-Analog zu den Vektorräumen werden die Funktionsräume beschrieben.
+- Analog zu den Vektorräumen werden die Funktionsräume beschrieben
 - verhalten sich bezüglich der Addition und skalaren Multiplikation genau wie Vektoren
 - Der Nullvektor wird im Funktionenraum als Nullfunktion bezeichnet, Funktion welche jedem $x$ den Wert $0$ zuordnet
 

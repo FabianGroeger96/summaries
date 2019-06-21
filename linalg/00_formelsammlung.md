@@ -2,6 +2,10 @@
 
 ## Matrizen
 
+### Zeilen & Spalten
+
+$$ \includegraphics[width=0.5\columnwidth]{images/zeilen_spalten.gif} $$
+
 ### Rechenregeln
 
 - Vorsicht! Addition nur mit Matrizen von gleichem Format möglich
@@ -24,7 +28,7 @@ $$
     \begin{bmatrix}
     1 & 0 & 3 \\
     2 & 3 & 5
-    \end{bmatrix} \\
+    \end{bmatrix} \quad \rightarrow \quad
     A^T &=
     \begin{bmatrix}
     1 & 2 \\
