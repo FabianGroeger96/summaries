@@ -65,12 +65,12 @@ $$
     &MAX = max(R, G, B) \quad \quad MIN = min(R, G, B) \\
     \\
     &H = \left\{ \begin{matrix}
-        0^{\degree}, &\quad \quad \text{falls} \ MAX = MIN \\
-        60^{\degree} \cdot (0 + \frac{G-B}{MAX - MIN}), \quad \quad &\text{falls} \ MAX = R \\
-        60^{\degree} \cdot (2 + \frac{B-R}{MAX - MIN}), \quad \quad &\text{falls} \ MAX = G \\
-        60^{\degree} \cdot (4 + \frac{R-G}{MAX - MIN}), \quad \quad &\text{falls} \ MAX = B \\
+        0^{\circ}, &\quad \quad \text{falls} \ MAX = MIN \\
+        60^{\circ} \cdot (0 + \frac{G-B}{MAX - MIN}), \quad \quad &\text{falls} \ MAX = R \\
+        60^{\circ} \cdot (2 + \frac{B-R}{MAX - MIN}), \quad \quad &\text{falls} \ MAX = G \\
+        60^{\circ} \cdot (4 + \frac{R-G}{MAX - MIN}), \quad \quad &\text{falls} \ MAX = B \\
     \end{matrix} \right\} \\
-    &\text{falls $H < 0^{\degree}$ dann $H = H + 360^{\degree}$} \\
+    &\text{falls $H < 0^{\circ}$ dann $H = H + 360^{\circ}$} \\
     \\
     &S = \left\{ \begin{matrix}
         0, \quad \quad &\text{falls} \ MAX = 0 \\
@@ -79,7 +79,7 @@ $$
     \\
     &V = MAX \\
     \\
-    &\text{Nachbedingung: H liegt im Bereich von $[0^{\degree}, 360^{\degree}]$} \\
+    &\text{Nachbedingung: H liegt im Bereich von $[0^{\circ}, 360^{\circ}]$} \\
     &\text{S, V liegen im Bereich von $[0,1]$}
 \end{aligned}
 $$
@@ -88,11 +88,11 @@ $$
 
 $$
 \begin{aligned}
-    &\text{Vorbedingung: H liegt im Bereich von $[0^{\degree}, 360^{\degree}]$} \\
+    &\text{Vorbedingung: H liegt im Bereich von $[0^{\circ}, 360^{\circ}]$} \\
     &\text{S, V liegen im Bereich von $[0,1]$} \\
     \\
-    &h_i = \frac{H}{60^{\degree}} \\
-    &f = \frac{H}{60^{\degree}} - h_i \\
+    &h_i = \frac{H}{60^{\circ}} \\
+    &f = \frac{H}{60^{\circ}} - h_i \\
     \\
     &p = V \cdot (1 - S) \\
     &q = V \cdot (1 - S \cdot f) \\

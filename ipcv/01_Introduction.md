@@ -2,7 +2,7 @@
 
 ## Bildverarbeitung
 
-Computergrafik $\lrarr$ Bildverarbeitung
+Computergrafik $\leftrightarrow$ Bildverarbeitung
 
 - Computergrafik -> Erzeugung von realisitischen bildern aus der Beschreibung von Objekten.
 - Bildverarbeitung -> Erkennung von Objekten oder Szenen aus Bildern

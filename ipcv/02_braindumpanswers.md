@@ -39,45 +39,51 @@ C \\ M \\ Y \\ max(C, M, Y)
 
 Mit $R', G', B' = f(x), f(x) = x/255$
 
-$$ Cmax = max(R', G', B')
+$$
+\begin{aligned}
+    Cmax = max(R', G', B')
 \\
 Cmin = min(R', G', B')
 \\
 \triangle = Cmax - Cmin
 \\
+\\
 H = \begin{cases}
-0° &\quad \triangle = 0 \\
-60° \times (\frac{G' - B'}{\triangle}mod(6)) &\quad C_{max} = R' \\
-60° \times (\frac{B' - R'}{\triangle}+2) &\quad  C_{max} = G' \\
-60° \times (\frac{R' - G'}{\triangle}+4) &\quad C_{max} = B' \\
-\end{cases}
+0^{\circ} &\quad \triangle = 0 \\
+60^{\circ} \times (\frac{G' - B'}{\triangle}mod(6)) &\quad C_{max} = R' \\
+60^{\circ} \times (\frac{B' - R'}{\triangle}+2) &\quad  C_{max} = G' \\
+60^{\circ} \times (\frac{R' - G'}{\triangle}+4) &\quad C_{max} = B' \\
+\end{cases} \\
 \\
 S = \begin{cases}
 0 &\quad C_{max} = 0 \\
 \frac{\triangle}{C_{max}} &\quad C_{max} \neq 0
-\end{cases}
+\end{cases} \\
 \\
-V = C_{max} $$
+V = C_{max}
+\end{aligned}$$
 
 Mit $0 \leq H < 360, 0 \leq S \leq 1, 0\leq V \leq 1$
 
 $$
+\begin{aligned}
 C = V \times S
 \\
-X = C \times (1 - |(H / 60°)*mod(2)-1|)
+X = C \times (1 - |(H / 60^{\circ})*mod(2)-1|)
 \\
 m = V-C
 \\
 (R',G',B') = \begin{cases}
-(C,X,0) &\quad 0° \leq H < 60° \\
-(X,C,0) &\quad 60° \leq H < 120° \\
-(0,C,X) &\quad 120° \leq H < 180° \\
-(0,X,C) &\quad 180° \leq H < 240° \\
-(X,0,C) &\quad 240° \leq H < 300° \\
-(C,0,X) &\quad 300° \leq H < 360° \\
-\end{cases}
+(C,X,0) &\quad 0^{\circ} \leq H < 60^{\circ} \\
+(X,C,0) &\quad 60^{\circ} \leq H < 120^{\circ} \\
+(0,C,X) &\quad 120^{\circ} \leq H < 180^{\circ} \\
+(0,X,C) &\quad 180^{\circ} \leq H < 240^{\circ} \\
+(X,0,C) &\quad 240^{\circ} \leq H < 300^{\circ} \\
+(C,0,X) &\quad 300^{\circ} \leq H < 360^{\circ} \\
+\end{cases} \\
 \\
 (R,G,B) = ((R'+m)*255,(G'+m)*255,(B'+m)*255)
+\end{aligned}
 $$
 
 ## Objekterkennung
