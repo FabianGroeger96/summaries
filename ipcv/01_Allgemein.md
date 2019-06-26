@@ -1,5 +1,9 @@
 # Allgemeines
 
+## Lichtspektrum
+
+$$ \includegraphics[width=0.5\columnwidth]{images/lichtspektrum.jpg} $$
+
 ## Umrechnen von Farbsystemen
 
 ### RGB zu CMY
