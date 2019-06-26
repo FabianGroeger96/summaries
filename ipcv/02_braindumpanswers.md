@@ -1,7 +1,8 @@
+# Braindump Answers
 
-# Farbsysteme
+## Farbsysteme
 
-## RGB - CMY
+### RGB - CMY
 
 Mit $R', G', B' = f(x), f(x) = x/255$
 
@@ -25,7 +26,7 @@ R' \\ G' \\ B'
 C \\ M \\ Y
 \end{bmatrix} $$
 
-## CMY - CMYK
+### CMY - CMYK
 
 $$ \begin{bmatrix}
 C \\ M \\ Y
@@ -34,7 +35,7 @@ C \\ M \\ Y
 C \\ M \\ Y \\ max(C, M, Y)
 \end{bmatrix} $$
 
-## RGB - HSV
+### RGB - HSV
 
 Mit $R', G', B' = f(x), f(x) = x/255$
 
@@ -79,9 +80,9 @@ m = V-C
 (R,G,B) = ((R'+m)*255,(G'+m)*255,(B'+m)*255)
 $$
 
-# Objekterkennung
+## Objekterkennung
 
-## Wie kann ein roter Ball in einem Bild anvisiert werden?
+### Wie kann ein roter Ball in einem Bild anvisiert werden?
 
 Um diese Aufgabe zu lösen können mehrere Ansätze verwendet werden.
 
@@ -97,6 +98,3 @@ Um diese Aufgabe zu lösen können mehrere Ansätze verwendet werden.
   - Logistic Regression
 - Weiter können Kombinationen verwendet werden.
 - Wichtig ist ebenfalls das Bild für das Isolieren des entsprechenden Objekts vorubereiten. z.B. in dem nur der Rot-Kanal für den Ball verwendet wird.
-
-
-
